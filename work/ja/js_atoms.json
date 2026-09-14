@@ -1,0 +1,290 @@
+{
+ "kind": "js",
+ "files": {
+  "assets/main.js": "57e085d27b22f38bf9d278907c486a34",
+  "assets/quiz.js": "7263553c3eabc8bc56461101f20b7e78",
+  "assets/sd.js": "c0cee8b57669fdaf74b465bcf5cbc816"
+ },
+ "atoms": {
+  "e9868cc5a7": {
+   "text": "已复制 ✓",
+   "occs": [
+    [
+     "assets/main.js",
+     5,
+     0
+    ]
+   ]
+  },
+  "fc8557e8c6": {
+   "text": "      /* 注释 */",
+   "occs": [
+    [
+     "assets/main.js",
+     274,
+     12
+    ]
+   ]
+  },
+  "18628f29cd": {
+   "text": "      /* 字符串 */",
+   "occs": [
+    [
+     "assets/main.js",
+     276,
+     5
+    ]
+   ]
+  },
+  "24e9c27a49": {
+   "text": "      /* 标记语言标签: <xxx ...> */",
+   "occs": [
+    [
+     "assets/main.js",
+     281,
+     5
+    ]
+   ]
+  },
+  "f25ed9be3e": {
+   "text": "              /* 简化: 上面整块替换不可靠时退回原样 */",
+   "occs": [
+    [
+     "assets/main.js",
+     289,
+     10
+    ]
+   ]
+  },
+  "52839fa52f": {
+   "text": "      /* @注解 / @title */",
+   "occs": [
+    [
+     "assets/main.js",
+     289,
+     20
+    ]
+   ]
+  },
+  "9752e7a087": {
+   "text": "      /* 数字 */",
+   "occs": [
+    [
+     "assets/main.js",
+     289,
+     26
+    ]
+   ]
+  },
+  "ea7bc6a91c": {
+   "text": "      /* 关键字 */",
+   "occs": [
+    [
+     "assets/main.js",
+     289,
+     32
+    ]
+   ]
+  },
+  "ec2c31ab5d": {
+   "text": "      /* 其它: 注意要在输出前转义 */",
+   "occs": [
+    [
+     "assets/main.js",
+     289,
+     44
+    ]
+   ]
+  },
+  "bafd1c1244": {
+   "text": "    /* 返回顶部 */",
+   "occs": [
+    [
+     "assets/main.js",
+     291,
+     4
+    ]
+   ]
+  },
+  "33e3794802": {
+   "text": "    /* 页脚年份 */",
+   "occs": [
+    [
+     "assets/main.js",
+     301,
+     3
+    ]
+   ]
+  },
+  "92105d1b48": {
+   "text": "<b class=\"t\">成绩</b>",
+   "occs": [
+    [
+     "assets/quiz.js",
+     6,
+     0
+    ]
+   ]
+  },
+  "84010ea52c": {
+   "text": "<p id=\"quiz-text\" style=\"margin:4px 0 0\">尚未作答 / 共 0 题</p>",
+   "occs": [
+    [
+     "assets/quiz.js",
+     8,
+     0
+    ]
+   ]
+  },
+  "b6893c37e5": {
+   "text": " ★★★ 优秀 (90%+)",
+   "occs": [
+    [
+     "assets/quiz.js",
+     18,
+     0
+    ]
+   ]
+  },
+  "4a32200662": {
+   "text": " ★★☆ 良好 (75%+)",
+   "occs": [
+    [
+     "assets/quiz.js",
+     19,
+     0
+    ]
+   ]
+  },
+  "67ca16523e": {
+   "text": " ★☆☆ 及格 (60%+)",
+   "occs": [
+    [
+     "assets/quiz.js",
+     20,
+     0
+    ]
+   ]
+  },
+  "00b2344f4f": {
+   "text": " ✗ 未达标 (<60%) —— 请回到对应手顺篇复习",
+   "occs": [
+    [
+     "assets/quiz.js",
+     21,
+     0
+    ]
+   ]
+  },
+  "672f26d725": {
+   "text": "已答 ",
+   "occs": [
+    [
+     "assets/quiz.js",
+     22,
+     0
+    ]
+   ]
+  },
+  "d8097f0f55": {
+   "text": " · 正确 ",
+   "occs": [
+    [
+     "assets/quiz.js",
+     24,
+     0
+    ]
+   ]
+  },
+  "cdb63fdee1": {
+   "text": " · 正确率 ",
+   "occs": [
+    [
+     "assets/quiz.js",
+     25,
+     0
+    ]
+   ]
+  },
+  "fd87b688bf": {
+   "text": "全部重做 ↺",
+   "occs": [
+    [
+     "assets/quiz.js",
+     60,
+     0
+    ]
+   ]
+  },
+  "dc822346a1": {
+   "text": "<span class=\"dim\">当前 ",
+   "occs": [
+    [
+     "assets/sd.js",
+     31,
+     0
+    ]
+   ]
+  },
+  "b33aab6f41": {
+   "text": "<button class=\"zoombtn\" data-close=\"1\">关闭 (ESC)</button>",
+   "occs": [
+    [
+     "assets/sd.js",
+     33,
+     0
+    ]
+   ]
+  },
+  "a1a93bdb58": {
+   "text": "显示 ",
+   "occs": [
+    [
+     "assets/sd.js",
+     70,
+     0
+    ]
+   ]
+  },
+  "189f802cc9": {
+   "text": " 个任务",
+   "occs": [
+    [
+     "assets/sd.js",
+     72,
+     0
+    ]
+   ]
+  },
+  "4c529b1f92": {
+   "text": "<span class=\"dim\">画面显示大小：</span>",
+   "occs": [
+    [
+     "assets/sd.js",
+     84,
+     0
+    ]
+   ]
+  },
+  "ac539ae57b": {
+   "text": "<span class=\"dim\">（投屏/教室建议 1.5×〜2×；点画面本身可放大到 4×）</span>",
+   "occs": [
+    [
+     "assets/sd.js",
+     88,
+     0
+    ]
+   ]
+  },
+  "06d18a08da": {
+   "text": "点击复制路径",
+   "occs": [
+    [
+     "assets/sd.js",
+     104,
+     0
+    ]
+   ]
+  }
+ }
+}

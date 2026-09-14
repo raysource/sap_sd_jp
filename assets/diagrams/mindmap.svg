@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1420 1240" width="1420" height="1240" role="img" aria-label="SAP SD 知識マップ（マインドマップ）" font-family="'PingFang SC','Hiragino Sans GB','Noto Sans CJK SC','Microsoft YaHei',sans-serif">
+<title>SAP SD 知識マップ（マインドマップ）</title>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0a6ed1"/></marker><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#007272"/></marker><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ffffff"/></marker></defs>
+<rect width="1420" height="1240" fill="#ffffff"/>
+<text x="40.0" y="46.0" font-size="22" fill="#1d2d3e" text-anchor="start" font-weight="700">SAP SD 知識マップ — 全体から部分へ</text>
+<text x="40.0" y="70.0" font-size="12.5" fill="#6b7a8d" text-anchor="start" font-weight="400">6 つのセクション：① 概念 ② 組織 ③ マスタ ④ 価格設定 ⑤ プロセス ⑥ 設定と分析。葉ノード = コースの要点（当サイト自作 SVG）</text>
+<rect x="590.0" y="585.0" width="240.0" height="150.0" rx="16" fill="#0854a0" stroke="#0854a0" stroke-width="1.4"/>
+<text x="710.0" y="638.0" font-size="32" fill="#ffffff" text-anchor="middle" font-weight="700">SAP SD</text>
+<text x="710.0" y="670.0" font-size="18" fill="#dbeafd" text-anchor="middle" font-weight="400">販売管理</text>
+<text x="710.0" y="696.0" font-size="12" fill="#a9cdf3" text-anchor="middle" font-weight="400" font-family="'SF Mono',Menlo,Consolas,monospace">Sales &amp; Distribution</text>
+<text x="710.0" y="720.0" font-size="11.5" fill="#a9cdf3" text-anchor="middle" font-weight="400">地図 → プロセス → 設定</text>
+<rect x="320.0" y="108.0" width="200.0" height="42.0" rx="12" fill="#0a6ed1" stroke="#0a6ed1" stroke-width="1.4"/>
+<text x="420.0" y="136.0" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="700">① 概念と位置づけ</text>
+<path d="M 590 612 C 544 612 566 129 520 129" fill="none" stroke="#0a6ed1" stroke-width="2.6"/>
+<rect x="40.0" y="162.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#0a6ed1" stroke-width="1.2"/>
+<text x="52.0" y="182.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">SD が担う範囲：何を売るか · 誰に売るか · どう価格設定するか ·</text>
+<text x="52.0" y="198.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">どう出荷するか · どう請求するか</text>
+<line x1="520.0" y1="185.0" x2="420.0" y2="150.0" stroke="#0a6ed1" stroke-width="1.2"/>
+<rect x="40.0" y="217.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#0a6ed1" stroke-width="1.2"/>
+<text x="52.0" y="237.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">FI / MM / PP / CO との境界：SD</text>
+<text x="52.0" y="253.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">は「販売伝票」を出し、隣接モジュールが在庫と会計伝票を出します</text>
+<line x1="520.0" y1="240.0" x2="420.0" y2="150.0" stroke="#0a6ed1" stroke-width="1.2"/>
+<rect x="40.0" y="272.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#0a6ed1" stroke-width="1.2"/>
+<text x="52.0" y="301.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">3 つの概念層：組織構造 → マスタ → 伝票（設定の順序も同じです）</text>
+<line x1="520.0" y1="295.0" x2="420.0" y2="150.0" stroke="#0a6ed1" stroke-width="1.2"/>
+<rect x="40.0" y="327.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#0a6ed1" stroke-width="1.2"/>
+<text x="52.0" y="356.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">5 大伝票：引合 · 見積 · 受注伝票 · 納入 · 請求書</text>
+<line x1="520.0" y1="350.0" x2="420.0" y2="150.0" stroke="#0a6ed1" stroke-width="1.2"/>
+<rect x="40.0" y="382.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#0a6ed1" stroke-width="1.2"/>
+<text x="52.0" y="411.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">中核となる組織キー：販売エリア = 販売組織 + 流通チャネル + 製品部門</text>
+<line x1="520.0" y1="405.0" x2="420.0" y2="150.0" stroke="#0a6ed1" stroke-width="1.2"/>
+<rect x="320.0" y="472.0" width="200.0" height="42.0" rx="12" fill="#007272" stroke="#007272" stroke-width="1.4"/>
+<text x="420.0" y="500.0" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="700">② 組織構造</text>
+<path d="M 590 636 C 544 636 566 493 520 493" fill="none" stroke="#007272" stroke-width="2.6"/>
+<rect x="40.0" y="526.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#007272" stroke-width="1.2"/>
+<text x="52.0" y="555.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">企業構造：会社コード / 販売組織 / プラント</text>
+<line x1="520.0" y1="549.0" x2="420.0" y2="514.0" stroke="#007272" stroke-width="1.2"/>
+<rect x="40.0" y="581.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#007272" stroke-width="1.2"/>
+<text x="52.0" y="610.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">販売構造：流通チャネル / 製品部門 / 販売事務所 / 販売グループ</text>
+<line x1="520.0" y1="604.0" x2="420.0" y2="514.0" stroke="#007272" stroke-width="1.2"/>
+<rect x="40.0" y="636.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#007272" stroke-width="1.2"/>
+<text x="52.0" y="665.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">出荷構造：出荷ポイント / 積込ポイント / ピッキング保管場所 / 輸送条件</text>
+<line x1="520.0" y1="659.0" x2="420.0" y2="514.0" stroke="#007272" stroke-width="1.2"/>
+<rect x="40.0" y="691.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#007272" stroke-width="1.2"/>
+<text x="52.0" y="711.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">割当関係は多くが多対多です（1 つのプラントは複数の販売組織に対応でき、1</text>
+<text x="52.0" y="727.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">つの出荷ポイントは複数のプラントにサービスできます）</text>
+<line x1="520.0" y1="714.0" x2="420.0" y2="514.0" stroke="#007272" stroke-width="1.2"/>
+<rect x="40.0" y="746.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#007272" stroke-width="1.2"/>
+<text x="52.0" y="766.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">組織データが決めること：マスタの作り方、伝票の流れ方、在庫の出所、収益の</text>
+<text x="52.0" y="782.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">計上方法</text>
+<line x1="520.0" y1="769.0" x2="420.0" y2="514.0" stroke="#007272" stroke-width="1.2"/>
+<rect x="320.0" y="836.0" width="200.0" height="42.0" rx="12" fill="#177245" stroke="#177245" stroke-width="1.4"/>
+<text x="420.0" y="864.0" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="700">③ マスタ</text>
+<path d="M 590 660 C 544 660 566 857 520 857" fill="none" stroke="#177245" stroke-width="2.6"/>
+<rect x="40.0" y="890.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#177245" stroke-width="1.2"/>
+<text x="52.0" y="919.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">得意先マスタの 3 層：一般データ／会社コードデータ／販売エリアデータ</text>
+<line x1="520.0" y1="913.0" x2="420.0" y2="878.0" stroke="#177245" stroke-width="1.2"/>
+<rect x="40.0" y="945.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#177245" stroke-width="1.2"/>
+<text x="52.0" y="965.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">4 つのパートナ役割：受注先 · 出荷先 · 請求先 ·</text>
+<text x="52.0" y="981.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">支払先（同一得意先の別番号を指すことも可能）</text>
+<line x1="520.0" y1="968.0" x2="420.0" y2="878.0" stroke="#177245" stroke-width="1.2"/>
+<rect x="40.0" y="1000.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#177245" stroke-width="1.2"/>
+<text x="52.0" y="1020.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">品目マスタ：販売ビュー（販売エリアレベル）+ プラントレベルビュー（MRP</text>
+<text x="52.0" y="1036.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">など）</text>
+<line x1="520.0" y1="1023.0" x2="420.0" y2="878.0" stroke="#177245" stroke-width="1.2"/>
+<rect x="40.0" y="1055.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#177245" stroke-width="1.2"/>
+<text x="52.0" y="1084.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">条件レコード：販売価格 PR00 / 割引 / 売上税 MWST など（VK11 で登録）</text>
+<line x1="520.0" y1="1078.0" x2="420.0" y2="878.0" stroke="#177245" stroke-width="1.2"/>
+<rect x="40.0" y="1110.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#177245" stroke-width="1.2"/>
+<text x="52.0" y="1139.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">得意先-品目情報レコード · 品目決定（リストと除外）· 得意先勘定グループ</text>
+<line x1="520.0" y1="1133.0" x2="420.0" y2="878.0" stroke="#177245" stroke-width="1.2"/>
+<rect x="900.0" y="108.0" width="200.0" height="42.0" rx="12" fill="#8d6e00" stroke="#8d6e00" stroke-width="1.4"/>
+<text x="1000.0" y="136.0" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="700">④ 価格設定と条件技術</text>
+<path d="M 830 612 C 876 612 854 129 900 129" fill="none" stroke="#8d6e00" stroke-width="2.6"/>
+<rect x="900.0" y="162.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#8d6e00" stroke-width="1.2"/>
+<text x="912.0" y="191.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">4 層構造：条件テーブル → アクセス順序 → 条件タイプ → 計算スキーマ</text>
+<line x1="900.0" y1="185.0" x2="1000.0" y2="150.0" stroke="#8d6e00" stroke-width="1.2"/>
+<rect x="900.0" y="217.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#8d6e00" stroke-width="1.2"/>
+<text x="912.0" y="237.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">条件タイプ PR00（価格）/ MWST（売上税）/ 割引と追加料金（教材は RVAA01</text>
+<text x="912.0" y="253.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">標準スキーマを使用）</text>
+<line x1="900.0" y1="240.0" x2="1000.0" y2="150.0" stroke="#8d6e00" stroke-width="1.2"/>
+<rect x="900.0" y="272.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#8d6e00" stroke-width="1.2"/>
+<text x="912.0" y="292.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">アクセス順序は「まず専用価格を探し、見つからなければ一般価格を探す」とい</text>
+<text x="912.0" y="308.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">う検索の優先順位を決定します</text>
+<line x1="900.0" y1="295.0" x2="1000.0" y2="150.0" stroke="#8d6e00" stroke-width="1.2"/>
+<rect x="900.0" y="327.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#8d6e00" stroke-width="1.2"/>
+<text x="912.0" y="347.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">計算スキーマ決定の 3</text>
+<text x="912.0" y="363.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">つのキー：販売エリア＋得意先計算スキーマ＋伝票計算スキーマ</text>
+<line x1="900.0" y1="350.0" x2="1000.0" y2="150.0" stroke="#8d6e00" stroke-width="1.2"/>
+<rect x="900.0" y="382.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#8d6e00" stroke-width="1.2"/>
+<text x="912.0" y="411.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">勘定設定：勘定キー + 品目/得意先の勘定割当グループ → 収益勘定（VKOA）</text>
+<line x1="900.0" y1="405.0" x2="1000.0" y2="150.0" stroke="#8d6e00" stroke-width="1.2"/>
+<rect x="900.0" y="472.0" width="200.0" height="42.0" rx="12" fill="#b3261e" stroke="#b3261e" stroke-width="1.4"/>
+<text x="1000.0" y="500.0" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="700">⑤ 業務プロセス O2C</text>
+<path d="M 830 636 C 876 636 854 493 900 493" fill="none" stroke="#b3261e" stroke-width="2.6"/>
+<rect x="900.0" y="526.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#b3261e" stroke-width="1.2"/>
+<text x="912.0" y="555.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">販売前：引合 VA11 → 見積 VA21（参照して登録可能）</text>
+<line x1="900.0" y1="549.0" x2="1000.0" y2="514.0" stroke="#b3261e" stroke-width="1.2"/>
+<rect x="900.0" y="581.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#b3261e" stroke-width="1.2"/>
+<text x="912.0" y="610.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">受注：受注伝票 VA01 —— 価格設定 + 所要量確認 ATP → 納入日の確定</text>
+<line x1="900.0" y1="604.0" x2="1000.0" y2="514.0" stroke="#b3261e" stroke-width="1.2"/>
+<rect x="900.0" y="636.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#b3261e" stroke-width="1.2"/>
+<text x="912.0" y="656.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">納入：出荷伝票 VL01N → ピッキング → 出庫過転記 VL02N（移動タイプ 601</text>
+<text x="912.0" y="672.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">で初めて実際に出庫）</text>
+<line x1="900.0" y1="659.0" x2="1000.0" y2="514.0" stroke="#b3261e" stroke-width="1.2"/>
+<rect x="900.0" y="691.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#b3261e" stroke-width="1.2"/>
+<text x="912.0" y="720.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">請求：請求書 VF01 → 転記 VF02 → 会計伝票 → 入金 F-28 消込</text>
+<line x1="900.0" y1="714.0" x2="1000.0" y2="514.0" stroke="#b3261e" stroke-width="1.2"/>
+<rect x="900.0" y="746.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#b3261e" stroke-width="1.2"/>
+<text x="912.0" y="775.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">モニタリング：伝票フロー（VA03 → 環境）/ 受注一覧 VA05 / 販売分析 MCTA</text>
+<line x1="900.0" y1="769.0" x2="1000.0" y2="514.0" stroke="#b3261e" stroke-width="1.2"/>
+<rect x="900.0" y="836.0" width="200.0" height="42.0" rx="12" fill="#5b3fa8" stroke="#5b3fa8" stroke-width="1.4"/>
+<text x="1000.0" y="864.0" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="700">⑥ 設定と分析</text>
+<path d="M 830 660 C 876 660 854 857 900 857" fill="none" stroke="#5b3fa8" stroke-width="2.6"/>
+<rect x="900.0" y="890.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#5b3fa8" stroke-width="1.2"/>
+<text x="912.0" y="910.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">SPRO ルート：組織 → 出荷 → マスタデータ → 価格設定 → 勘定設定 →</text>
+<text x="912.0" y="926.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">更新グループ</text>
+<line x1="900.0" y1="913.0" x2="1000.0" y2="878.0" stroke="#5b3fa8" stroke-width="1.2"/>
+<rect x="900.0" y="945.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#5b3fa8" stroke-width="1.2"/>
+<text x="912.0" y="965.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">伝票制御オブジェクト：販売伝票タイプ／明細カテゴリ／納入日程行カテゴリ（</text>
+<text x="912.0" y="981.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">VOV4／VOV5／VOV7）</text>
+<line x1="900.0" y1="968.0" x2="1000.0" y2="878.0" stroke="#5b3fa8" stroke-width="1.2"/>
+<rect x="900.0" y="1000.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#5b3fa8" stroke-width="1.2"/>
+<text x="912.0" y="1029.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">チェックとルール：不完全性チェック OVA2、与信管理、パートナ決定</text>
+<line x1="900.0" y1="1023.0" x2="1000.0" y2="878.0" stroke="#5b3fa8" stroke-width="1.2"/>
+<rect x="900.0" y="1055.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#5b3fa8" stroke-width="1.2"/>
+<text x="912.0" y="1084.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">出力決定：受注確認 / 納入伝票 / 請求書の出力と印刷</text>
+<line x1="900.0" y1="1078.0" x2="1000.0" y2="878.0" stroke="#5b3fa8" stroke-width="1.2"/>
+<rect x="900.0" y="1110.0" width="480.0" height="46.0" rx="8" fill="#ffffff" stroke="#5b3fa8" stroke-width="1.2"/>
+<text x="912.0" y="1139.0" font-size="12.5" fill="#354a5f" text-anchor="start" font-weight="400">分析：VC/2 販売集計、VA05 受注一覧、MCTA 販売分析、貸借対照表</text>
+<line x1="900.0" y1="1133.0" x2="1000.0" y2="878.0" stroke="#5b3fa8" stroke-width="1.2"/>
+</svg>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>価格設定と条件技術 · SAP SD トレーニングコース</title>
+<meta name="description" content="SAP SD（販売管理）トレーニングコース：概念 → 組織構造 → マスタ → 価格設定 → エンドツーエンドプロセス（引合・見積・受注・納入・出荷・請求・入金）→ 設定 → 分析。各段階に実際の SAP GUI システムのスクリーンショット（中国語インターフェース）と自作図のフロー図、構造図、マインドマップを用意します。">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/sd.css">
+</head>
+<body>
+<header class="site">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html"><span class="logo">SD</span><span class="txt">トレーニングコース</span></a>
+    <nav class="main">
+      <a href="index.html" title="コースマップと学習ルート">ホーム</a>
+      <a href="concept.html" title="SD とは何か、3 つの概念レイヤ、5 大伝票">基本概念</a>
+      <a href="org.html" title="企業構造 / 販売構造 / 出荷構造">組織</a>
+      <a href="master.html" title="得意先マスタ / 品目の販売ビュー / 条件レコード">マスタ</a>
+      <a class="active" href="pricing.html" title="条件技術の4要素と計算スキーマ決定">価格設定</a>
+      <a href="flow.html" title="エンドツーエンド O2C のフロー図と伝票フロー">プロセス</a>
+      <a href="order.html" title="引合 · 見積 · 受注伝票（部分的な詳細解説）">受注伝票</a>
+      <a href="delivery.html" title="出荷伝票 · ピッキング · 出庫過転記">納入</a>
+      <a href="billing.html" title="請求書 · FI への転記 · 入金">請求</a>
+      <a href="analysis.html" title="伝票フロー／受注一覧／販売分析">データ分析</a>
+      <a href="config.html" title="SPRO 設定ルート（48 タスク）">設定</a>
+      <a href="practice.html" title="実習タスクと完成基準">実習</a>
+      <a href="instructor.html" title="採点ポイント / 必ず問う質問 / 解答">講師</a>
+      <a href="worksheet.html" title="記入表（印刷可能）">受講者</a>
+      <a href="quiz.html" title="30 問のセルフチェック（合格 75%）">セルフチェックテスト</a>
+      <a href="glossary.html" title="中国語・英語対照 / T-code クイックリファレンス">用語</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+<main class="page">
+<article>
+<p class="breadcrumb"><a href="index.html">ホーム</a> / <span>価格設定と条件技術</span></p>
+<h1>価格設定：条件技術の 4 層構造</h1>
+<p class="kicker">条件テーブル · アクセス順序 · 条件タイプ · 計算スキーマ · 計算スキーマ決定 · 勘定設定</p>
+<div class="toc"><a href="#oneline">1. ひと言で</a><a href="#map">2. 価格設定の 4 層構造</a><a href="#four">3. 4 つの概念</a><a href="#det">4. 計算スキーマ決定</a><a href="#tax">5. 税と勘定設定</a><a href="#shots">6. 実際の画面と価格計算のプロセス</a><a href="#trouble">7. トラブルシューティング一覧</a><a href="#check">8. セルフチェック</a></div>
+<h2 id="oneline">1. ひとこと</h2>
+<div class="box ok"><b class="t">価格は「入力」するものではなく「検索」されるもの</b><p>伝票入力時に価格を入力していなくても、受注伝票には価格が入っています。システムが設定された順序で<b>条件レコード</b>を検索するからです。「誰が調べるか、どの順序で調べるか、どの行が検索結果か」をはっきりさせれば、価格設定の問題はすべて特定できます。</p></div>
+<h2 id="map">2. 価格設定の 4 層構造（構造図）</h2>
+<figure class="dia"><a class="zoom" href="assets/diagrams/pricing-chain.svg"><img src="assets/diagrams/pricing-chain.svg" alt="条件技術と計算スキーマ決定の構造図" loading="lazy"></a><figcaption><span class="n">構造図</span><span class="cap">条件テーブル → アクセス順序 → 条件タイプ → 計算スキーマ（左）、計算スキーマ決定と勘定設定（右）、価格計算例（下）</span><span class="src">当サイト自作の SVG</span></figcaption></figure>
+<h2 id="four">2. 4 つの概念を 1 枚の図で理解</h2>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>階層</th><th>とは</th><th>教材で対応するもの</th><th>たとえて言うと</th></tr></thead><tbody><tr><td>条件テーブル Condition Table</td><td>価格を格納するテーブルで、項目は「価格検索に使うキー」です</td><td>PR00 のアクセス順序には「承認ステータスを持つ品目」などのステップが含まれる</td><td>Excel の価格表（得意先 + 品目 → 価格）</td></tr><tr><td>アクセス順序 Access Sequence</td><td>優先順位順に並べた複数の条件テーブル</td><td>PR00 のアクセス順序：まず誰の価格を探し、見つからなければ次に誰の価格を探すか</td><td>資料を調べる順序：まず専用の一覧を調べ、なければ総表を調べる</td></tr><tr><td>条件タイプ Condition Type</td><td>価格・割引・税の一種で、計算ルールと勘定キーを持ちます</td><td><code>PR00</code> 販売価格 / <code>MWST</code> 売上税</td><td>価格の「カテゴリ」：単価、割引、運賃、税</td></tr><tr><td>計算スキーマ Pricing Procedure</td><td>条件タイプをステップ順に1つの表に並べる。計算タイプと小計を含む</td><td>教材はシステムの定義済み設定である <code>RVAA01</code>「標準」を使用</td><td>計算表：ステップ 10 単価、ステップ 20 割引、ステップ 30 税…</td></tr></tbody></table></div>
+<div class="note info"><span class="t">重要な詳細：計算スキーマ内の「勘定キー」</span>計算スキーマの各ステップには条件タイプのほかに<b>勘定キー（Account Key）</b>があり、たとえば<code>ERL</code>は収益を表します。請求書の転記時、システムは「勘定キー＋品目の勘定割当グループ＋得意先の勘定割当グループ」で収益勘定を検索します。したがって計算スキーマは価格計算だけでなく、記帳も担います。</div>
+<div class="pathline" data-copy="销售和分销 → 基本功能 → 定价 → 定价控制 → 定义并分配定价过程"><b>IMG パス（計算スキーマの定義と割当 / 得意先と伝票の計算スキーマ）</b>販売管理 → 基本機能 → 価格設定 → 価格設定管理 → 計算スキーマの定義と割当</div><div class="pathzh"><b>原教材の中国語パス</b><code>销售和分销 → 基本功能 → 定价 → 定价控制 → 定义并分配定价过程</code></div>
+<div class="shot-grid"><figure class="shot"><a class="zoom" href="assets/img/sd/t22/02_1_image1179.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t22/02_1_image1179.png" width="630" height="378" alt="計算スキーマ RVAA01（標準）を選択し、左側の「管理データ」をクリックしてステップを登録" loading="lazy"></a><figcaption><span class="n">画面 1</span><span class="cap">計算スキーマ RVAA01（標準）を選択し、左側の「管理データ」をクリックしてステップを登録</span><span class="src">教材《S4.docx》SD モジュール · image1179.png</span></figcaption></figure><figure class="shot"><a class="zoom" href="assets/img/sd/t22/04_1_image1181.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t22/04_1_image1181.png" width="988" height="617" alt="計算スキーマの明細：Ctyp（条件タイプ）／勘定キー／計算タイプを行ごとに並べる" loading="lazy"></a><figcaption><span class="n">画面 2</span><span class="cap">計算スキーマの明細：Ctyp（条件タイプ）／勘定キー／計算タイプを行ごとに並べる</span><span class="src">教材《S4.docx》SD モジュール · image1181.png</span></figcaption></figure></div>
+<h2 id="det">3. 計算スキーマ決定：「どのスキーマを使うか」を決める</h2>
+<p>システムが勘でスキーマを選ぶことはありません。<b>3 つのキー</b>を使って 1 つのテーブルを検索します（IMG：計算スキーマの定義と割当 → 計算スキーマ決定）：</p>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>決定キー</th><th>どこから来るか</th><th>教材のシナリオ</th></tr></thead><tbody><tr><td>販売エリア</td><td>販売組織 + 流通チャネル + 製品部門</td><td>計 4 つの販売エリアを個別に指定できます</td></tr><tr><td>得意先計算スキーマ Customer Pricing Procedure</td><td>得意先マスタ → 販売ビュー → 価格設定</td><td>教材は標準値を使用</td></tr><tr><td>伝票計算スキーマ Document Pricing Procedure</td><td>販売伝票タイプの価格設定項目</td><td>受注タイプ OR に対応する値</td></tr></tbody></table></div>
+<div class="note tip"><span class="t">トラブルシューティングの考え方</span>価格が合わないときはまず 3 点を確認します：① 受注伝票ヘッダ/明細の販売エリアが正しいか；② 得意先の「得意先計算スキーマ」項目に値があるか；③ 伝票タイプの「伝票計算スキーマ」に値があるか。3 つのキーの組み合わせでスキーマが見つからないと、価格が空になるか、不完全のメッセージが出ます。</div>
+<h2 id="tax">4. 税と勘定設定</h2>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>やるべきこと</th><th>対象の設定</th><th>教材タスク</th></tr></thead><tbody><tr><td>税決定ルールの定義</td><td>IMG：販売管理 → 基本機能 → 税 → 税決定ルールの定義</td><td>タスク 27</td></tr><tr><td>得意先税分類と品目税分類の定義</td><td>IMG：販売管理 → 基本機能 → 税 → 主レコードデータ関連性の定義</td><td>タスク 28</td></tr><tr><td>売上税率を登録</td><td><code>VK11</code> → 条件タイプ <code>MWST</code></td><td>タスク 36</td></tr><tr><td>品目の勘定割当グループの定義</td><td>IMG：販売管理 → 基本機能 → 勘定割当/原価 → 収益勘定設定 → 勘定割当の関連マスタデータのチェック（教材の例：M1 自製品 / M2 取引商品）</td><td>タスク 29</td></tr><tr><td>売上収益の総勘定元帳勘定を登録</td><td>IMG：… → 収益勘定設定 → 総勘定元帳勘定の割当</td><td>タスク 30</td></tr></tbody></table></div>
+<p>教材の考え方は明快です：<b>品目だけで収益勘定を分ける</b>（自製品 / 取引商品の 2 種類）、得意先の勘定割当グループも決定に関与しますが、このシナリオでは作用しません。これは「勘定設定」を理解するための最小の例です：まず「どのキーを使うか」を決め、次に「キーの値の組み合わせ → 勘定」を決めます。</p>
+<figure class="shot narrow"><a class="zoom" href="assets/img/sd/t29/02_1_image1208.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t29/02_1_image1208.png" width="568" height="137" alt="タスク 29：「品目：勘定割当グループ」をダブルクリックして、M1 / M2 の 2 種類の品目の収益勘定の割当を登録します" loading="lazy"></a><figcaption><span class="n">画面 3</span><span class="cap">タスク 29：「品目：勘定割当グループ」をダブルクリックして、M1 / M2 の 2 種類の品目の収益勘定の割当を登録します</span><span class="src">教材《S4.docx》・SD タスク 29 品目の勘定割当グループの定義</span></figcaption></figure>
+<h2 id="shots">5. 価格計算のプロセスを一度たどる（コースシナリオ）</h2>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>ステップ</th><th>システムが行うこと</th><th>どこを見るか</th></tr></thead><tbody><tr><td>① 品目 + 数量の入力</td><td>販売単位、明細カテゴリ、プラントを引き継ぐ</td><td>受注明細行</td></tr><tr><td>② 計算スキーマの決定</td><td>販売エリア + 得意先計算スキーマ + 伝票計算スキーマ → RVAA01</td><td>IMG 計算スキーマ決定</td></tr><tr><td>③ 明細ごとに条件を取り込む</td><td>計算スキーマのステップに従い、各条件タイプはアクセス順序に従って条件レコードを検索</td><td>明細 → <b>条件</b>タブ</td></tr><tr><td>④ 正味価額の計算</td><td>単価 × 数量 − 割引 ＋ 追加料金 ＝ 正味価額</td><td>条件タブの小計行</td></tr><tr><td>⑤ 税の計算</td><td>得意先税分類 + 品目税分類 → 税コード → 売上税</td><td>条件タブの <code>MWST</code> 行</td></tr><tr><td>⑥ 保存後に追跡可能</td><td>価格は受注伝票に書き込まれ、後から照会・再価格設定ができます</td><td><code>VA03</code> / <code>VA05</code></td></tr></tbody></table></div>
+<div class="note ref"><span class="t">コースシナリオの数値（教材の画面より）</span>教材の見積/受注シナリオは「铸钢泵 170-230 を 30 件」。後続の納入・請求画面には 120 PC と表示され、正味価額 <b>960,000.00 RMB</b>、請求書 <code>F2</code> 90000000、請求書日付 2021.04.15、支払先 10000000。VK11 の PR00 の条件レコードは<b>8,000.00 RMB</b>／PC、有効期間 2021.01.01 – 9999.04.14 です。これらは教材環境の実際の数値で、<b>標準値ではありません</b>——皆さんのシステムでは単価と税率が必ず異なります。重要なのは「数値がどう計算されるか」（8,000 × 120 = 960,000）を理解することです。</div>
+<h2 id="trouble">6. 価格設定のトラブルシューティング一覧（発生確率の高い順）</h2>
+<ol class="oplist" start="1"><li class=""><b>価格行がない</b>：条件レコードが存在しない / 期限切れ / キー不一致（販売エリア、得意先、品目が一致しない）。まず<code>VK13</code> で条件タイプごとにレコードがあるか照会します。</li><li class=""><b>価格行はあるが金額が違う</b>：アクセス順序で別のレコードが見つかっています（例えば得意先専用価格が一般価格より優先される）。<code>VA03</code> の条件タブで、その明細の「出所」と「条件レコード番号」を確認します。</li><li class=""><b>条件レコードを変更しても既存の伝票は変わらない</b>：伝票はスナップショットです。反映させるには伝票内で手動で再価格設定するか、伝票を新規作成します。</li><li class=""><b>税が 0</b>：得意先の税分類または品目の税分類が欠落/不一致、あるいは <code>MWST</code> の条件レコードが欠落している。</li><li class=""><b>価格設定タイプが不完全というメッセージ</b>：計算スキーマに「必須」とマークされた条件タイプが欠けています（例えば税分類が未登録だと不完全性のメッセージが出ます）。</li></ol>
+<h2 id="check">7. セルフチェック</h2>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>確認すべきこと</th><th>どう確認するか</th></tr></thead><tbody><tr><td>この受注伝票で使われている計算スキーマはどれか</td><td><code>VA03</code> → ヘッダ → 条件/価格設定の関連項目；または <code>V/08</code> で決定テーブルを確認</td></tr><tr><td>ある条件タイプのアクセス順序</td><td>カスタマイジング：販売管理 → 基本機能 → 価格設定 → 条件タイプ → 条件タイプの定義（アクセス順序をダブルクリック）</td></tr><tr><td>条件レコード明細</td><td><code>VK13</code> で条件タイプとキーを入力；テーブル <code>KONP</code>（条件金額）/ <code>KONH</code>（条件ヘッダ）</td></tr><tr><td>受注伝票で実際に使われた条件値</td><td><code>VA03</code> → 明細 → 条件タブ；テーブル <code>KONV</code>（伝票条件）</td></tr></tbody></table></div>
+<ol class="steps"><li>次ページ：<a href="flow.html"><b>プロセス概要</b></a> —— 受注・納入・請求をつなぎます。</li><li>まず実践：<a href="practice.html"><b>実習タスク</b></a>。</li></ol>
+</article>
+</main>
+</div>
+
+<footer class="site">
+  <div class="inner">
+    <div class="cols">
+      <div>
+<h5>SAP SD トレーニングコース</h5>
+<p>販売管理 · 概念からプロセスへ · 全体から部分へ</p>
+      </div>
+      <div>
+<h5>コースセクション</h5>
+<p><a href="concept.html">概念</a> · <a href="org.html">組織</a> · <a href="master.html">マスタ</a> ·
+<a href="pricing.html">価格設定</a> · <a href="flow.html">プロセス</a> · <a href="config.html">設定</a></p>
+      </div>
+      <div>
+<h5>授業用付属資料</h5>
+<p><a href="practice.html">実習タスク</a> · <a href="instructor.html">講師用</a> ·
+<a href="worksheet.html">受講者用</a> · <a href="quiz.html">セルフチェックテスト</a> ·
+<a href="glossary.html">用語集</a></p>
+      </div>
+      <div>
+<h5>ひと言の免責</h5>
+<p>スクリーンショットは教材ドキュメントの実際の SAP GUI 画面（中国語インターフェース）。図と表は当サイトの自作です。
+標準値はリリース/業界ソリューションによって異なります。ページに記載の確認方法をご自身のシステムで確認してください。</p>
+      </div>
+    </div>
+<p class="copy">© <span data-year>2026</span> SAP SD トレーニングコース · 静的サイト、オフラインで利用可能</p>
+  </div>
+</footer>
+<script src="assets/main.js"></script>
+<script src="assets/quiz.js"></script>
+<script src="assets/sd.js"></script>
+</body>
+</html>

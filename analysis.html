@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>分析とモニタリング · SAP SD トレーニングコース</title>
+<meta name="description" content="SAP SD（販売管理）トレーニングコース：概念 → 組織構造 → マスタ → 価格設定 → エンドツーエンドプロセス（引合・見積・受注・納入・出荷・請求・入金）→ 設定 → 分析。各段階に実際の SAP GUI システムのスクリーンショット（中国語インターフェース）と自作図のフロー図、構造図、マインドマップを用意します。">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/sd.css">
+</head>
+<body>
+<header class="site">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html"><span class="logo">SD</span><span class="txt">トレーニングコース</span></a>
+    <nav class="main">
+      <a href="index.html" title="コースマップと学習ルート">ホーム</a>
+      <a href="concept.html" title="SD とは何か、3 つの概念レイヤ、5 大伝票">基本概念</a>
+      <a href="org.html" title="企業構造 / 販売構造 / 出荷構造">組織</a>
+      <a href="master.html" title="得意先マスタ / 品目の販売ビュー / 条件レコード">マスタ</a>
+      <a href="pricing.html" title="条件技術の4要素と計算スキーマ決定">価格設定</a>
+      <a href="flow.html" title="エンドツーエンド O2C のフロー図と伝票フロー">プロセス</a>
+      <a href="order.html" title="引合 · 見積 · 受注伝票（部分的な詳細解説）">受注伝票</a>
+      <a href="delivery.html" title="出荷伝票 · ピッキング · 出庫過転記">納入</a>
+      <a href="billing.html" title="請求書 · FI への転記 · 入金">請求</a>
+      <a class="active" href="analysis.html" title="伝票フロー／受注一覧／販売分析">データ分析</a>
+      <a href="config.html" title="SPRO 設定ルート（48 タスク）">設定</a>
+      <a href="practice.html" title="実習タスクと完成基準">実習</a>
+      <a href="instructor.html" title="採点ポイント / 必ず問う質問 / 解答">講師</a>
+      <a href="worksheet.html" title="記入表（印刷可能）">受講者</a>
+      <a href="quiz.html" title="30 問のセルフチェック（合格 75%）">セルフチェックテスト</a>
+      <a href="glossary.html" title="中国語・英語対照 / T-code クイックリファレンス">用語</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+<main class="page">
+<article>
+<p class="breadcrumb"><a href="index.html">ホーム</a> / <span>分析とモニタリング</span></p>
+<h1>分析とモニタリング：プロセスを管理する</h1>
+<p class="kicker">伝票フロー · VA05 受注一覧 · MCTA 販売分析 · 更新グループ · 財務と在庫の照合 · 教材のつまずき集</p>
+<div class="toc"><a href="#doc">1. 伝票をたどる応用</a><a href="#list">2. 受注伝票と販売一覧</a><a href="#analysis">3. 販売分析（前提条件を含む）</a><a href="#recon">4. 財務と在庫の照合</a><a href="#issues">5. 教材のつまずき集（実際のエラー）</a><a href="#check">6. セルフチェック</a></div>
+<h2 id="doc">1. 伝票フロー：最もよく使う追跡ツール</h2>
+<p>伝票フローは「1 つの伝票の下流」と「1 つの伝票の上流」をどちらも一覧表示します。3 つの入口はどれもよく使います：</p>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>入口</th><th>パス</th><th>答えるために使う</th></tr></thead><tbody><tr><td>受注伝票</td><td><code>VA03</code> → 環境 → 伝票フローの照会（または）「伝票フロー」ボタンをクリック</td><td>この受注伝票では、どの納入／請求書がすでに発生していますか？ステータスはどうですか？</td></tr><tr><td>納入</td><td><code>VL03N</code> → 環境 → 伝票フロー照会</td><td>この納入はどの受注伝票に対応しますか？請求は済んでいますか？</td></tr><tr><td>請求書</td><td><code>VF03</code> → ヘッダ → 「元伝票」/ 伝票フローをクリック</td><td>この請求書はどの納入から作成されたのか？（教材タスク 45）</td></tr></tbody></table></div>
+<figure class="shot"><a class="zoom" href="assets/img/sd/t45/01_1_image1313.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t45/01_1_image1313.png" width="968" height="226" alt="教材タスク 45：請求書から「原始凭证」——請求書 F2 90000000、正味価額 960,000.00 RMB、120 PC" loading="lazy"></a><figcaption><span class="n">画面 1</span><span class="cap">教材タスク 45：請求書から「原始凭证」——請求書 F2 90000000、正味価額 960,000.00 RMB、120 PC</span><span class="src">教材《S4.docx》・SD タスク 45 「元伝票」をクリック</span></figcaption></figure>
+<h2 id="list">2. 受注一覧と販売一覧</h2>
+<div class="pathline" data-copy="后勤 → 销售和分销 → 销售 → 信息系统 → 订单 → VA05-销售订单清单"><b>教材のメニューパス（受注明細一覧の照会）</b>ロジスティクス → 販売管理 → 販売 → 情報システム → 受注 → VA05-受注一覧</div><div class="pathzh"><b>原教材の中国語パス</b><code>后勤 → 销售和分销 → 销售 → 信息系统 → 订单 → VA05-销售订单清单</code></div>
+<div class="shot-grid"><figure class="shot"><a class="zoom" href="assets/img/sd/t46/01_1_image1314.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t46/01_1_image1314.png" width="638" height="400" alt="VA05 受注一覧：得意先/品目/日付などの条件で絞り込み" loading="lazy"></a><figcaption><span class="n">画面 2</span><span class="cap">VA05 受注一覧：得意先/品目/日付などの条件で絞り込み</span><span class="src">教材《S4.docx》SD モジュール · image1314.png</span></figcaption></figure><figure class="shot"><a class="zoom" href="assets/img/sd/t46/02_1_image1315.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t46/02_1_image1315.png" width="1706" height="325" alt="一覧の結果：伝票へ直接ドリルダウンできる" loading="lazy"></a><figcaption><span class="n">画面 3</span><span class="cap">一覧の結果：伝票へ直接ドリルダウンできる</span><span class="src">教材《S4.docx》SD モジュール · image1315.png</span></figcaption></figure></div>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>ツール</th><th>T-code</th><th>使用目的</th></tr></thead><tbody><tr><td>受注一覧</td><td><code>VA05</code></td><td>得意先/品目/日付/ステータス別に受注を一覧表示。営業とカスタマサービスが毎日使用</td></tr><tr><td>見積一覧</td><td><code>VA25</code></td><td>成約していない見積をフォローアップする</td></tr><tr><td>未処理の納入伝票</td><td><code>VL06O</code></td><td>ピッキング待ち / 出庫過転記待ちの納入伝票（倉庫と出荷で最もよく使用）</td></tr><tr><td>請求一覧</td><td><code>VF04</code></td><td>請求待ち/リリース待ちの請求書。一括処理に対応</td></tr></tbody></table></div>
+<h2 id="analysis">3. 販売分析（MCTA）とその前提条件</h2>
+<p>教材タスク 47 の説明は重要です：<b>これらの標準分析を使うには、まずロジスティクス情報システムの更新（更新グループ）を有効化する必要があります。さらに得意先と品目マスタに統計グループを登録して初めて、レポートにデータが出ます。</b></p>
+<div class="pathline" data-copy="后勤 → 销售和分销 → 销售信息系统 → 标准分析 → MCTA-客户"><b>教材のメニューパス（販売分析）</b>ロジスティクス → 販売管理 → 販売情報システム → 標準分析 → MCTA-得意先</div><div class="pathzh"><b>原教材の中国語パス</b><code>后勤 → 销售和分销 → 销售信息系统 → 标准分析 → MCTA-客户</code></div>
+<figure class="shot"><a class="zoom" href="assets/img/sd/t47/01_1_image1316.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t47/01_1_image1316.png" width="825" height="409" alt="MCTA 販売分析：得意先別の標準分析" loading="lazy"></a><figcaption><span class="n">画面 4</span><span class="cap">MCTA 販売分析：得意先別の標準分析</span><span class="src">教材《S4.docx》・SD タスク 47 販売分析</span></figcaption></figure>
+<figure class="shot"><a class="zoom" href="assets/img/sd/t47/03_1_image1319.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t47/03_1_image1319.png" width="642" height="196" alt="分析結果の内訳表示／ドリルダウン（「明細の切替」をクリック）" loading="lazy"></a><figcaption><span class="n">画面 5</span><span class="cap">分析結果の内訳表示／ドリルダウン（「明細の切替」をクリック）</span><span class="src">教材《S4.docx》・SD タスク 47 販売分析</span></figcaption></figure>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>前提条件</th><th>教材タスク</th><th>意味</th></tr></thead><tbody><tr><td>ヘッダ更新グループ</td><td>タスク 31</td><td>どの販売エリア／得意先／伝票タイプのヘッダデータが情報システムに入るか</td></tr><tr><td>明細更新グループ</td><td>タスク 32</td><td>明細レベル（品目、数量、金額）のデータを更新するか</td></tr><tr><td>得意先統計グループ／品目統計グループ</td><td>得意先と品目マスタ</td><td>データがどの統計軸に落ちるかを決定</td></tr><tr><td>更新グループなし → レポートが空</td><td>—</td><td>よくある現象：レポートを実行してもデータが出ない。多くはここが未設定</td></tr></tbody></table></div>
+<div class="note tip"><span class="t">現場でよくある誤解</span>「レポートにデータがない」のは、レポートの不具合ではなく、<b>更新が有効化されていない</b>か、<b>統計グループが登録されていない</b>ことが多いです；また、統計に入るのは「設定後に新しく発生した伝票」だけで、過去のデータは自動では補完されません。</div>
+<h2 id="recon">4. 財務と在庫の照合</h2>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>何を対象にするか</th><th>ツール</th><th>期待される結果</th></tr></thead><tbody><tr><td>在庫数量</td><td><code>MMBE</code> / <code>MB52</code> / <code>MB51</code></td><td>該当品目の在庫数量と品目伝票が正しく記録される</td></tr><tr><td>収益と売掛金</td><td><code>FB03</code>（会計伝票）/ <code>FBL5N</code>（得意先未消込項目）</td><td>請求書の転記後に売掛金の未消込項目が発生</td></tr><tr><td>損益計算書／貸借対照表</td><td>教材タスク 48（総勘定元帳レポート）</td><td>期末に売上収益と売上税を確認できる</td></tr><tr><td>販売と財務の基準が一致</td><td>MCTA（数量/金額）と FI（収益）の照合</td><td>差異を理解するにはまず「更新時点」を押さえます：SD は請求時、FI は転記時</td></tr></tbody></table></div>
+<figure class="shot"><a class="zoom" href="assets/img/sd/t48/01_2_image1321.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t48/01_2_image1321.png" width="1807" height="467" alt="教材タスク 48：総勘定元帳レポート（貸借対照表/損益計算書/キャッシュフロー）—— 売上収益と税が計上されているか検証" loading="lazy"></a><figcaption><span class="n">画面 6</span><span class="cap">教材タスク 48：総勘定元帳レポート（貸借対照表/損益計算書/キャッシュフロー）—— 売上収益と税が計上されているか検証</span><span class="src">教材《S4.docx》・SD タスク 48 貸借対照表を実行</span></figcaption></figure>
+<h2 id="issues">5. 教材のつまずき集（受講者が実際に遭遇するエラー）</h2>
+<p>教材タスク 48 の 24 ステップには「エラーに遭遇 → どう解決するか」の記録が多数あります。当サイトでは SD のチェーンに関連するものを抜粋しました：</p>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>現象</th><th>教材が提示する考え方</th><th>対応画面</th></tr></thead><tbody><tr><td><code>VL01N</code> で出荷伝票を登録しようとしても登録できない</td><td><code>MB1C</code> 移動タイプ <b>501</b> 発注伝票なしの入庫、期首在庫を入力</td><td>教材タスク 48 第 23 ステップ</td></tr><tr><td>「非当前业务交易组」/ カスタマイジングエラーの表示</td><td>設定とクライアントコピーが完全かどうかをチェック（教材では CLIENT COPY が不完全な場合の影響に触れている）</td><td>教材タスク 48 第 6 ステップ</td></tr><tr><td>作業タイプを設定できない</td><td>「国→計算ルールの割当」などの基本設定で対処します</td><td>教材タスク 48 第 3/5 ステップ</td></tr><tr><td><code>CK11N</code> / <code>CK24</code> 標準原価見積のエラー</td><td>画面で価格を登録してから再実行。終了してから入り直して実行する</td><td>教材タスク 48 第 17〜19 ステップ</td></tr><tr><td>請求／支払段階の税タイプが許可されていない</td><td>「+」は売上税のみ、「*」はすべての税タイプを許可します。変更後は必ず<code>MIRO</code> を終了して入り直してください</td><td>教材タスク 48 第 15 ステップ</td></tr></tbody></table></div>
+<div class="shot-grid"><figure class="shot"><a class="zoom" href="assets/img/sd/t48/06_1_image1356.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t48/06_1_image1356.png" width="466" height="248" alt="教材タスク 48 第 6 ステップ：カスタマイジングエラー「非当前业务交易组」" loading="lazy"></a><figcaption><span class="n">画面 7</span><span class="cap">教材タスク 48 第 6 ステップ：カスタマイジングエラー「非当前业务交易组」</span><span class="src">教材《S4.docx》SD モジュール · image1356.png</span></figcaption></figure><figure class="shot"><a class="zoom" href="assets/img/sd/t48/25_2_image1385.jpeg" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t48/25_2_image1385.jpeg" width="867" height="633" alt="ステップ 23：MB1C 501 で期首在庫を入力する方法" loading="lazy"></a><figcaption><span class="n">画面 8</span><span class="cap">ステップ 23：MB1C 501 で期首在庫を入力する方法</span><span class="src">教材《S4.docx》SD モジュール · image1385.jpeg</span></figcaption></figure></div>
+<div class="note ref"><span class="t">これらのエラーをどう捉えるか</span>これらはすべて<b>環境準備の不足</b>が原因で、操作テクニックの問題ではありません。講義では次のように説明できます：「実習環境は他人が設定済みなので、この種のエラーが出たらまず T-code とメッセージ番号を記録し、基本設定の担当者に渡してください」、同時に、各エラーの背後でどの層の設定が欠けているのかを理解します。</div>
+<h2 id="check">6. セルフチェック</h2>
+<div class="box ok"><b class="t">セルフチェックの質問</b><ol><li>得意先から「自分の荷物は今どこか」と聞かれたら、どの機能を使い、どのステータスを見ますか？</li><li>「本日、出庫過転記待ちの納入伝票をすべて探す」には何を使いますか？</li><li>販売分析レポートにデータがないとき、まず確認する 3 つのことは？</li><li>教材で「出荷伝票を作成できない」ときの解決方法は何ですか？</li></ol></div>
+<ol class="steps"><li>次ページ：<a href="config.html"><b>設定</b></a> —— 48 のカスタマイジングタスクの全索引。</li><li>練習する：<a href="practice.html"><b>実習タスク</b></a> → <a href="quiz.html"><b>セルフチェックテスト</b></a>。</li></ol>
+</article>
+</main>
+</div>
+
+<footer class="site">
+  <div class="inner">
+    <div class="cols">
+      <div>
+<h5>SAP SD トレーニングコース</h5>
+<p>販売管理 · 概念からプロセスへ · 全体から部分へ</p>
+      </div>
+      <div>
+<h5>コースセクション</h5>
+<p><a href="concept.html">概念</a> · <a href="org.html">組織</a> · <a href="master.html">マスタ</a> ·
+<a href="pricing.html">価格設定</a> · <a href="flow.html">プロセス</a> · <a href="config.html">設定</a></p>
+      </div>
+      <div>
+<h5>授業用付属資料</h5>
+<p><a href="practice.html">実習タスク</a> · <a href="instructor.html">講師用</a> ·
+<a href="worksheet.html">受講者用</a> · <a href="quiz.html">セルフチェックテスト</a> ·
+<a href="glossary.html">用語集</a></p>
+      </div>
+      <div>
+<h5>ひと言の免責</h5>
+<p>スクリーンショットは教材ドキュメントの実際の SAP GUI 画面（中国語インターフェース）。図と表は当サイトの自作です。
+標準値はリリース/業界ソリューションによって異なります。ページに記載の確認方法をご自身のシステムで確認してください。</p>
+      </div>
+    </div>
+<p class="copy">© <span data-year>2026</span> SAP SD トレーニングコース · 静的サイト、オフラインで利用可能</p>
+  </div>
+</footer>
+<script src="assets/main.js"></script>
+<script src="assets/quiz.js"></script>
+<script src="assets/sd.js"></script>
+</body>
+</html>

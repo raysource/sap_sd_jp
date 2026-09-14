@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>実習タスク · SAP SD トレーニングコース</title>
+<meta name="description" content="SAP SD（販売管理）トレーニングコース：概念 → 組織構造 → マスタ → 価格設定 → エンドツーエンドプロセス（引合・見積・受注・納入・出荷・請求・入金）→ 設定 → 分析。各段階に実際の SAP GUI システムのスクリーンショット（中国語インターフェース）と自作図のフロー図、構造図、マインドマップを用意します。">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/sd.css">
+</head>
+<body>
+<header class="site">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html"><span class="logo">SD</span><span class="txt">トレーニングコース</span></a>
+    <nav class="main">
+      <a href="index.html" title="コースマップと学習ルート">ホーム</a>
+      <a href="concept.html" title="SD とは何か、3 つの概念レイヤ、5 大伝票">基本概念</a>
+      <a href="org.html" title="企業構造 / 販売構造 / 出荷構造">組織</a>
+      <a href="master.html" title="得意先マスタ / 品目の販売ビュー / 条件レコード">マスタ</a>
+      <a href="pricing.html" title="条件技術の4要素と計算スキーマ決定">価格設定</a>
+      <a href="flow.html" title="エンドツーエンド O2C のフロー図と伝票フロー">プロセス</a>
+      <a href="order.html" title="引合 · 見積 · 受注伝票（部分的な詳細解説）">受注伝票</a>
+      <a href="delivery.html" title="出荷伝票 · ピッキング · 出庫過転記">納入</a>
+      <a href="billing.html" title="請求書 · FI への転記 · 入金">請求</a>
+      <a href="analysis.html" title="伝票フロー／受注一覧／販売分析">データ分析</a>
+      <a href="config.html" title="SPRO 設定ルート（48 タスク）">設定</a>
+      <a class="active" href="practice.html" title="実習タスクと完成基準">実習</a>
+      <a href="instructor.html" title="採点ポイント / 必ず問う質問 / 解答">講師</a>
+      <a href="worksheet.html" title="記入表（印刷可能）">受講者</a>
+      <a href="quiz.html" title="30 問のセルフチェック（合格 75%）">セルフチェックテスト</a>
+      <a href="glossary.html" title="中国語・英語対照 / T-code クイックリファレンス">用語</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+<main class="page">
+<article>
+<p class="breadcrumb"><a href="index.html">ホーム</a> / <span>実習タスク</span></p>
+<h1>実習：5 つのハンズオンタスク</h1>
+<p class="kicker">タスクカード · 完成基準 · 対応画面 · よくあるエラー</p>
+<p>5 つのタスクを順に進めれば、O2C をひと通り体験したことになります。各タスクには「完成基準」（自分で確認できる）が用意されており、および対応する教材の実際の画面です。記入には<a href="worksheet.html">受講者用記入表</a>を使います。</p>
+<div class="steph" id="t1"><span class="no">タスク 1</span><h3>組織構造を理解する</h3><span class="fb">組織</span><span class="tc"> 対応するコースページ：組織構造を理解する</span></div>
+<p class="opcap"><span class="lead">何をするか</span></p>
+<ol class="oplist" start="1"><li class="">システムで販売組織、流通チャネル、製品部門の一覧を確認（カスタマイジングまたはテーブルを直接照会）</li><li class="">自システムにすでに登録済みの販売エリアを探し、2〜3 の組合せを記録する</li><li class="">プラント → 販売組織/流通チャネル の割当を探し、「なぜ複数なのか」を説明する</li></ol>
+<div class="box ok"><b class="t">完成基準（自分で検証できて初めて完了）</b><ul><li>「販売組織 × 流通チャネル × 製品部門 = 販売エリア」の図を描ける</li><li>本システムの販売エリアにどのようなものがあるかを言える</li><li>プラントと販売組織がなぜ多対多なのかを説明できる</li></ul></div>
+<div class="note warn"><span class="t">よくあるエラー / 行き詰まったらここを見る</span>「販売エリア」を「販売部門」と言い換えています——販売エリア（Sales Area）と販売事務所（Sales Office）の区別に注意してください。</div>
+<div class="shot-grid"><figure class="shot"><a class="zoom" href="assets/img/sd/t07/02_1_image1106.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t07/02_1_image1106.png" width="775" height="283" alt="販売エリアを設定する画面（教材タスク 07）" loading="lazy"></a><figcaption><span class="n">画面</span><span class="cap">販売エリアを設定する画面（教材タスク 07）</span><span class="src">教材《S4.docx》SD モジュール · image1106.png</span></figcaption></figure><figure class="shot"><a class="zoom" href="assets/img/sd/t13/02_1_image1129.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t13/02_1_image1129.png" width="757" height="199" alt="プラント → 販売組織/流通チャネル（タスク 13）" loading="lazy"></a><figcaption><span class="n">画面</span><span class="cap">プラント → 販売組織/流通チャネル（タスク 13）</span><span class="src">教材《S4.docx》SD モジュール · image1129.png</span></figcaption></figure></div>
+<p class="meta">関連するコースページ：<a href="org.html">組織構造を理解する</a></p>
+<div class="steph" id="t2"><span class="no">タスク 2</span><h3>見積 → 受注伝票</h3><span class="fb">プロセス</span><span class="tc"> 対応するコースページ：見積</span></div>
+<p class="opcap"><span class="lead">何をするか</span></p>
+<ol class="oplist" start="1"><li class="">VA21 で見積を 1 件作成する（得意先 + 品目 + 数量 + 有効日）</li><li class="">見積の価格条件をチェック：価格はどの条件レコードから来るのか</li><li class="">「後続機能 → V-01 受注」で見積を参照して受注伝票を作成する（受注タイプ OR）</li><li class="">受注伝票に記録：確定納入日、正味価額、明細カテゴリ</li></ol>
+<div class="box ok"><b class="t">完成基準（自分で検証できて初めて完了）</b><ul><li>見積番号と受注番号を取得</li><li>受注伝票のヘッダから見積までたどれる（環境 → 伝票フロー）</li><li>受注伝票で価格が自動的に取得され、条件レコードと一致する</li><li>納入日に値があることを確認する（所要量確認が実行された証拠）</li></ul></div>
+<div class="note warn"><span class="t">よくあるエラー / 行き詰まったらここを見る</span>価格が空 → 条件レコードが存在するか/期限切れかを確認。確認日が空 → 所要量確認がオフになっていないか確認。</div>
+<div class="shot-grid"><figure class="shot"><a class="zoom" href="assets/img/sd/t40/01_1_image1288.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t40/01_1_image1288.png" width="664" height="309" alt="見積を登録（タスク 40）" loading="lazy"></a><figcaption><span class="n">画面</span><span class="cap">見積を登録（タスク 40）</span><span class="src">教材《S4.docx》SD モジュール · image1288.png</span></figcaption></figure><figure class="shot"><a class="zoom" href="assets/img/sd/t41/03_1_image1300.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t41/03_1_image1300.png" width="651" height="390" alt="見積を参照して受注伝票を登録（タスク 41）" loading="lazy"></a><figcaption><span class="n">画面</span><span class="cap">見積を参照して受注伝票を登録（タスク 41）</span><span class="src">教材《S4.docx》SD モジュール · image1300.png</span></figcaption></figure></div>
+<p class="meta">関連するコースページ：<a href="order.html">見積 → 受注伝票</a></p>
+<div class="steph" id="t3"><span class="no">タスク 3</span><h3>納入と出庫過転記</h3><span class="fb">プロセス</span><span class="tc"> 対応するコースページ：納入と出庫過転記</span></div>
+<p class="opcap"><span class="lead">何をするか</span></p>
+<ol class="oplist" start="1"><li class="">VL01N で受注伝票を参照して出荷伝票を作成する（出荷ポイントと納入日に注意）</li><li class="">VL02N でピッキングを完了（ピッキング数量を入力）</li><li class="">「出庫過転記」（移動タイプ 601）をクリックし、システムメッセージを記録する</li><li class="">MMBE または MB52 で在庫の変化を見る。VL03N で納入ステータスを見る</li></ol>
+<div class="box ok"><b class="t">完成基準（自分で検証できて初めて完了）</b><ul><li>納入番号を取得し、納入ステータス＝出荷完了</li><li>在庫数量が減少（前後の数量を記録）</li><li>「納入伝票の作成時点では在庫は変わらず、出庫過転記後に変わる」と説明できる</li></ul></div>
+<div class="note warn"><span class="t">よくあるエラー / 行き詰まったらここを見る</span>在庫なしと表示 → MB1C + 移動タイプ 501 で期首在庫を入力（教材タスク 48 の方法）。出荷ポイントが見つからない → プラントの出荷ポイント割当を確認。</div>
+<div class="shot-grid"><figure class="shot"><a class="zoom" href="assets/img/sd/t42/01_1_image1303.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t42/01_1_image1303.png" width="362" height="403" alt="出荷伝票を登録（タスク 42）" loading="lazy"></a><figcaption><span class="n">画面</span><span class="cap">出荷伝票を登録（タスク 42）</span><span class="src">教材《S4.docx》SD モジュール · image1303.png</span></figcaption></figure><figure class="shot"><a class="zoom" href="assets/img/sd/t48/25_2_image1385.jpeg" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t48/25_2_image1385.jpeg" width="867" height="633" alt="MB1C 501 期首在庫の入力（タスク 48）" loading="lazy"></a><figcaption><span class="n">画面</span><span class="cap">MB1C 501 期首在庫の入力（タスク 48）</span><span class="src">教材《S4.docx》SD モジュール · image1385.jpeg</span></figcaption></figure></div>
+<p class="meta">関連するコースページ：<a href="delivery.html">納入と出庫過転記</a></p>
+<div class="steph" id="t4"><span class="no">タスク 4</span><h3>請求と財務への転記</h3><span class="fb">プロセス</span><span class="tc"> 対応するコースページ：請求と財務への転記</span></div>
+<p class="opcap"><span class="lead">何をするか</span></p>
+<ol class="oplist" start="1"><li class="">VF01 で納入を参照して請求書を作成する（伝票タイプ F2）。請求書番号と正味価額を記録する</li><li class="">VF02 で請求書をリリースし、システムメッセージ（「伝票が転記に送信されました」）を記録する</li><li class="">請求書で「会計」をクリック、または VF03 → 環境で、生成された会計伝票（借方・貸方の勘定と金額）を確認します</li><li class="">FBL5N で得意先の未消込明細を照会し、売掛金が計上されていることを確認する</li></ol>
+<div class="box ok"><b class="t">完成基準（自分で検証できて初めて完了）</b><ul><li>請求書番号を取得し、ステータス＝転記済み（リリース済み）</li><li>会計伝票を確認できる：借方 得意先未収 / 貸方 収益 + 売上税</li><li>収益勘定がどの 3 つのキーで決まるかを言える</li></ul></div>
+<div class="note warn"><span class="t">よくあるエラー / 行き詰まったらここを見る</span>請求できない → 納入伝票が出庫過転記済みか確認。会計伝票がない → 勘定設定/税の設定に漏れがないか確認。</div>
+<div class="shot-grid"><figure class="shot narrow"><a class="zoom" href="assets/img/sd/t43/03_1_image1309.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t43/03_1_image1309.png" width="188" height="33" alt="請求書を登録して保存（タスク 43）" loading="lazy"></a><figcaption><span class="n">画面</span><span class="cap">請求書を登録して保存（タスク 43）</span><span class="src">教材《S4.docx》SD モジュール · image1309.png</span></figcaption></figure><figure class="shot narrow"><a class="zoom" href="assets/img/sd/t44/02_1_image1311.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t44/02_1_image1311.png" width="170" height="46" alt="請求書をリリースし、「伝票はすでに転記に転送されました」と表示される（タスク 44）" loading="lazy"></a><figcaption><span class="n">画面</span><span class="cap">請求書をリリースし、「伝票はすでに転記に転送されました」と表示される（タスク 44）</span><span class="src">教材《S4.docx》SD モジュール · image1311.png</span></figcaption></figure></div>
+<p class="meta">関連するコースページ：<a href="billing.html">請求と財務への転記</a></p>
+<div class="steph" id="t5"><span class="no">タスク 5</span><h3>追跡とレポート</h3><span class="fb">データ分析</span><span class="tc"> 対応するコースページ：追跡とレポート</span></div>
+<p class="opcap"><span class="lead">何をするか</span></p>
+<ol class="oplist" start="1"><li class="">VA03 でタスク 2 の受注伝票を開く → 環境 → 伝票フロー照会 で、チェーン全体をスクリーンショットに収める</li><li class="">VA05 で得意先または品目別に受注一覧を照会する</li><li class="">VL06O で出荷待ち/転記待ちの納入を照会する。VF04 で請求待ちの一覧を照会する</li><li class="">（任意）タスク 31/32 で更新グループが有効化されている前提で、MCTA で販売分析を 1 回実行</li></ol>
+<div class="box ok"><b class="t">完成基準（自分で検証できて初めて完了）</b><ul><li>「受注伝票 → 納入 → 請求書」の 3 つの番号を 1 枚の紙に書き出せる</li><li>MCTA レポートにデータがないことがある理由を説明できる</li><li>「伝票を追跡する」4 つの入口を言える</li></ul></div>
+<div class="note warn"><span class="t">よくあるエラー / 行き詰まったらここを見る</span>レポートにデータがない → 更新グループ/統計グループが未設定、または設定前に発生したデータ。伝票フローが空 → 参照関係が切れている（直接新規作成した伝票の可能性）。</div>
+<div class="shot-grid"><figure class="shot"><a class="zoom" href="assets/img/sd/t45/01_1_image1313.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t45/01_1_image1313.png" width="968" height="226" alt="請求書から元伝票/伝票フローを見る（タスク 45）" loading="lazy"></a><figcaption><span class="n">画面</span><span class="cap">請求書から元伝票/伝票フローを見る（タスク 45）</span><span class="src">教材《S4.docx》SD モジュール · image1313.png</span></figcaption></figure><figure class="shot"><a class="zoom" href="assets/img/sd/t46/01_1_image1314.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t46/01_1_image1314.png" width="638" height="400" alt="VA05 受注一覧（タスク 46）" loading="lazy"></a><figcaption><span class="n">画面</span><span class="cap">VA05 受注一覧（タスク 46）</span><span class="src">教材《S4.docx》SD モジュール · image1314.png</span></figcaption></figure></div>
+<p class="meta">関連するコースページ：<a href="analysis.html">追跡とレポート</a></p>
+<h2 id="env">実習環境の準備チェックリスト（開講前チェック）</h2>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>チェック項目</th><th>どう調べるか</th><th>達成できない場合の代替</th></tr></thead><tbody><tr><td>SAP GUI にログインして中国語インターフェースを表示できる</td><td>ログイン後に <code>VA03</code> を開く</td><td>教材のスクリーンショットで解説し、受講者は観察記録のみを行う</td></tr><tr><td>利用可能な販売組織/販売エリアがある</td><td>カスタマイジングの企業構造、またはテーブル <code>TVKO</code>／<code>TVKOV</code></td><td>既存の販売エリアを使い、新規作成しない</td></tr><tr><td>得意先マスタ（販売ビュー）がある</td><td><code>VD03</code> / <code>XD03</code></td><td>既存の得意先をコピーするか、Z 得意先を登録</td></tr><tr><td>品目（販売ビュー）+ 条件レコードがある</td><td><code>MM03</code> → 販売組織データ；<code>VK13</code> で PR00 を照会</td><td>Z 品目と Z 条件レコードを作成</td></tr><tr><td>在庫がある（ないと納入が流れない）</td><td><code>MMBE</code></td><td><code>MB1C</code> 501 期首在庫を入力</td></tr><tr><td>請求と勘定設定の設定が利用可能</td><td>試しに請求書を 1 枚作成する <code>VF01</code></td><td>請求書の保存までで、リリースは行わない</td></tr></tbody></table></div>
+<ol class="steps"><li>記入表に記入：<a href="worksheet.html"><b>受講者用記入表</b></a>（印刷可）。</li><li>セルフチェックテストを行う：<a href="quiz.html"><b>30 問</b></a>（合格 75%）。</li></ol>
+</article>
+</main>
+</div>
+
+<footer class="site">
+  <div class="inner">
+    <div class="cols">
+      <div>
+<h5>SAP SD トレーニングコース</h5>
+<p>販売管理 · 概念からプロセスへ · 全体から部分へ</p>
+      </div>
+      <div>
+<h5>コースセクション</h5>
+<p><a href="concept.html">概念</a> · <a href="org.html">組織</a> · <a href="master.html">マスタ</a> ·
+<a href="pricing.html">価格設定</a> · <a href="flow.html">プロセス</a> · <a href="config.html">設定</a></p>
+      </div>
+      <div>
+<h5>授業用付属資料</h5>
+<p><a href="practice.html">実習タスク</a> · <a href="instructor.html">講師用</a> ·
+<a href="worksheet.html">受講者用</a> · <a href="quiz.html">セルフチェックテスト</a> ·
+<a href="glossary.html">用語集</a></p>
+      </div>
+      <div>
+<h5>ひと言の免責</h5>
+<p>スクリーンショットは教材ドキュメントの実際の SAP GUI 画面（中国語インターフェース）。図と表は当サイトの自作です。
+標準値はリリース/業界ソリューションによって異なります。ページに記載の確認方法をご自身のシステムで確認してください。</p>
+      </div>
+    </div>
+<p class="copy">© <span data-year>2026</span> SAP SD トレーニングコース · 静的サイト、オフラインで利用可能</p>
+  </div>
+</footer>
+<script src="assets/main.js"></script>
+<script src="assets/quiz.js"></script>
+<script src="assets/sd.js"></script>
+</body>
+</html>

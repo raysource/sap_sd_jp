@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 660" width="1300" height="660" role="img" aria-label="SD と FI / MM / PP / CO の統合を示す構造図" font-family="'PingFang SC','Hiragino Sans GB','Noto Sans CJK SC','Microsoft YaHei',sans-serif">
+<title>SD と FI / MM / PP / CO の統合を示す構造図</title>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0a6ed1"/></marker><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#007272"/></marker><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ffffff"/></marker></defs>
+<rect width="1300" height="660" fill="#ffffff"/>
+<text x="40.0" y="48.0" font-size="20" fill="#1d2d3e" text-anchor="start" font-weight="700">SD と他モジュールの統合（データがどこへ流れるかを 1 枚の図で）</text>
+<text x="40.0" y="70.0" font-size="13" fill="#6b7a8d" text-anchor="start" font-weight="400">SD が担うのは「販売」だけ。実際に在庫を引き当て、収益を計上し、生産を動かすのは隣接モジュールです（当サイトの自作図）</text>
+<rect x="500.0" y="300.0" width="300.0" height="150.0" rx="14" fill="#0854a0" stroke="#0854a0" stroke-width="1.4"/>
+<text x="650.0" y="348.0" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="700">SD 販売管理</text>
+<text x="650.0" y="376.0" font-size="13.5" fill="#dbeafd" text-anchor="middle" font-weight="400">受注伝票 · 納入 · 請求書</text>
+<text x="650.0" y="400.0" font-size="12" fill="#a9cdf3" text-anchor="middle" font-weight="400" font-family="'SF Mono',Menlo,Consolas,monospace">VA01 / VL01N / VF01</text>
+<text x="650.0" y="424.0" font-size="11.5" fill="#a9cdf3" text-anchor="middle" font-weight="400">駆動されるのは SD 自身の伝票だけです</text>
+<rect x="60.0" y="140.0" width="380.0" height="140.0" rx="11" fill="#ffffff" stroke="#007272" stroke-width="1.4"/>
+<rect x="60.0" y="140.0" width="4.5" height="140.0" rx="2" fill="#007272" stroke="#007272" stroke-width="1.4"/>
+<text x="74.0" y="166.0" font-size="16" fill="#007272" text-anchor="start" font-weight="700">MM 資材管理</text>
+<text x="74.0" y="186.0" font-size="11.5" fill="#6b7a8d" text-anchor="start" font-weight="400">在庫と購買</text>
+<text x="74.0" y="208.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">出庫過転記 601 で初めて在庫が減ります（SD</text>
+<text x="74.0" y="224.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">は納入するだけで在庫を減らしません）</text>
+<text x="74.0" y="240.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">在庫なし → 納入伝票を作成できない（教材では MB1C 501</text>
+<text x="74.0" y="256.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">で期首在庫を入力して解決）</text>
+<text x="74.0" y="272.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">購買入庫 101</text>
+<text x="74.0" y="288.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">は有効在庫を増やし、受注伝票の所要量確認の結果に影響します</text>
+<text x="74.0" y="268.0" font-size="11" fill="#007272" text-anchor="start" font-weight="400" font-family="'SF Mono',Menlo,Consolas,monospace">MB1C / MIGO / MB52 / MD04</text>
+<line x1="440.0" y1="210.0" x2="500.0" y2="375.0" stroke="#007272" stroke-width="2.0" marker-end="url(#ar)"/>
+<line x1="500.0" y1="400.0" x2="440.0" y2="232.0" stroke="#007272" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#ar)"/>
+<rect x="60.0" y="420.0" width="380.0" height="140.0" rx="11" fill="#ffffff" stroke="#5b3fa8" stroke-width="1.4"/>
+<rect x="60.0" y="420.0" width="4.5" height="140.0" rx="2" fill="#5b3fa8" stroke="#5b3fa8" stroke-width="1.4"/>
+<text x="74.0" y="446.0" font-size="16" fill="#5b3fa8" text-anchor="start" font-weight="700">FI 財務会計</text>
+<text x="74.0" y="466.0" font-size="11.5" fill="#6b7a8d" text-anchor="start" font-weight="400">売掛金 / 収益 / 税</text>
+<text x="74.0" y="488.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">請求書の転記（VF02）で会計伝票を生成：借方</text>
+<text x="74.0" y="504.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">得意先売掛金／貸方 収益＋売上税</text>
+<text x="74.0" y="520.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">勘定は VKOA「勘定設定」+</text>
+<text x="74.0" y="536.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">品目/得意先の勘定割当グループで導出される</text>
+<text x="74.0" y="552.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">入金 F-28 で売掛金を消し込み、FBL5N</text>
+<text x="74.0" y="568.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">で得意先未消込項目を確認できます</text>
+<text x="74.0" y="548.0" font-size="11" fill="#5b3fa8" text-anchor="start" font-weight="400" font-family="'SF Mono',Menlo,Consolas,monospace">FS00 / VKOA / F-28 / FBL5N</text>
+<line x1="440.0" y1="490.0" x2="500.0" y2="375.0" stroke="#5b3fa8" stroke-width="2.0" marker-end="url(#ar)"/>
+<line x1="500.0" y1="400.0" x2="440.0" y2="512.0" stroke="#5b3fa8" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#ar)"/>
+<rect x="860.0" y="140.0" width="380.0" height="140.0" rx="11" fill="#ffffff" stroke="#8d6e00" stroke-width="1.4"/>
+<rect x="860.0" y="140.0" width="4.5" height="140.0" rx="2" fill="#8d6e00" stroke="#8d6e00" stroke-width="1.4"/>
+<text x="874.0" y="166.0" font-size="16" fill="#8d6e00" text-anchor="start" font-weight="700">PP 生産計画</text>
+<text x="874.0" y="186.0" font-size="11.5" fill="#6b7a8d" text-anchor="start" font-weight="400">所要量伝達と供給</text>
+<text x="874.0" y="208.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">受注明細の所要量タイプ/所要量カテゴリが所要量を</text>
+<text x="874.0" y="224.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">MRP（MD04）へ伝達する</text>
+<text x="874.0" y="240.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">MTO</text>
+<text x="874.0" y="256.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">シナリオ：所要量は「個別得意先在庫」に入り、自由在庫には入…</text>
+<text x="874.0" y="272.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">MTS</text>
+<text x="874.0" y="288.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">シナリオ：まず計画独立所要量（MD61）があり、受注伝票は予…</text>
+<text x="874.0" y="268.0" font-size="11" fill="#8d6e00" text-anchor="start" font-weight="400" font-family="'SF Mono',Menlo,Consolas,monospace">MD04 / MD01N / CO01 / MD61</text>
+<line x1="860.0" y1="210.0" x2="800.0" y2="375.0" stroke="#8d6e00" stroke-width="2.0" marker-end="url(#ar)"/>
+<line x1="800.0" y1="400.0" x2="860.0" y2="232.0" stroke="#8d6e00" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#ar)"/>
+<rect x="860.0" y="420.0" width="380.0" height="140.0" rx="11" fill="#ffffff" stroke="#177245" stroke-width="1.4"/>
+<rect x="860.0" y="420.0" width="4.5" height="140.0" rx="2" fill="#177245" stroke="#177245" stroke-width="1.4"/>
+<text x="874.0" y="446.0" font-size="16" fill="#177245" text-anchor="start" font-weight="700">CO 管理会計</text>
+<text x="874.0" y="466.0" font-size="11.5" fill="#6b7a8d" text-anchor="start" font-weight="400">収益と原価対象</text>
+<text x="874.0" y="488.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">収益は勘定設定に従って CO-PA</text>
+<text x="874.0" y="504.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">利益分析（収益エレメント）に入ります</text>
+<text x="874.0" y="520.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">ETO/プロジェクトシナリオ：収益は WBS に、決済は CJ88 など</text>
+<text x="874.0" y="536.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">原価対象が限界利益の計算方法を決定</text>
+<text x="874.0" y="548.0" font-size="11" fill="#177245" text-anchor="start" font-weight="400" font-family="'SF Mono',Menlo,Consolas,monospace">KKA2 / CJ88 / VA88 / KO88</text>
+<line x1="860.0" y1="490.0" x2="800.0" y2="375.0" stroke="#177245" stroke-width="2.0" marker-end="url(#ar)"/>
+<line x1="800.0" y1="400.0" x2="860.0" y2="512.0" stroke="#177245" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#ar)"/>
+<rect x="470.0" y="470.0" width="360.0" height="118.0" rx="10" fill="#f7fafc" stroke="#d9e1e8" stroke-width="1.4"/>
+<text x="488.0" y="496.0" font-size="14" fill="#1d2d3e" text-anchor="start" font-weight="700">共通の「技術基盤」</text>
+<text x="488.0" y="516.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">組織データ（会社コード / プラント /</text>
+<text x="488.0" y="532.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">販売組織）、マスタ（得意先 /</text>
+<text x="488.0" y="548.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">品目）、番号範囲、伝票フロー——SD</text>
+<text x="488.0" y="564.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">と隣接モジュールは同じデータを読むため、設定の順序は「…</text>
+</svg>

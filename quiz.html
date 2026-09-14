@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>セルフチェックテスト（30 問） · SAP SD トレーニングコース</title>
+<meta name="description" content="SAP SD（販売管理）トレーニングコース：概念 → 組織構造 → マスタ → 価格設定 → エンドツーエンドプロセス（引合・見積・受注・納入・出荷・請求・入金）→ 設定 → 分析。各段階に実際の SAP GUI システムのスクリーンショット（中国語インターフェース）と自作図のフロー図、構造図、マインドマップを用意します。">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/sd.css">
+</head>
+<body>
+<header class="site">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html"><span class="logo">SD</span><span class="txt">トレーニングコース</span></a>
+    <nav class="main">
+      <a href="index.html" title="コースマップと学習ルート">ホーム</a>
+      <a href="concept.html" title="SD とは何か、3 つの概念レイヤ、5 大伝票">基本概念</a>
+      <a href="org.html" title="企業構造 / 販売構造 / 出荷構造">組織</a>
+      <a href="master.html" title="得意先マスタ / 品目の販売ビュー / 条件レコード">マスタ</a>
+      <a href="pricing.html" title="条件技術の4要素と計算スキーマ決定">価格設定</a>
+      <a href="flow.html" title="エンドツーエンド O2C のフロー図と伝票フロー">プロセス</a>
+      <a href="order.html" title="引合 · 見積 · 受注伝票（部分的な詳細解説）">受注伝票</a>
+      <a href="delivery.html" title="出荷伝票 · ピッキング · 出庫過転記">納入</a>
+      <a href="billing.html" title="請求書 · FI への転記 · 入金">請求</a>
+      <a href="analysis.html" title="伝票フロー／受注一覧／販売分析">データ分析</a>
+      <a href="config.html" title="SPRO 設定ルート（48 タスク）">設定</a>
+      <a href="practice.html" title="実習タスクと完成基準">実習</a>
+      <a href="instructor.html" title="採点ポイント / 必ず問う質問 / 解答">講師</a>
+      <a href="worksheet.html" title="記入表（印刷可能）">受講者</a>
+      <a class="active" href="quiz.html" title="30 問のセルフチェック（合格 75%）">セルフチェックテスト</a>
+      <a href="glossary.html" title="中国語・英語対照 / T-code クイックリファレンス">用語</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+<main class="page">
+<article>
+<p class="breadcrumb"><a href="index.html">ホーム</a> / <span>セルフチェックテスト</span></p>
+<h1>セルフチェックテスト：30 問</h1>
+<p class="kicker">概念 5 · 組織 4 · マスタ 5 · 価格設定 6 · プロセス 7 · 分析 3</p>
+<p>選択肢をクリックするとその場で採点されます。まず答えを見ずに一度解いて、その後で各問題の下の解説を見ることをおすすめします。<b>合格ライン：≥75%（23 問以上）</b>、かつ<a href="practice.html">5 つの実習タスク</a>の完成基準をすべてチェック済みであること。</p>
+<div class="quiz-q" data-answer="A">
+<div class="q-meta"><span class="tag gray">基本概念</span></div>
+<h4>1. SD モジュールの中心的な成果物は何か？</h4>
+<div class="opts">
+<div class="opt" data-key="A">販売伝票（引合／見積／受注／納入／請求）</div>
+<div class="opt" data-key="B">品目伝票と在庫</div>
+<div class="opt" data-key="C">会計伝票</div>
+<div class="opt" data-key="D">製造指図</div>
+</div>
+<div class="explain"><b>答え A。</b>SD は販売伝票を担当します。品目伝票は MM が出庫過転記時に生成し、会計伝票は FI が請求書転記時に生成します。</div>
+</div>
+<div class="quiz-q" data-answer="C">
+<div class="q-meta"><span class="tag gray">基本概念</span></div>
+<h4>2. どのステップで実際に在庫が減りますか？</h4>
+<div class="opts">
+<div class="opt" data-key="A">受注伝票を保存</div>
+<div class="opt" data-key="B">出荷伝票を登録</div>
+<div class="opt" data-key="C">納入の出庫過転記（PGI、移動タイプ 601）</div>
+<div class="opt" data-key="D">請求書の転記</div>
+</div>
+<div class="explain"><b>答え C。</b>受注伝票は約束にすぎません。納入伝票は準備をするだけです。出庫過転記（移動タイプ 601）で初めて品目伝票が生成され、在庫が減少します。</div>
+</div>
+<div class="quiz-q" data-answer="B">
+<div class="q-meta"><span class="tag gray">基本概念</span></div>
+<h4>3. 「販売エリア」はどの 3 つのキーで構成されますか？</h4>
+<div class="opts">
+<div class="opt" data-key="A">販売組織 + 会社コード + プラント</div>
+<div class="opt" data-key="B">販売組織 + 流通チャネル + 製品部門</div>
+<div class="opt" data-key="C">会社コード + 流通チャネル + 販売事務所</div>
+<div class="opt" data-key="D">販売組織 + 販売事務所 + 販売グループ</div>
+</div>
+<div class="explain"><b>答え B。</b>販売エリア Sales Area = 販売組織 + 流通チャネル + 製品部門。得意先／品目の販売ビューと条件レコードの組織キーです。</div>
+</div>
+<div class="quiz-q" data-answer="B">
+<div class="q-meta"><span class="tag gray">基本概念</span></div>
+<h4>4. 請求書の転記（リリース）時に生成される会計伝票は通常どれですか？</h4>
+<div class="opts">
+<div class="opt" data-key="A">借方 収益 / 貸方 得意先売掛金</div>
+<div class="opt" data-key="B">借方 得意先売掛金 / 貸方 収益 + 売上税</div>
+<div class="opt" data-key="C">借方 在庫 / 貸方 買掛金</div>
+<div class="opt" data-key="D">会計伝票を生成しない</div>
+</div>
+<div class="explain"><b>答え B。</b>請求書のリリースで FI 伝票を生成：借方 得意先売掛金（税込）、貸方 販売収益（正味価額）と売上税。</div>
+</div>
+<div class="quiz-q" data-answer="C">
+<div class="q-meta"><span class="tag gray">基本概念</span></div>
+<h4>5. 次のうち、誤っている記述はどれ？</h4>
+<div class="opts">
+<div class="opt" data-key="A">価格は条件レコードに登録する</div>
+<div class="opt" data-key="B">1 つの会社コードに複数の販売組織を持てます</div>
+<div class="opt" data-key="C">納入伝票の登録時に在庫が減少する</div>
+<div class="opt" data-key="D">1 つの得意先に複数のパートナ役割を持てます</div>
+</div>
+<div class="explain"><b>答え C。</b>納入伝票の登録時は在庫は変わりません。在庫が減るのは出庫過転記の時だけです。ほかの記述はすべて正しいです。</div>
+</div>
+<div class="quiz-q" data-answer="A">
+<div class="q-meta"><span class="tag gray">組織</span></div>
+<h4>6. 販売組織を会社コードに割り当てる意味は？</h4>
+<div class="opts">
+<div class="opt" data-key="A">販売組織がどの会計主体に属するかを決定</div>
+<div class="opt" data-key="B">販売組織にどの流通チャネルがあるかを決定</div>
+<div class="opt" data-key="C">出荷プラントを決定</div>
+<div class="opt" data-key="D">得意先の番号範囲を決定</div>
+</div>
+<div class="explain"><b>答え A。</b>販売組織と会社コードは多対一です：この販売取引の収益がどの会社コードの勘定に計上されるかを決定します。</div>
+</div>
+<div class="quiz-q" data-answer="B">
+<div class="q-meta"><span class="tag gray">組織</span></div>
+<h4>7. 出荷ポイント（Shipping Point）の役割は？</h4>
+<div class="opts">
+<div class="opt" data-key="A">価格を決定</div>
+<div class="opt" data-key="B">出荷の起点を決定。プラントとは多対多</div>
+<div class="opt" data-key="C">収益勘定の決定</div>
+<div class="opt" data-key="D">請求タイプを決定</div>
+</div>
+<div class="explain"><b>答え B。</b>出荷ポイントは出荷場所を決定します（教材例：Z999 颐宁装运点）。プラントとは多対多の関係です。</div>
+</div>
+<div class="quiz-q" data-answer="A">
+<div class="q-meta"><span class="tag gray">組織</span></div>
+<h4>8. ピッキング保管場所の決定条件のうち、教材で有効にしているのはどれですか？</h4>
+<div class="opts">
+<div class="opt" data-key="A">出荷ポイント + プラント（+ 保管条件）</div>
+<div class="opt" data-key="B">得意先＋品目</div>
+<div class="opt" data-key="C">販売組織 + 製品部門</div>
+<div class="opt" data-key="D">会社コード + プラント</div>
+</div>
+<div class="explain"><b>答え A。</b>カスタマイジングの「ピッキング場所の割当」は出荷ポイント、プラント、保管条件で決定されます。教材シナリオでは前の 2 つだけを有効にします。</div>
+</div>
+<div class="quiz-q" data-answer="B">
+<div class="q-meta"><span class="tag gray">組織</span></div>
+<h4>9. 販売事務所（Sales Office）の主な用途は？</h4>
+<div class="opts">
+<div class="opt" data-key="A">価格を計算する</div>
+<div class="opt" data-key="B">統計や権限など、組織/地域のディメンションでの管理</div>
+<div class="opt" data-key="C">税コードを決定</div>
+<div class="opt" data-key="D">プラントを決定</div>
+</div>
+<div class="explain"><b>答え B。</b>販売事務所と販売グループは統計と権限のための組織構造で、価格設定ロジックには関与しません。</div>
+</div>
+<div class="quiz-q" data-answer="C">
+<div class="q-meta"><span class="tag gray">マスタ</span></div>
+<h4>10. 得意先マスタは3階層。販売エリア階層に入るのは？</h4>
+<div class="opts">
+<div class="opt" data-key="A">名称・住所などの一般情報</div>
+<div class="opt" data-key="B">照合勘定と支払条件</div>
+<div class="opt" data-key="C">得意先計算スキーマ、輸送条件、税分類、パートナ役割などの販売データ</div>
+<div class="opt" data-key="D">リスト</div>
+</div>
+<div class="explain"><b>答え C。</b>一般データは全社で共用し、会社コード層には財務データ、販売エリア層には販売関連データを置きます。</div>
+</div>
+<div class="quiz-q" data-answer="B">
+<div class="q-meta"><span class="tag gray">マスタ</span></div>
+<h4>11. 4 つのパートナ役割のうち、「荷物をどこへ届けるか」を決定するのはどれですか？</h4>
+<div class="opts">
+<div class="opt" data-key="A">受注先</div>
+<div class="opt" data-key="B">出荷先</div>
+<div class="opt" data-key="C">請求書送付先</div>
+<div class="opt" data-key="D">支払先</div>
+</div>
+<div class="explain"><b>答え B。</b>出荷先（Ship-to）は納入の受領地と受領者を決定します。</div>
+</div>
+<div class="quiz-q" data-answer="C">
+<div class="q-meta"><span class="tag gray">マスタ</span></div>
+<h4>12. 販売価格（PR00）はどこに登録しますか？</h4>
+<div class="opts">
+<div class="opt" data-key="A">品目マスタの販売ビュー</div>
+<div class="opt" data-key="B">得意先マスタ</div>
+<div class="opt" data-key="C">条件レコード（VK11）</div>
+<div class="opt" data-key="D">受注伝票で手入力</div>
+</div>
+<div class="explain"><b>答え C。</b>価格は条件レコードにあります（条件タイプ PR00、VK11 で登録）。品目の販売ビューが決めるのは販売可否、税分類、勘定割当グループなどです。</div>
+</div>
+<div class="quiz-q" data-answer="B">
+<div class="q-meta"><span class="tag gray">マスタ</span></div>
+<h4>13. 2つの品目を別々の売上収益勘定に仕向けるには、教材ではどうしていますか？</h4>
+<div class="opts">
+<div class="opt" data-key="A">計算スキーマの計算タイプを変更</div>
+<div class="opt" data-key="B">品目に異なる勘定割当グループを設定する（M1/M2）</div>
+<div class="opt" data-key="C">得意先コードを変更</div>
+<div class="opt" data-key="D">販売エリアを変更</div>
+</div>
+<div class="explain"><b>答え B。</b>勘定設定では「勘定キー + 品目の勘定割当グループ + 得意先の勘定割当グループ」を使用します。教材では M1 自製品 / M2 取引商品で収益勘定を区別しています。</div>
+</div>
+<div class="quiz-q" data-answer="B">
+<div class="q-meta"><span class="tag gray">マスタ</span></div>
+<h4>14. 得意先勘定グループの画面レイアウト設定は何を決定しますか？</h4>
+<div class="opts">
+<div class="opt" data-key="A">得意先番号の範囲</div>
+<div class="opt" data-key="B">得意先マスタのどの項目が必須/任意/非表示か</div>
+<div class="opt" data-key="C">得意先の信用限度額</div>
+<div class="opt" data-key="D">得意先の支払条件</div>
+</div>
+<div class="explain"><b>答え B。</b>勘定グループの項目ステータスが、得意先マスタ画面の表示と必須ルールを決定します。</div>
+</div>
+<div class="quiz-q" data-answer="B">
+<div class="q-meta"><span class="tag gray">価格設定</span></div>
+<h4>15. 条件技術で「価格をどこから探すか」から「どのスキーマを使うか」までの正しい順序は？</h4>
+<div class="opts">
+<div class="opt" data-key="A">条件タイプ → 条件テーブル → 計算スキーマ → アクセス順序</div>
+<div class="opt" data-key="B">条件テーブル → アクセス順序 → 条件タイプ → 計算スキーマ → 計算スキーマ決定</div>
+<div class="opt" data-key="C">計算スキーマ → 条件テーブル → アクセス順序 → 条件タイプ</div>
+<div class="opt" data-key="D">アクセス順序 → 計算スキーマ → 条件テーブル → 条件タイプ</div>
+</div>
+<div class="explain"><b>答え B。</b>条件テーブルに値を保存 → アクセス順序で優先順位を決定 → 条件タイプで分類 → 計算スキーマでステップを並べる → 計算スキーマ決定でスキーマを選択。</div>
+</div>
+<div class="quiz-q" data-answer="B">
+<div class="q-meta"><span class="tag gray">価格設定</span></div>
+<h4>16. 計算スキーマ決定（どの計算スキーマを使うかを決める）の 3 つのキーは？</h4>
+<div class="opts">
+<div class="opt" data-key="A">販売組織 + プラント + 得意先</div>
+<div class="opt" data-key="B">販売エリア + 得意先計算スキーマ + 伝票計算スキーマ</div>
+<div class="opt" data-key="C">会社コード + 品目 + 得意先</div>
+<div class="opt" data-key="D">流通チャネル＋製品部門＋得意先グループ</div>
+</div>
+<div class="explain"><b>答え B。</b>IMG「計算スキーマの定義と割当」では、販売エリア、得意先計算スキーマ、伝票計算スキーマの 3 つのキーで決定します。</div>
+</div>
+<div class="quiz-q" data-answer="B">
+<div class="q-meta"><span class="tag gray">価格設定</span></div>
+<h4>17. 計算スキーマの「勘定キー（Account Key）」、たとえば ERL の役割は？</h4>
+<div class="opts">
+<div class="opt" data-key="A">割引のパーセントを決定</div>
+<div class="opt" data-key="B">この条件金額をどの勘定に記帳するかを決定（勘定割当グループと連携）</div>
+<div class="opt" data-key="C">税コードを決定</div>
+<div class="opt" data-key="D">納入日を決定</div>
+</div>
+<div class="explain"><b>答え B。</b>勘定キーは勘定設定に関与します：勘定キー + 品目/得意先の勘定割当グループ → 収益などの勘定。</div>
+</div>
+<div class="quiz-q" data-answer="B">
+<div class="q-meta"><span class="tag gray">価格設定</span></div>
+<h4>18. 条件タイプ PR00 の「アクセス順序」の役割は？</h4>
+<div class="opts">
+<div class="opt" data-key="A">価格の表示形式を決定</div>
+<div class="opt" data-key="B">どの優先順位で条件レコードを探すかを決定（まず誰の価格を探すか）</div>
+<div class="opt" data-key="C">通貨を決定</div>
+<div class="opt" data-key="D">税の決定</div>
+</div>
+<div class="explain"><b>答え B。</b>アクセス順序は優先順位順に複数の条件テーブルを並べ、システムは先頭から探して見つかった時点で止まります。</div>
+</div>
+<div class="quiz-q" data-answer="B">
+<div class="q-meta"><span class="tag gray">価格設定</span></div>
+<h4>19. 売上税の税額は何によって決まりますか？</h4>
+<div class="opts">
+<div class="opt" data-key="A">品目マスタの価格</div>
+<div class="opt" data-key="B">得意先税分類 + 品目税分類 → 税コード、その後税率で計算</div>
+<div class="opt" data-key="C">販売組織</div>
+<div class="opt" data-key="D">支払条件</div>
+</div>
+<div class="explain"><b>答え B。</b>税コードは得意先の税分類と品目の税分類（+ 国別ルール）で決定され、MWST 条件レコードが税率を提供します。</div>
+</div>
+<div class="quiz-q" data-answer="B">
+<div class="q-meta"><span class="tag gray">価格設定</span></div>
+<h4>20. 条件レコードを変更したのに、以前保存した受注伝票が変わらないのはなぜ？</h4>
+<div class="opts">
+<div class="opt" data-key="A">システムキャッシュの問題</div>
+<div class="opt" data-key="B">伝票はスナップショットであり、マスタの変更は新しい伝票にのみ影響します（または手動での再価格設定が必要）</div>
+<div class="opt" data-key="C">条件レコードが保存されていない</div>
+<div class="opt" data-key="D">ユーザ権限の問題</div>
+</div>
+<div class="explain"><b>答え B。</b>伝票を保存するとデータが確定し、過去の伝票の追跡が可能になります。変更するには伝票内で再価格設定が必要です。</div>
+</div>
+<div class="quiz-q" data-answer="B">
+<div class="q-meta"><span class="tag gray">プロセス</span></div>
+<h4>21. 得意先に正式な見積を出すには、どの T-code を使いますか？</h4>
+<div class="opts">
+<div class="opt" data-key="A">VA11</div>
+<div class="opt" data-key="B">VA21</div>
+<div class="opt" data-key="C">VA01</div>
+<div class="opt" data-key="D">VF01</div>
+</div>
+<div class="explain"><b>答え B。</b>VA21 で見積（QT）を登録；VA11 は引合、VA01 は受注伝票、VF01 は請求書。</div>
+</div>
+<div class="quiz-q" data-answer="B">
+<div class="q-meta"><span class="tag gray">プロセス</span></div>
+<h4>22. 見積を参照して受注伝票を登録します。教材で使う入口は？</h4>
+<div class="opts">
+<div class="opt" data-key="A">VA01 で見積番号を手入力</div>
+<div class="opt" data-key="B">見積の「後続機能 → V-01 受注伝票」</div>
+<div class="opt" data-key="C">VL01N</div>
+<div class="opt" data-key="D">VF01</div>
+</div>
+<div class="explain"><b>答え B。</b>教材タスク 41 では見積の後続機能から入り、「有参照创建」をクリックします。VA01 で手動参照しても構いません。</div>
+</div>
+<div class="quiz-q" data-answer="A">
+<div class="q-meta"><span class="tag gray">プロセス</span></div>
+<h4>23. 教材で出荷伝票を作成する T-code は？</h4>
+<div class="opts">
+<div class="opt" data-key="A">VL01N</div>
+<div class="opt" data-key="B">VL02N</div>
+<div class="opt" data-key="C">VL03N</div>
+<div class="opt" data-key="D">VL06O</div>
+</div>
+<div class="explain"><b>答え A。</b>VL01N は納入 1 件の登録；VL02N は変更（ピッキング/出庫過転記）；VL03N は照会；VL06O は納入一覧。</div>
+</div>
+<div class="quiz-q" data-answer="B">
+<div class="q-meta"><span class="tag gray">プロセス</span></div>
+<h4>24. 受注伝票の保存時に「有効在庫なし」のメッセージが出た。正しい理解は？</h4>
+<div class="opts">
+<div class="opt" data-key="A">受注伝票の保存に失敗</div>
+<div class="opt" data-key="B">そのまま保存を続行でき、確定日が表示されるだけ。後続の出荷前に在庫の補充が必要</div>
+<div class="opt" data-key="C">ただちに伝票を削除する必要がある</div>
+<div class="opt" data-key="D">システムが自動で購買する</div>
+</div>
+<div class="explain"><b>答え B。</b>所要量確認は標準では保存をブロックしません。教材では MB1C ＋ 501 で期首在庫を入力し、後続の出荷の問題を解決します。</div>
+</div>
+<div class="quiz-q" data-answer="C">
+<div class="q-meta"><span class="tag gray">プロセス</span></div>
+<h4>25. 期首在庫を補充するとき、教材ではどの移動タイプを使う？</h4>
+<div class="opts">
+<div class="opt" data-key="A">101</div>
+<div class="opt" data-key="B">261</div>
+<div class="opt" data-key="C">501</div>
+<div class="opt" data-key="D">601</div>
+</div>
+<div class="explain"><b>答え C。</b>501 は「購買発注なしの入庫」で、教材ではこれで期首在庫を入力します。101 は通常、購買発注/製造指図に対する入庫に使い、601 は出荷の出庫です。</div>
+</div>
+<div class="quiz-q" data-answer="B">
+<div class="q-meta"><span class="tag gray">プロセス</span></div>
+<h4>26. 請求書を保存したあと、財務会計に反映するには何が必要ですか？</h4>
+<div class="opts">
+<div class="opt" data-key="A">何もする必要はない</div>
+<div class="opt" data-key="B">リリース（Release to Accounting、VF02）</div>
+<div class="opt" data-key="C">もう一度保存する</div>
+<div class="opt" data-key="D">FI で伝票を手入力</div>
+</div>
+<div class="explain"><b>答え B。</b>保存では SD の請求伝票のみ生成されます。会計伝票はリリース後に生成され、システムは「伝票はすでに転記に転送されました」と表示します。</div>
+</div>
+<div class="quiz-q" data-answer="A">
+<div class="q-meta"><span class="tag gray">プロセス</span></div>
+<h4>27. 誤った出庫過転記を取り消すには何を使う？</h4>
+<div class="opts">
+<div class="opt" data-key="A">VL09</div>
+<div class="opt" data-key="B">VL01N で再作成</div>
+<div class="opt" data-key="C">VA02 で受注を変更</div>
+<div class="opt" data-key="D">VF11</div>
+</div>
+<div class="explain"><b>答え A。</b>VL09 は出庫過転記の取消；VF11 は請求書の取消。順序としては通常、下流の伝票から処理します。</div>
+</div>
+<div class="quiz-q" data-answer="B">
+<div class="q-meta"><span class="tag gray">データ分析</span></div>
+<h4>28. 得意先から「私の荷物は今どこですか」と聞かれたとき、最も直接的なツールは？</h4>
+<div class="opts">
+<div class="opt" data-key="A">MCTA</div>
+<div class="opt" data-key="B">伝票フロー（VA03/VL03N → 環境 → 伝票フローの照会）</div>
+<div class="opt" data-key="C">FS00</div>
+<div class="opt" data-key="D">MM01</div>
+</div>
+<div class="explain"><b>答え B。</b>伝票フローで上流・下流の伝票とステータスが一目でわかります。納入ステータスと出庫ステータスの項目でも確認できます。</div>
+</div>
+<div class="quiz-q" data-answer="B">
+<div class="q-meta"><span class="tag gray">データ分析</span></div>
+<h4>29. 販売分析（MCTA）レポートにデータがない場合、最も可能性が高い原因は？</h4>
+<div class="opts">
+<div class="opt" data-key="A">レポートプログラムの不具合</div>
+<div class="opt" data-key="B">更新グループが未活性、または得意先/品目の統計グループが未登録</div>
+<div class="opt" data-key="C">得意先を入力していない</div>
+<div class="opt" data-key="D">システム言語の設定</div>
+</div>
+<div class="explain"><b>答え B。</b>分析レポートはロジスティクス情報システムの統計更新（タスク 31/32）とマスタの統計グループに依存します。また、設定後に発生したデータだけが集計されます。</div>
+</div>
+<div class="quiz-q" data-answer="B">
+<div class="q-meta"><span class="tag gray">データ分析</span></div>
+<h4>30. 教材で「VL01N で出荷伝票を作成できない」場合の解決策は？</h4>
+<div class="opts">
+<div class="opt" data-key="A">受注伝票タイプを変更</div>
+<div class="opt" data-key="B">MB1C + 移動タイプ 501 で期首在庫を入力する</div>
+<div class="opt" data-key="C">システムを開き直す</div>
+<div class="opt" data-key="D">受注伝票を削除して再登録</div>
+</div>
+<div class="explain"><b>答え B。</b>教材タスク 48 第 23 ステップの方法：MB1C 501 の発注参照なし入庫で期首在庫を入力し、納入を可能にします。</div>
+</div>
+<h2 id="pass">合格したら</h2>
+<div class="box ok"><b class="t">能力の検証（単なる試験ではない）</b><ul><li>ご自身のシステムで自力で一通り実行できる：受注 → 納入 → 出庫過転記 → 請求書 → リリース。</li><li>伝票フローで「この請求書がどの受注伝票から来たか」を答えられます。</li><li>1 枚の受注伝票の価格の出所と収益勘定の出所を説明できる。</li><li>「在庫がない / 請求できない / 価格が空」に遭遇したとき、調査の順序を言える。</li></ul></div>
+<ol class="steps"><li>復習に戻る：<a href="concept.html">概念</a>／<a href="pricing.html">価格設定</a>／<a href="flow.html">プロセス</a>。</li><li>用語と T-code を調べる：<a href="glossary.html"><b>用語集</b></a>。</li></ol>
+</article>
+</main>
+</div>
+
+<footer class="site">
+  <div class="inner">
+    <div class="cols">
+      <div>
+<h5>SAP SD トレーニングコース</h5>
+<p>販売管理 · 概念からプロセスへ · 全体から部分へ</p>
+      </div>
+      <div>
+<h5>コースセクション</h5>
+<p><a href="concept.html">概念</a> · <a href="org.html">組織</a> · <a href="master.html">マスタ</a> ·
+<a href="pricing.html">価格設定</a> · <a href="flow.html">プロセス</a> · <a href="config.html">設定</a></p>
+      </div>
+      <div>
+<h5>授業用付属資料</h5>
+<p><a href="practice.html">実習タスク</a> · <a href="instructor.html">講師用</a> ·
+<a href="worksheet.html">受講者用</a> · <a href="quiz.html">セルフチェックテスト</a> ·
+<a href="glossary.html">用語集</a></p>
+      </div>
+      <div>
+<h5>ひと言の免責</h5>
+<p>スクリーンショットは教材ドキュメントの実際の SAP GUI 画面（中国語インターフェース）。図と表は当サイトの自作です。
+標準値はリリース/業界ソリューションによって異なります。ページに記載の確認方法をご自身のシステムで確認してください。</p>
+      </div>
+    </div>
+<p class="copy">© <span data-year>2026</span> SAP SD トレーニングコース · 静的サイト、オフラインで利用可能</p>
+  </div>
+</footer>
+<script src="assets/main.js"></script>
+<script src="assets/quiz.js"></script>
+<script src="assets/sd.js"></script>
+</body>
+</html>

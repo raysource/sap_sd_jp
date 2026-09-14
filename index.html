@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ホーム · コースマップと学習ルート · SAP SD トレーニングコース</title>
+<meta name="description" content="SAP SD（販売管理）トレーニングコース：概念 → 組織構造 → マスタ → 価格設定 → エンドツーエンドプロセス（引合・見積・受注・納入・出荷・請求・入金）→ 設定 → 分析。各段階に実際の SAP GUI システムのスクリーンショット（中国語インターフェース）と自作図のフロー図、構造図、マインドマップを用意します。">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/sd.css">
+</head>
+<body>
+<header class="site">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html"><span class="logo">SD</span><span class="txt">トレーニングコース</span></a>
+    <nav class="main">
+      <a class="active" href="index.html" title="コースマップと学習ルート">ホーム</a>
+      <a href="concept.html" title="SD とは何か、3 つの概念レイヤ、5 大伝票">基本概念</a>
+      <a href="org.html" title="企業構造 / 販売構造 / 出荷構造">組織</a>
+      <a href="master.html" title="得意先マスタ / 品目の販売ビュー / 条件レコード">マスタ</a>
+      <a href="pricing.html" title="条件技術の4要素と計算スキーマ決定">価格設定</a>
+      <a href="flow.html" title="エンドツーエンド O2C のフロー図と伝票フロー">プロセス</a>
+      <a href="order.html" title="引合 · 見積 · 受注伝票（部分的な詳細解説）">受注伝票</a>
+      <a href="delivery.html" title="出荷伝票 · ピッキング · 出庫過転記">納入</a>
+      <a href="billing.html" title="請求書 · FI への転記 · 入金">請求</a>
+      <a href="analysis.html" title="伝票フロー／受注一覧／販売分析">データ分析</a>
+      <a href="config.html" title="SPRO 設定ルート（48 タスク）">設定</a>
+      <a href="practice.html" title="実習タスクと完成基準">実習</a>
+      <a href="instructor.html" title="採点ポイント / 必ず問う質問 / 解答">講師</a>
+      <a href="worksheet.html" title="記入表（印刷可能）">受講者</a>
+      <a href="quiz.html" title="30 問のセルフチェック（合格 75%）">セルフチェックテスト</a>
+      <a href="glossary.html" title="中国語・英語対照 / T-code クイックリファレンス">用語</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+<main class="page">
+<article>
+<div class="box info"><b class="t">このサイトについて（日本語版）</b><p>このサイトは中国語版コース <code>sap_cn</code>（SAP SD トレーニングコース）を<b>日本語にしたもの</b>です。掲載している画面は原教材 <code>S4.docx</code> の<b>中国語インターフェース</b>の実機スクリーンショットをそのまま使っているため、本文の日本語と画面の中国語が食い違って見える箇所があります。その対応表が<a href="glossary.html">用語集</a>（日本語 ⇔ 画面の中国語 ⇔ 英語 / IMG パス対照）です。設定手順（<a href="config.html">設定</a>）では、各タスクの原文（中国語）を折りたたみで併記しています。</p></div>
+<div class="hero sd"><div class="hero-inner">
+<p class="kicker">SAP SD トレーニングコース · 販売管理（Sales and Distribution）</p>
+<h1>1 つの問いから始めます：モノをどう売り、お金をどう回収するか</h1>
+<p class="lead">このコースは「<b>概念 → 組織構造 → マスタ → 価格設定 → エンドツーエンドのプロセス → 設定</b>」の順に進み、まず全体像（マインドマップ + 構造図 + フロー図）を示し、その後、マウス操作をなぞれる粒度まで段ごとに分解します。各段階に実際の SAP GUI システムのスクリーンショットを用意します（中国語インターフェース。本コースの教材ドキュメントの実機画面から取得）。</p>
+<p class="meta">16 ページ · 48 の設定タスク · 155 枚の実機スクリーンショット · 10 枚の自作フロー図/構造図/マインドマップ</p>
+</div></div>
+<div class="grid cards stats"><div class="card"><b>16</b><span>ページ</span><small>概念から設定までの完全コース</small></div><div class="card"><b>48</b><span>件の設定タスク</span><small>SPRO で実際に行うカスタマイジング設定</small></div><div class="card"><b>155</b><span>枚の実際のスクリーンショット</span><small>SAP GUI 中国語インターフェースの実機画面</small></div><div class="card"><b>10</b><span>枚の自作図</span><small>フロー図 / 構造図 / マインドマップ</small></div></div>
+<h2 id="map">1. コースマップ（マインドマップ）</h2>
+<p>まずこの図を見てください：SD の知識はすべてこの 6 つのセクションです。この図を理解すれば、以降の各ページはその拡大版にすぎません。1回目は細部を暗記せず、「どの問題がどのセクションか」だけ覚えることをお勧めします。</p>
+<figure class="dia"><a class="zoom" href="assets/diagrams/mindmap.svg"><img src="assets/diagrams/mindmap.svg" alt="SAP SD 知識マップのマインドマップ" loading="lazy"></a><figcaption><span class="n">マインドマップ</span><span class="cap">6 つのセクションと要点：① 概念 ② 組織構造 ③ マスタ ④ 価格設定 ⑤ プロセス ⑥ 設定と分析</span><span class="src">当サイト自作の SVG</span></figcaption></figure>
+<h2 id="route">2. 学習ルート（全体から部分へ）</h2>
+<ol class="route">
+<li><b><a href="concept.html">まず全体像をつかむ</a></b> — SD が担う範囲、財務/品目/生産との役割分担、5 大伝票の姿。読み終えたら「1 件の受注伝票がなぜ自動で価格と納入日を計算できるのか」に答えられるようになります。</li>
+<li><b><a href="org.html">組織構造をもう一度見る</a></b> — 会社コード / 販売組織 / 流通チャネル / 製品部門 / 販売エリア / プラント / 出荷ポイント。これがすべてのデータの「座標」です。</li>
+<li><b><a href="master.html">マスタをもう一度見る</a></b> — 得意先マスタ（4 つのパートナ役割を含む）、品目マスタの販売ビュー、条件レコード。データが整っていないと伝票は絶対に動きません。</li>
+<li><b><a href="pricing.html">価格設定をもう一度見る</a></b> — 条件テーブル → アクセス順序 → 条件タイプ → 計算スキーマ → 計算スキーマ決定。価格に関する問題の標準的な答えはここにあります。</li>
+<li><b><a href="flow.html">その後、プロセスを一通り実行する</a></b> — エンドツーエンドのフロー図 + 伝票フロー：引合 → 見積 → 受注伝票 → 納入 → 出庫過転記 → 請求書 → 会計伝票 → 入金。</li>
+<li><b><a href="order.html">さらに各ステップに分解する</a></b> — 3 つの段階にそれぞれ 1 ページ：受注（order）、納入（delivery）、請求（billing）。各ページに実際の画面とステップごとの操作があります。</li>
+<li><b><a href="config.html">設定と実習</a></b> — 48 個のカスタマイジング設定タスク（SPRO の順序でグループ化）と対応する実際の画面。その後、実習タスクを自分で 1 通り実行してみます。</li>
+<li><b><a href="quiz.html">セルフチェックテストと用語</a></b> — 30 問のセルフチェック（合格 75%）。用語集で中英対照と T-code をいつでも確認できます。</li>
+</ol>
+<h2 id="mods">3. 6 つのセクション</h2>
+<div class="modlist">
+<div class="modcard c1"><h3><a href="concept.html">① 概念と位置づけ</a></h3><p>SD の ERP 内での位置づけ、3 つの概念レイヤ、5 大伝票、よくある誤解。</p><div class="meta">概念 · 統合構造図 · 伝票フロー構造図</div></div>
+<div class="modcard c2"><h3><a href="org.html">② 組織構造</a></h3><p>企業構造 / 販売構造 / 出荷構造、およびそれらの割当関係。</p><div class="meta">組織図 · 12 の設定タスク</div></div>
+<div class="modcard c3"><h3><a href="master.html">③ マスタ</a></h3><p>得意先マスタの 3 層と 4 つのパートナ役割、品目の販売ビュー、条件レコード。</p><div class="meta">得意先／品目／条件レコード</div></div>
+<div class="modcard c4"><h3><a href="pricing.html">④ 価格設定と条件技術</a></h3><p>条件テーブル、アクセス順序、条件タイプ、計算スキーマ、勘定設定。</p><div class="meta">価格設定構造図 · 価格計算例</div></div>
+<div class="modcard c5"><h3><a href="flow.html">⑤ 業務プロセス O2C</a></h3><p>受注伝票 → 納入 → 出荷 → 請求 → 入金 のエンドツーエンドプロセスと伝票フロー。</p><div class="meta">エンドツーエンドのフロー図 · スイムレーン図</div></div>
+<div class="modcard c6"><h3><a href="config.html">⑥ 設定と分析</a></h3><p>SPRO 設定ルート（48 タスク）＋ レポートと分析。</p><div class="meta">設定グループ表 · 実際の画面</div></div>
+</div>
+<h2 id="who">4. 役割別の学習ルート</h2>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>役割</th><th>推奨ルート</th><th>重要ポイント</th></tr></thead><tbody><tr><td>販売 / キーユーザ</td><td>シミュレーション受注</td><td><a href="concept.html">基本概念</a> → <a href="flow.html">プロセス</a> → <a href="order.html">受注伝票</a> → <a href="delivery.html">納入</a> → <a href="billing.html">請求</a> → <a href="analysis.html">データ分析</a></td><td>伝票フローが読め、「在庫がない / 請求できない / 価格が違う」に対処できる</td></tr><tr><td>SD コンサルタント</td><td>コース全体</td><td><a href="concept.html">基本概念</a> → <a href="org.html">組織</a> → <a href="master.html">マスタ</a> → <a href="pricing.html">価格設定</a> → <a href="config.html">設定</a> → <a href="practice.html">実習</a></td><td>「業務上の現象」を「カスタマイジングのどの設定か」に翻訳できる</td></tr><tr><td>財務 / 原価</td><td>中央の 3 ページ</td><td><a href="concept.html">基本概念</a> → <a href="flow.html">プロセス</a> → <a href="billing.html">請求</a> → <a href="pricing.html">価格設定</a></td><td>収益勘定がどのように決まるか（勘定設定）、請求書の転記でどのような会計伝票が生成されるか</td></tr><tr><td>開発 / インターフェース</td><td>データを見る</td><td><a href="master.html">マスタ</a> → <a href="pricing.html">価格設定</a> → <a href="flow.html">プロセス</a> → <a href="glossary.html">用語</a></td><td>伝票テーブルと項目：VBAK／VBAP／LIPS／VBRK、条件テーブル KONV、計算スキーマ</td></tr></tbody></table></div>
+<h2 id="how">5. この教材の使い方</h2>
+<div class="two-col">
+<div class="box info"><b class="t">各ページの読み方</b><ol><li>まずこのページ上部の「自作図」を見てください——それがこのページの骨格です</li><li>さらに実機のスクリーンショット：各画像の下には、教材のどのタスクから来たか、元のファイル名は何かが示されており、Word の原稿と照合できます</li><li>画像をクリックすると 4× に拡大（投影用）；ESC で閉じる</li><li>最後のセクションは通常「自分のシステムで合っているかをどう見るか」です</li></ol></div>
+<div class="box warn"><b class="t">スクリーンショットに関する正直な説明</b><p><b>実際のスクリーンショット</b>：ページ内で「画面 N」と示した画像は、教材ドキュメント S4.docx から抽出した実際の SAP GUI 画面です（中国語インターフェース）であり、描き直したイメージ図ではありません。元のファイル名は各図の説明行に残しています。</p><p><b>自作図</b>：「フロー図 / 構造図 / マインドマップ」と表示された図は、このコースが自作した SVG です。構造と順序を説明するために使います。図の数値はコースシナリオの値なので、自分のシステムの画面を基準にしてください。</p></div>
+</div>
+<div class="note tip"><span class="t">標準値とリリース差異</span>コースで示している受注タイプ OR、明細カテゴリ TAN、計算スキーマ RVAA01、条件タイプ PR00 / MWST などは、意味はすべてのリリースで共通ですが、<b>具体的なコードや項目を変更できるかは、リリースと業界ソリューションによって異なります</b>。システムによって異なる可能性がある点については、ページに「自システムでの確認方法」（F1 ヘルプ／F4 入力候補／IMG パス）を示しています。</div>
+</article>
+</main>
+</div>
+
+<footer class="site">
+  <div class="inner">
+    <div class="cols">
+      <div>
+<h5>SAP SD トレーニングコース</h5>
+<p>販売管理 · 概念からプロセスへ · 全体から部分へ</p>
+      </div>
+      <div>
+<h5>コースセクション</h5>
+<p><a href="concept.html">概念</a> · <a href="org.html">組織</a> · <a href="master.html">マスタ</a> ·
+<a href="pricing.html">価格設定</a> · <a href="flow.html">プロセス</a> · <a href="config.html">設定</a></p>
+      </div>
+      <div>
+<h5>授業用付属資料</h5>
+<p><a href="practice.html">実習タスク</a> · <a href="instructor.html">講師用</a> ·
+<a href="worksheet.html">受講者用</a> · <a href="quiz.html">セルフチェックテスト</a> ·
+<a href="glossary.html">用語集</a></p>
+      </div>
+      <div>
+<h5>ひと言の免責</h5>
+<p>スクリーンショットは教材ドキュメントの実際の SAP GUI 画面（中国語インターフェース）。図と表は当サイトの自作です。
+標準値はリリース/業界ソリューションによって異なります。ページに記載の確認方法をご自身のシステムで確認してください。</p>
+      </div>
+    </div>
+<p class="copy">© <span data-year>2026</span> SAP SD トレーニングコース · 静的サイト、オフラインで利用可能</p>
+  </div>
+</footer>
+<script src="assets/main.js"></script>
+<script src="assets/quiz.js"></script>
+<script src="assets/sd.js"></script>
+</body>
+</html>

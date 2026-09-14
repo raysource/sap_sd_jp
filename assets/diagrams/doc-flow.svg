@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1340 620" width="1340" height="620" role="img" aria-label="伝票フローと参照関係（構造図）" font-family="'PingFang SC','Hiragino Sans GB','Noto Sans CJK SC','Microsoft YaHei',sans-serif">
+<title>伝票フローと参照関係（構造図）</title>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0a6ed1"/></marker><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#007272"/></marker><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ffffff"/></marker></defs>
+<rect width="1340" height="620" fill="#ffffff"/>
+<text x="40.0" y="48.0" font-size="20" fill="#1d2d3e" text-anchor="start" font-weight="700">伝票フロー構造図：どれがどれを参照するか、各伝票がどんなステータスを持つか</text>
+<text x="40.0" y="70.0" font-size="13" fill="#6b7a8d" text-anchor="start" font-weight="400">「参照による登録」はデータの一貫性を保証します：数量・価格・得意先が上流から引き継がれます（当サイト自作図）</text>
+<rect x="60.0" y="140.0" width="222.0" height="190.0" rx="12" fill="#ffffff" stroke="#0a6ed1" stroke-width="1.4"/>
+<rect x="60.0" y="140.0" width="222.0" height="40.0" rx="12" fill="#0a6ed1" stroke="#0a6ed1" stroke-width="1.4"/>
+<text x="76.0" y="167.0" font-size="16" fill="#ffffff" text-anchor="start" font-weight="700">引合伝票</text>
+<text x="266.0" y="167.0" font-size="12.5" fill="#eaf4ff" text-anchor="end" font-weight="400" font-family="'SF Mono',Menlo,Consolas,monospace">VA11</text>
+<text x="76.0" y="206.0" font-size="11.5" fill="#6b7a8d" text-anchor="start" font-weight="400" font-family="'SF Mono',Menlo,Consolas,monospace">伝票タイプ／カテゴリ：IN</text>
+<text x="76.0" y="230.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· 得意先の意向</text>
+<text x="76.0" y="247.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· 価格拘束なし</text>
+<rect x="76.0" y="288.0" width="190.0" height="28.0" rx="7" fill="#f7fafc" stroke="#d9e1e8" stroke-width="1"/>
+<text x="86.0" y="307.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">全体ステータス</text>
+<line x1="286.0" y1="235.0" x2="314.0" y2="235.0" stroke="#0a6ed1" stroke-width="2.2" marker-end="url(#ar)"/>
+<text x="278.0" y="222.0" font-size="11.5" fill="#6b7a8d" text-anchor="start" font-weight="400">参照元</text>
+<rect x="318.0" y="140.0" width="222.0" height="190.0" rx="12" fill="#ffffff" stroke="#0a6ed1" stroke-width="1.4"/>
+<rect x="318.0" y="140.0" width="222.0" height="40.0" rx="12" fill="#0a6ed1" stroke="#0a6ed1" stroke-width="1.4"/>
+<text x="334.0" y="167.0" font-size="16" fill="#ffffff" text-anchor="start" font-weight="700">見積伝票</text>
+<text x="524.0" y="167.0" font-size="12.5" fill="#eaf4ff" text-anchor="end" font-weight="400" font-family="'SF Mono',Menlo,Consolas,monospace">VA21</text>
+<text x="334.0" y="206.0" font-size="11.5" fill="#6b7a8d" text-anchor="start" font-weight="400" font-family="'SF Mono',Menlo,Consolas,monospace">伝票タイプ／カテゴリ：QT</text>
+<text x="334.0" y="230.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· 有効期間</text>
+<text x="334.0" y="247.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· 引合を参照して登録</text>
+<rect x="334.0" y="288.0" width="190.0" height="28.0" rx="7" fill="#f7fafc" stroke="#d9e1e8" stroke-width="1"/>
+<text x="344.0" y="307.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">全体ステータス</text>
+<line x1="544.0" y1="235.0" x2="572.0" y2="235.0" stroke="#0a6ed1" stroke-width="2.2" marker-end="url(#ar)"/>
+<text x="536.0" y="222.0" font-size="11.5" fill="#6b7a8d" text-anchor="start" font-weight="400">参照元</text>
+<rect x="576.0" y="140.0" width="222.0" height="190.0" rx="12" fill="#ffffff" stroke="#0854a0" stroke-width="1.4"/>
+<rect x="576.0" y="140.0" width="222.0" height="40.0" rx="12" fill="#0854a0" stroke="#0854a0" stroke-width="1.4"/>
+<text x="592.0" y="167.0" font-size="16" fill="#ffffff" text-anchor="start" font-weight="700">受注伝票</text>
+<text x="782.0" y="167.0" font-size="12.5" fill="#eaf4ff" text-anchor="end" font-weight="400" font-family="'SF Mono',Menlo,Consolas,monospace">VA01</text>
+<text x="592.0" y="206.0" font-size="11.5" fill="#6b7a8d" text-anchor="start" font-weight="400" font-family="'SF Mono',Menlo,Consolas,monospace">伝票タイプ／カテゴリ：OR</text>
+<text x="592.0" y="230.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· 価格設定の決定</text>
+<text x="592.0" y="247.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· 所要量確認</text>
+<text x="592.0" y="264.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· 納入日</text>
+<text x="592.0" y="281.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· 不完全性チェック</text>
+<rect x="592.0" y="288.0" width="190.0" height="28.0" rx="7" fill="#f7fafc" stroke="#d9e1e8" stroke-width="1"/>
+<text x="602.0" y="307.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">全体ステータス / 拒否理由</text>
+<line x1="802.0" y1="235.0" x2="830.0" y2="235.0" stroke="#0854a0" stroke-width="2.2" marker-end="url(#ar)"/>
+<text x="794.0" y="222.0" font-size="11.5" fill="#6b7a8d" text-anchor="start" font-weight="400">参照元</text>
+<rect x="834.0" y="140.0" width="222.0" height="190.0" rx="12" fill="#ffffff" stroke="#007272" stroke-width="1.4"/>
+<rect x="834.0" y="140.0" width="222.0" height="40.0" rx="12" fill="#007272" stroke="#007272" stroke-width="1.4"/>
+<text x="850.0" y="167.0" font-size="16" fill="#ffffff" text-anchor="start" font-weight="700">納入伝票</text>
+<text x="1040.0" y="167.0" font-size="12.5" fill="#eaf4ff" text-anchor="end" font-weight="400" font-family="'SF Mono',Menlo,Consolas,monospace">VL01N</text>
+<text x="850.0" y="206.0" font-size="11.5" fill="#6b7a8d" text-anchor="start" font-weight="400" font-family="'SF Mono',Menlo,Consolas,monospace">伝票タイプ／カテゴリ：LF</text>
+<text x="850.0" y="230.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· ピッキング</text>
+<text x="850.0" y="247.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· 出庫過転記 601</text>
+<text x="850.0" y="264.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· 納入ステータス</text>
+<rect x="850.0" y="288.0" width="190.0" height="28.0" rx="7" fill="#f7fafc" stroke="#d9e1e8" stroke-width="1"/>
+<text x="860.0" y="307.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">出庫ステータス</text>
+<line x1="1060.0" y1="235.0" x2="1088.0" y2="235.0" stroke="#007272" stroke-width="2.2" marker-end="url(#ar)"/>
+<text x="1052.0" y="222.0" font-size="11.5" fill="#6b7a8d" text-anchor="start" font-weight="400">参照元</text>
+<rect x="1092.0" y="140.0" width="222.0" height="190.0" rx="12" fill="#ffffff" stroke="#5b3fa8" stroke-width="1.4"/>
+<rect x="1092.0" y="140.0" width="222.0" height="40.0" rx="12" fill="#5b3fa8" stroke="#5b3fa8" stroke-width="1.4"/>
+<text x="1108.0" y="167.0" font-size="16" fill="#ffffff" text-anchor="start" font-weight="700">請求書</text>
+<text x="1298.0" y="167.0" font-size="12.5" fill="#eaf4ff" text-anchor="end" font-weight="400" font-family="'SF Mono',Menlo,Consolas,monospace">VF01</text>
+<text x="1108.0" y="206.0" font-size="11.5" fill="#6b7a8d" text-anchor="start" font-weight="400" font-family="'SF Mono',Menlo,Consolas,monospace">伝票タイプ／カテゴリ：F2</text>
+<text x="1108.0" y="230.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· 請求</text>
+<text x="1108.0" y="247.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· 転記で FI 伝票を生成</text>
+<rect x="1108.0" y="288.0" width="190.0" height="28.0" rx="7" fill="#f7fafc" stroke="#d9e1e8" stroke-width="1"/>
+<text x="1118.0" y="307.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">請求ステータス</text>
+<rect x="60.0" y="366.0" width="1220.0" height="96.0" rx="10" fill="#e6f2f2" stroke="#007272" stroke-width="1.4"/>
+<text x="78.0" y="394.0" font-size="14" fill="#007272" text-anchor="start" font-weight="700">なぜ新規に伝票を入力し直すのではなく「参照」するのか？</text>
+<text x="78.0" y="414.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">① データの一貫性：数量・単価・条件は上流から引き継がれ、二重入力によるミスを防ぎます；② 追跡可能性：どの請求書からも、その納入伝票と受注伝票へたどれる（元伝票ボタン）；③</text>
+<text x="78.0" y="431.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">ステータスの連動：納入が完了すると受注明細の納入ステータスが更新され、請求書を転記すると請求ステータスが更新されます——ステータスは「この伝票がどこまで進んだか」の答えです。</text>
+<rect x="60.0" y="478.0" width="600.0" height="108.0" rx="10" fill="#ffffff" stroke="#8d6e00" stroke-width="1.4"/>
+<text x="78.0" y="506.0" font-size="14" fill="#8d6e00" text-anchor="start" font-weight="700">変更と再決定（もう一度理解しましょう）</text>
+<text x="78.0" y="528.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">得意先や品目を変更すると、システムは品目決定、価格設定、税、所要量を再決定します。</text>
+<text x="78.0" y="545.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">教材では得意先を変更すると Information: New pricing carried</text>
+<text x="78.0" y="562.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">out（価格設定の再実行）が表示されます。</text>
+<rect x="680.0" y="478.0" width="600.0" height="108.0" rx="10" fill="#ffffff" stroke="#b3261e" stroke-width="1.4"/>
+<text x="698.0" y="506.0" font-size="14" fill="#b3261e" text-anchor="start" font-weight="700">ステップは飛ばせない（最もよくあるエラー）</text>
+<text x="698.0" y="528.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">納入がなければ（または出庫過転記をしていなければ）請求できません。在庫がなければ納入伝票を作</text>
+<text x="698.0" y="545.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">成できません（教材が示す対処：MB1C 501 で期首在庫を入力）。順序が違うのは Bug</text>
+<text x="698.0" y="562.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">ではなく、業務プロセスの順序要件です。</text>
+</svg>

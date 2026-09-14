@@ -1,0 +1,1345 @@
+{
+ "source": "SAP 培训手册内嵌 SAP GUI 截图逐张人工抄录（视觉识别，仅记录画面真实可见文字）",
+ "baseline_dir": "/Users/jason/Desktop/work/training/sap_sd_cn/assets/img",
+ "image_count": 27,
+ "method": "对每张图用视觉工具读图；先看全图，再对文字密集区域放大复核；不确定一律标注「不清楚」",
+ "entries": [
+  {
+   "n": 1,
+   "requested_path": "prep/t01/02_1_image2.png",
+   "actual_path": "prep/t01/02_1_image2.png",
+   "substituted": false,
+   "ui_language": "英文",
+   "window_title": "SAP Logon 770",
+   "toolbar_buttons": [
+    "Variable Logon（左上按钮）"
+   ],
+   "sections": [
+    {
+     "heading": "Connections",
+     "items": [
+      "Filter Items（输入框，带对话气泡图标）",
+      "下拉框：Tree View"
+     ]
+    },
+    {
+     "heading": "表格列名",
+     "items": [
+      "Name",
+      "System Description"
+     ]
+    },
+    {
+     "heading": "左侧树节点",
+     "items": [
+      "Favorites",
+      "Shortcuts",
+      "Connections"
+     ]
+    },
+    {
+     "heading": "按钮",
+     "items": [
+      "Log On"
+     ]
+    }
+   ],
+   "uncertain": []
+  },
+  {
+   "n": 2,
+   "requested_path": "prep/t01/04_1_image4.png",
+   "actual_path": "prep/t01/04_1_image4.png",
+   "substituted": false,
+   "ui_language": "英文",
+   "window_title": "System Entry Properties",
+   "sections": [
+    {
+     "heading": "选项卡",
+     "items": [
+      "Connection",
+      "Network",
+      "Code Page"
+     ]
+    },
+    {
+     "heading": "说明文字",
+     "items": [
+      "Choose the connection type and change the system parameters as required. Delete the old description if you want the system to propose a description. The \"OK\" button is activated once you have entered all required input data."
+     ]
+    },
+    {
+     "heading": "Connection Type",
+     "items": [
+      "Group/Server Selection（未选中）",
+      "Custom Application Server（已选中）"
+     ]
+    },
+    {
+     "heading": "System Connection Parameters",
+     "items": [
+      "Description: sapecc6ehp6",
+      "System ID: ERP",
+      "Instance Number: 00",
+      "SAProuter String: （空）",
+      "Application Server: 192.168.100.128"
+     ]
+    },
+    {
+     "heading": "按钮",
+     "items": [
+      "OK",
+      "Cancel",
+      "Help"
+     ]
+    }
+   ],
+   "uncertain": []
+  },
+  {
+   "n": 3,
+   "requested_path": "sd/t01/03_1_image1080.png",
+   "actual_path": "sd/t01/03_1_image1080.png",
+   "substituted": false,
+   "ui_language": "中文",
+   "window_title": "不清楚（截图为界面局部，未包含窗口标题栏）",
+   "toolbar_buttons": [
+    "绿色对勾（确认/回车）",
+    "空的输入框（带下拉箭头，右边缘被裁切）",
+    "表格右上角齿轮图标"
+   ],
+   "table": {
+    "columns": [
+     "SOrg.",
+     "名称"
+    ],
+    "rows": [
+     [
+      "（复选框未勾选）0001",
+      "销售机构 001"
+     ]
+    ],
+    "note": "仅第 1 行有数据，其下为空白行"
+   },
+   "uncertain": [
+    "窗口标题栏未出现在截图中"
+   ]
+  },
+  {
+   "n": 4,
+   "requested_path": "sd/t01/05_1_image1082.png",
+   "actual_path": "sd/t01/05_1_image1082.png",
+   "substituted": false,
+   "ui_language": "中文",
+   "window_title": "信息",
+   "status_messages": [
+    "警告:更改统计货币会导致数据不一致"
+   ],
+   "toolbar_buttons": [
+    "绿色对勾",
+    "帮助图标（问号/感叹号，具体图形不清楚）"
+   ],
+   "uncertain": [
+    "对话框底部帮助按钮的具体图形/文字不清楚"
+   ]
+  },
+  {
+   "n": 5,
+   "requested_path": "sd/t03/01_1_image1089.png",
+   "actual_path": "sd/t03/01_1_image1088.png",
+   "substituted": true,
+   "ui_language": "中文",
+   "window_title": "不清楚（IMG 树视图局部，无标题栏）",
+   "sections": [
+    {
+     "heading": "树节点（自上而下）",
+     "items": [
+      "企业结构",
+      "局部化采样组织单位",
+      "定义",
+      "财务会计",
+      "控制",
+      "后勤 - 常规",
+      "定义评估级别",
+      "定义，复制，删除，检查工厂",
+      "定义位置",
+      "定义，复制，删除，检查产品组"
+     ]
+    }
+   ],
+   "uncertain": [
+    "「局部化采样组织单位」为放大后逐字所见（两次确认）；SAP 标准中文界面此处通常另有措辞",
+    "图片底部被裁切，树的其他节点不可见"
+   ],
+   "substitution_note": "原指定文件不存在；按同目录同前缀 01_1 且 >5KB 选取 sd/t03/01_1_image1088.png 代替"
+  },
+  {
+   "n": 6,
+   "requested_path": "sd/t07/02_1_image1106.png",
+   "actual_path": "sd/t07/02_1_image1106.png",
+   "substituted": false,
+   "ui_language": "中文",
+   "window_title": "不清楚（截图为表格维护界面局部，无标题栏）",
+   "toolbar_buttons": [
+    "绿色对勾",
+    "空输入框（带下拉箭头）",
+    "保存（磁盘）图标",
+    "扳手+铅笔（工具）图标",
+    "⊖（减号）",
+    "取消",
+    "↑、↗、↳、↓ 等箭头图标"
+   ],
+   "table": {
+    "heading": "分配销售组织 - 分销渠道 - 产品组（标题左端被裁切）",
+    "columns": [
+     "SOrg.",
+     "名称",
+     "DChl",
+     "名称",
+     "组",
+     "名称",
+     "状态"
+    ],
+    "rows": [
+     [
+      "（空）",
+      "红色 *",
+      "（空）",
+      "（空）",
+      "红色 *",
+      "（空）",
+      "（空）"
+     ]
+    ],
+    "note": "全表为空行，第 1 行处于选中（蓝色高亮）；名称列与组列显示红色必填星号"
+   },
+   "uncertain": [
+    "区块标题左端被裁切，仅见后半部分"
+   ]
+  },
+  {
+   "n": 7,
+   "requested_path": "sd/t07/03_1_image1107.png",
+   "actual_path": "sd/t07/03_1_image1107.png",
+   "substituted": false,
+   "ui_language": "中文",
+   "window_title": "不清楚（截图为表格维护界面局部，无标题栏）",
+   "toolbar_buttons": [
+    "绿色对勾",
+    "空输入框（带下拉箭头）",
+    "保存（磁盘）图标",
+    "扳手+铅笔（工具）图标",
+    "⊖",
+    "取消",
+    "↑、↗、↳、↓ 等箭头图标"
+   ],
+   "table": {
+    "columns": [
+     "SOrg.",
+     "名称",
+     "DChl",
+     "名称",
+     "组",
+     "名称",
+     "状态"
+    ],
+    "rows": [
+     [
+      "C999",
+      "颐宁销售",
+      "Z1",
+      "直销",
+      "Z1",
+      "铸钢泵",
+      ""
+     ],
+     [
+      "C999",
+      "颐宁销售",
+      "Z2",
+      "批发",
+      "Z1",
+      "铸钢泵",
+      ""
+     ],
+     [
+      "C999",
+      "颐宁销售",
+      "Z1",
+      "直销",
+      "Z2",
+      "增压泵",
+      ""
+     ],
+     [
+      "C999",
+      "颐宁销售",
+      "Z2",
+      "批发",
+      "Z2",
+      "增压泵",
+      ""
+     ],
+     [
+      "（新增空行，红色 *）",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ]
+    ]
+   },
+   "uncertain": [
+    "状态列为空，未读出内容"
+   ]
+  },
+  {
+   "n": 8,
+   "requested_path": "sd/t08/03_1_image1097.png",
+   "actual_path": "sd/t08/04_1_image1113.png",
+   "substituted": true,
+   "ui_language": "中文",
+   "window_title": "编辑地址: Z001",
+   "sections": [
+    {
+     "heading": "名称",
+     "items": [
+      "称谓：（下拉，值 公司）",
+      "名称：颐宁南方销售办公室"
+     ]
+    },
+    {
+     "heading": "搜索词",
+     "items": [
+      "搜索项 1：（空）",
+      "搜索项 2：（空）"
+     ]
+    },
+    {
+     "heading": "街道地址",
+     "items": [
+      "街道/门牌号：（空）（空）",
+      "邮政编码/城市：（空）（空）",
+      "国家/地区：CN",
+      "地区：（空）"
+     ]
+    },
+    {
+     "heading": "邮政信箱地址",
+     "items": [
+      "邮政信箱：（空）",
+      "邮政编码：（空）",
+      "公司邮政编码：（空）"
+     ]
+    },
+    {
+     "heading": "通信",
+     "items": [
+      "语言：ZH 中文（下拉）",
+      "电话：（空）  分机号：（空）",
+      "移动电话：（空）  分机号：（空）",
+      "传真：（空）  分机号：（空）",
+      "电子邮件：（空）"
+     ]
+    }
+   ],
+   "uncertain": [
+    "图片底部被裁切，后半部分内容未显示"
+   ],
+   "substitution_note": "原指定文件不存在；t08 目录内无 03_1 前缀且 >5KB 的文件，取目录内最大文件 sd/t08/04_1_image1113.png 代替"
+  },
+  {
+   "n": 9,
+   "requested_path": "sd/t09/02_1_image1101.png",
+   "actual_path": "sd/t09/01_1_image1114.png",
+   "substituted": true,
+   "ui_language": "中文",
+   "window_title": "不清楚（IMG 树视图局部，无标题栏）",
+   "sections": [
+    {
+     "heading": "树节点（自上而下）",
+     "items": [
+      "企业结构",
+      "局部化采样组织单位",
+      "定义",
+      "财务会计",
+      "控制",
+      "后勤 - 常规",
+      "销售与分销",
+      "定义，复制，删除，检查销售组织",
+      "定义，复制，删除，检查分销渠道",
+      "维护销售办公室（选中/高亮）",
+      "维护销售组"
+     ]
+    }
+   ],
+   "uncertain": [
+    "「局部化采样组织单位」为放大后逐字所见"
+   ],
+   "substitution_note": "原指定文件不存在；t09 目录内 02_1 前缀的 02_1_image1118.png 仅 4348 字节（<5KB），取目录内最大文件 sd/t09/01_1_image1114.png 代替"
+  },
+  {
+   "n": 10,
+   "requested_path": "sd/t13/02_1_image1129.png",
+   "actual_path": "sd/t13/02_1_image1129.png",
+   "substituted": false,
+   "ui_language": "中文",
+   "window_title": "不清楚（截图为表格维护界面局部，无标题栏）",
+   "toolbar_buttons": [
+    "绿色对勾",
+    "空输入框（带下拉箭头）",
+    "保存（磁盘）",
+    "扳手+铅笔（工具）",
+    "⊖",
+    "取消",
+    "其他图标、↑↗↳↓ 箭头"
+   ],
+   "table": {
+    "heading": "分配销售组织/分销渠道 - 工厂",
+    "columns": [
+     "SOrg.",
+     "名称",
+     "DChCust/Mt",
+     "名称",
+     "工厂",
+     "名称 1",
+     "状态"
+    ],
+    "rows": [
+     [
+      "C999",
+      "颐宁销售",
+      "Z1",
+      "直销",
+      "P999",
+      "颐宁机械工厂",
+      ""
+     ],
+     [
+      "C999",
+      "颐宁销售",
+      "Z2",
+      "批发",
+      "P999",
+      "颐宁机械工厂",
+      ""
+     ],
+     [
+      "（新增空行 *，带下拉图标）",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ]
+    ]
+   },
+   "uncertain": [
+    "状态列内容未读出"
+   ]
+  },
+  {
+   "n": 11,
+   "requested_path": "sd/t14/03_1_image1136.png",
+   "actual_path": "sd/t14/03_1_image1136.png",
+   "substituted": false,
+   "ui_language": "中文",
+   "window_title": "不清楚（截图为配置屏幕局部，无标题栏）",
+   "toolbar_buttons": [
+    "绿色对勾",
+    "空输入框（带下拉箭头）",
+    "保存（磁盘）",
+    "扳手+铅笔（工具）",
+    "⊖",
+    "两个翻页/复制图标",
+    "取消"
+   ],
+   "sections": [
+    {
+     "heading": "运送地点",
+     "items": [
+      "（名称输入框，空）",
+      "（第二个输入框，空）"
+     ]
+    },
+    {
+     "heading": "位置",
+     "items": [
+      "国家/地区：（空）",
+      "出发地区：（空）"
+     ]
+    },
+    {
+     "heading": "时间",
+     "items": [
+      "工厂日历：（空）",
+      "工作时间：（空）"
+     ]
+    },
+    {
+     "heading": "确定时间",
+     "items": [
+      "确定装载时间  ☐ 未确定装载时间",
+      "确定拣配/包装时间  ☐ 未确定的拣配/包装时间",
+      "舍入工作天数：（空）"
+     ]
+    },
+    {
+     "heading": "表格文本名称",
+     "items": [
+      "地址文本名称：（空）",
+      "信函标题文本：（空）",
+      "文本名称页脚行：（空）",
+      "文本名称问候：（空）",
+      "文本名称SDB发送者：（空）"
+     ]
+    },
+    {
+     "heading": "打印拣配清单",
+     "items": [
+      "输出类型：（空）",
+      "消息语言：（空）",
+      "消息编号：（空）",
+      "发送时间：（空）",
+      "传输媒体：（空）",
+      "子系统：（空）"
+     ]
+    },
+    {
+     "heading": "后台处理",
+     "items": [
+      "☐ 显示信息"
+     ]
+    },
+    {
+     "heading": "其他",
+     "items": [
+      "拣配确认：（空）"
+     ]
+    }
+   ],
+   "uncertain": []
+  },
+  {
+   "n": 12,
+   "requested_path": "sd/t20/03_1_image1161.png",
+   "actual_path": "sd/t20/03_1_image1161.png",
+   "substituted": false,
+   "ui_language": "中文",
+   "window_title": "不清楚（截图为表格维护界面局部，无标题栏）",
+   "toolbar_buttons": [
+    "绿色对勾",
+    "空输入框（带下拉箭头）",
+    "保存（磁盘）",
+    "扳手+铅笔（工具）",
+    "⊖"
+   ],
+   "table": {
+    "heading": "拣配地点确定（右侧带齿轮图标）",
+    "columns": [
+     "运点",
+     "工厂",
+     "SC",
+     "库位"
+    ],
+    "rows": [
+     [
+      "Z999",
+      "P999",
+      "",
+      "003"
+     ]
+    ],
+    "note": "行首有复选框（未勾选）；其下为空白行"
+   },
+   "uncertain": []
+  },
+  {
+   "n": 13,
+   "requested_path": "sd/t21/03_1_image1113.png",
+   "actual_path": "sd/t21/03_1_image1167.png",
+   "substituted": true,
+   "ui_language": "中文",
+   "window_title": "不清楚（截图为配置屏幕局部，无标题栏）",
+   "toolbar_buttons": [
+    "绿色对勾",
+    "空输入框（带下拉箭头）",
+    "扩展字段状态（按钮）"
+   ],
+   "sections": [
+    {
+     "heading": "字段",
+     "items": [
+      "帐户组：K001（选中/高亮）"
+     ]
+    },
+    {
+     "heading": "基本信息",
+     "items": [
+      "名称：订货方-颐宁",
+      "☐ 一次性科目",
+      "输出确定过程：（空）"
+     ]
+    },
+    {
+     "heading": "字段状态（分组）",
+     "items": [
+      "基本信息",
+      "公司代码数据",
+      "销售数据"
+     ]
+    }
+   ],
+   "uncertain": [],
+   "substitution_note": "原指定文件不存在；取同目录同前缀 03_1 且 >5KB 的 sd/t21/03_1_image1167.png 代替"
+  },
+  {
+   "n": 14,
+   "requested_path": "sd/t22/02_1_image1117.png",
+   "actual_path": "sd/t22/02_1_image1179.png",
+   "substituted": true,
+   "ui_language": "中文",
+   "window_title": "选择活动：（绿色应用栏标题，右侧有菜单≡与关闭×图标）",
+   "sections": [
+    {
+     "heading": "活动（列表）",
+     "items": [
+      "维护定价过程（红框标出/高亮）",
+      "定义客户定价过程",
+      "定义单据定价过程",
+      "为订单类型指定单据定价过程",
+      "给出具发票类型分配单据定价过程",
+      "定义定价程序确定",
+      "检查定价过程的设置"
+     ]
+    }
+   ],
+   "uncertain": [
+    "列表表头仅见「活动」，左侧列标题被裁切"
+   ],
+   "substitution_note": "原指定文件不存在；取同目录同前缀 02_1 且 >5KB 的 sd/t22/02_1_image1179.png 代替"
+  },
+  {
+   "n": 15,
+   "requested_path": "sd/t29/02_1_image1206.png",
+   "actual_path": "sd/t29/01_1_image1207.png",
+   "substituted": true,
+   "ui_language": "中文",
+   "window_title": "不清楚（IMG 树视图局部，无标题栏）",
+   "sections": [
+    {
+     "heading": "树节点（自上而下）",
+     "items": [
+      "销售与分销",
+      "主数据",
+      "基本功能",
+      "科目分配/成本",
+      "收入帐户确定",
+      "检查科目分配的相关主数据（红框标出）",
+      "定义收入科目确定的相关性",
+      "定义存取顺序和科目确定类型",
+      "定义并分配科目确定过程",
+      "定义并分配科目代码",
+      "分配总账科目",
+      "收入确认",
+      "调节科目确定",
+      "现金科目确定"
+     ]
+    }
+   ],
+   "uncertain": [
+    "树中另有若干未完全显示/被裁切的节点（如 税收、业务区银行帐户分配、分配成本中心 等大致可见但不清楚）"
+   ],
+   "substitution_note": "原指定文件不存在；t29 内其余文件均 <5KB，取目录内最大文件 sd/t29/01_1_image1207.png 代替"
+  },
+  {
+   "n": 16,
+   "requested_path": "sd/t31/03_1_image1213.png",
+   "actual_path": "sd/t31/03_1_image1219.png",
+   "substituted": true,
+   "ui_language": "中文",
+   "window_title": "不清楚（截图为配置屏幕局部，无标题栏）",
+   "toolbar_buttons": [
+    "绿色对勾",
+    "空输入框（带下拉箭头）",
+    "保存（磁盘）",
+    "扳手+铅笔（工具）",
+    "⊖",
+    "翻页/复制图标",
+    "取消"
+   ],
+   "fields": [
+    [
+     "销售组织",
+     "C999  颐宁销售"
+    ],
+    [
+     "分销渠道",
+     "Z1"
+    ],
+    [
+     "产品组",
+     "Z1"
+    ],
+    [
+     "客户统计组",
+     "1   'A' 物资"
+    ],
+    [
+     "销售单据状态组",
+     "1   订单，借项凭单"
+    ],
+    [
+     "更新组",
+     "1   SIS更新：订单,交货通知,开票凭证（选中/高亮）"
+    ]
+   ],
+   "substitution_note": "原指定文件不存在；取同目录同前缀 03_1 且 >5KB 的 sd/t31/03_1_image1219.png 代替"
+  },
+  {
+   "n": 17,
+   "requested_path": "sd/t34/02_1_image1247.png",
+   "actual_path": "sd/t34/02_1_image1247.png",
+   "substituted": false,
+   "ui_language": "中文",
+   "window_title": "不清楚（截图为物料主数据创建屏幕局部，无标题栏）",
+   "toolbar_buttons": [
+    "绿色对勾",
+    "空输入框（带下拉箭头）",
+    "链接：选择视图",
+    "组织级别",
+    "数据",
+    "取消"
+   ],
+   "fields": [
+    [
+     "物料",
+     "F999-100"
+    ],
+    [
+     "行业领域",
+     "M 机械工程（下拉）"
+    ],
+    [
+     "物料类型",
+     "FERT 成品（下拉）"
+    ],
+    [
+     "变更编号",
+     "（空，输入框处于选中状态）"
+    ]
+   ],
+   "sections": [
+    {
+     "heading": "复制从...",
+     "items": [
+      "物料：（空）"
+     ]
+    }
+   ],
+   "uncertain": []
+  },
+  {
+   "n": 18,
+   "requested_path": "sd/t35/02_1_image1256.png",
+   "actual_path": "sd/t35/03_1_image1259.png",
+   "substituted": true,
+   "ui_language": "中文",
+   "window_title": "创建 价格 条件 (PR00)：快速输入",
+   "toolbar_buttons": [
+    "绿色对勾",
+    "空输入框（带下拉箭头）",
+    "其他数据/图标按钮",
+    "日历图标",
+    "取消等"
+   ],
+   "fields": [
+    [
+     "销售组织",
+     "C999 颐宁销售"
+    ],
+    [
+     "分销渠道",
+     "Z1 直销"
+    ]
+   ],
+   "table": {
+    "heading": "具有审批状态的物料",
+    "columns": [
+     "物料",
+     "描述",
+     "处",
+     "金额",
+     "单位",
+     "单位",
+     "单位",
+     "计算类型",
+     "等",
+     "有效从",
+     "失效期",
+     "删",
+     "条",
+     "等",
+     "文",
+     "排",
+     "付..",
+     "固定起息日",
+     "附.."
+    ],
+    "rows": [
+     [
+      "F999-100",
+      "铸钢泵170-230",
+      "",
+      "8,000.00",
+      "RMB",
+      "1PC",
+      "",
+      "C",
+      "",
+      "2021.01.01",
+      "9999.04.14",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     [
+      "T999-100",
+      "高速增压涡轮泵",
+      "",
+      "12,000.00",
+      "RMB",
+      "1PC",
+      "",
+      "C",
+      "",
+      "2021.01.01",
+      "9999.04.14",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     [
+      "（新增空行 *）",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ]
+    ]
+   },
+   "uncertain": [
+    "表格后半部分列名被压缩显示，部分列名只有 1-2 个字，无法确认为完整字段名"
+   ],
+   "substitution_note": "原指定文件不存在；t35 内 02_1 前缀文件仅 3642 字节（<5KB），取目录内最大文件 sd/t35/03_1_image1259.png 代替"
+  },
+  {
+   "n": 19,
+   "requested_path": "sd/t37/03_1_image1268.png",
+   "actual_path": "sd/t37/03_1_image1268.png",
+   "substituted": false,
+   "ui_language": "中文",
+   "window_title": "不清楚（截图为客户主数据销售视图局部，无标题栏）",
+   "toolbar_buttons": [
+    "绿色对勾",
+    "空输入框（带下拉箭头）",
+    "其他客户",
+    "Fashion 特定数据",
+    "取消"
+   ],
+   "fields": [
+    [
+     "客户",
+     "10000000  远东造船厂 / 大连"
+    ],
+    [
+     "销售组织",
+     "C999 颐宁销售"
+    ],
+    [
+     "分销渠道",
+     "Z1 直销"
+    ],
+    [
+     "产品组",
+     "Z1 铸钢泵"
+    ]
+   ],
+   "sections": [
+    {
+     "heading": "选项卡（可见）",
+     "items": [
+      "销售",
+      "发送",
+      "开票凭证",
+      "合作伙伴职能（选中，红色标注）"
+     ]
+    },
+    {
+     "heading": "装运",
+     "items": [
+      "交货优先级：02",
+      "☑ 订单组合",
+      "装运条件：99",
+      "交货工厂：P999",
+      "☐ 与 POD 相关",
+      "POD 的时间框架：（空）"
+     ]
+    },
+    {
+     "heading": "部分交货",
+     "items": [
+      "☐ 要求完全交货",
+      "每个项目的交货：（空）",
+      "允许部分交货：（空）",
+      "大部分交货：9",
+      "☐ 未限定容差",
+      "交货不足限度：（空）",
+      "过量交货限度：（空）"
+     ]
+    },
+    {
+     "heading": "一般运输数据",
+     "items": [
+      "运输区：（空）"
+     ]
+    }
+   ],
+   "uncertain": []
+  },
+  {
+   "n": 20,
+   "requested_path": "sd/t39/02_1_image1279.png",
+   "actual_path": "sd/t39/02_1_image1285.png",
+   "substituted": true,
+   "ui_language": "中文",
+   "window_title": "更改 客户：初始屏幕",
+   "fields": [
+    [
+     "客户",
+     "10000000  远东造船厂第三分公司"
+    ]
+   ],
+   "sections": [
+    {
+     "heading": "销售范围",
+     "items": [
+      "销售组织：C999 颐宁销售",
+      "分销渠道：Z1 直销",
+      "产品组：Z2 增压泵"
+     ]
+    },
+    {
+     "heading": "按钮",
+     "items": [
+      "所有销售范围...",
+      "客户的销售范围..."
+     ]
+    }
+   ],
+   "uncertain": [
+    "图片底部工具栏图标显示为 ✓ 与 ×，中间部分不清楚"
+   ],
+   "substitution_note": "原指定文件不存在；取同目录同前缀 02_1 且 >5KB 的 sd/t39/02_1_image1285.png 代替"
+  },
+  {
+   "n": 21,
+   "requested_path": "sd/t40/01_1_image1288.png",
+   "actual_path": "sd/t40/01_1_image1288.png",
+   "substituted": false,
+   "ui_language": "中文",
+   "window_title": "创建 报价：初始屏幕",
+   "toolbar_buttons": [
+    "绿色对勾",
+    "空输入框（带下拉箭头）",
+    "依照参考创建",
+    "销售",
+    "项目总览",
+    "订货方",
+    "取消"
+   ],
+   "fields": [
+    [
+     "报价单类型",
+     "QT"
+    ]
+   ],
+   "sections": [
+    {
+     "heading": "组织数据",
+     "items": [
+      "销售组织：C999 颐宁销售",
+      "分销渠道：Z1 直销",
+      "产品组：Z1 铸钢泵",
+      "销售办事处：（空）",
+      "销售组：（被裁切，不清楚）"
+     ]
+    }
+   ],
+   "uncertain": [
+    "图片底部被裁切，销售组之后的内容不可见"
+   ]
+  },
+  {
+   "n": 22,
+   "requested_path": "sd/t41/01_1_image1297.png",
+   "actual_path": "sd/t41/01_1_image1297.png",
+   "substituted": false,
+   "ui_language": "中文",
+   "window_title": "不清楚（截图为 SAP Easy Access 菜单树，无标题栏）",
+   "sections": [
+    {
+     "heading": "菜单/事务码（自上而下）",
+     "items": [
+      "后勤",
+      "物料管理",
+      "销售与分销",
+      "主数据",
+      "销售支持",
+      "销售",
+      "询价",
+      "报价",
+      "VA21 - 创建",
+      "VA22 - 更改",
+      "VA23 - 显示",
+      "后继功能",
+      "V-01 - 订单（选中/高亮）",
+      "VA26 - 后续活动",
+      "VA44 - 计算附加费",
+      "VA88 - 结算",
+      "DP90 - 资源相关发票凭证"
+     ]
+    }
+   ],
+   "uncertain": [
+    "树中部分节点的层级归属无法完全确认"
+   ]
+  },
+  {
+   "n": 23,
+   "requested_path": "sd/t42/02_1_image1305.png",
+   "actual_path": "sd/t42/02_1_image1305.png",
+   "substituted": false,
+   "ui_language": "中文",
+   "window_title": "外向发货 80000000 更改: 概览",
+   "toolbar_buttons": [
+    "绿色对勾",
+    "空输入框（带下拉箭头）",
+    "若干图标按钮",
+    "过账发货",
+    "取消"
+   ],
+   "fields": [
+    [
+     "外向交货",
+     "80000000"
+    ],
+    [
+     "凭证日期",
+     "2021.04.15"
+    ],
+    [
+     "送达方",
+     "10000000  远东造船厂 / 枫桥路 / 116088 辽宁，大连"
+    ],
+    [
+     "按钮",
+     "基础值（左侧带图标）"
+    ]
+   ],
+   "sections": [
+    {
+     "heading": "选项卡",
+     "items": [
+      "项目概览",
+      "拣配（选中/红框）",
+      "装载",
+      "传输",
+      "状态概览",
+      "货物移动数据"
+     ]
+    },
+    {
+     "heading": "拣配",
+     "items": [
+      "拣配日期/时间：2021.04.15 00:0…",
+      "全部拣配状态：A 尚未拣配",
+      "仓库号：（空）",
+      "综合 WM 状态：不需要WM调拨定单"
+     ]
+    }
+   ],
+   "table": {
+    "heading": "全部项目",
+    "columns": [
+     "项目",
+     "物料",
+     "工厂",
+     "库位",
+     "需求段",
+     "交货数量",
+     "单.",
+     "拣配数量",
+     "单.",
+     "批次",
+     "批..",
+     "W",
+     "备料日期",
+     "备..",
+     "评估类型",
+     "描述"
+    ],
+    "rows": [
+     [
+      "10",
+      "F999-100",
+      "P999",
+      "003",
+      "",
+      "120",
+      "PC",
+      "120（红框标出）",
+      "PC",
+      "",
+      "A",
+      "",
+      "2021.04.15 00:0…",
+      "",
+      "",
+      "铸钢泵170-230"
+     ]
+    ]
+   },
+   "uncertain": [
+    "表格中部分列名被压缩为 2 个字符，无法确认完整字段名"
+   ]
+  },
+  {
+   "n": 24,
+   "requested_path": "sd/t43/01_1_image1307.png",
+   "actual_path": "sd/t43/01_1_image1307.png",
+   "substituted": false,
+   "ui_language": "中文",
+   "window_title": "不清楚（截图为开票到期清单局部，无标题栏）",
+   "toolbar_buttons": [
+    "绿色对勾",
+    "空输入框（带下拉箭头）",
+    "保存（磁盘）",
+    "铅笔",
+    "≡",
+    "到期出具发票清单",
+    "开票凭证概览"
+   ],
+   "sections": [
+    {
+     "heading": "缺失数据",
+     "items": [
+      "开票类型：（下拉，空）",
+      "提供服务：（空）",
+      "出具发票日期：（空，选中/高亮）",
+      "定价日期：（空）"
+     ]
+    }
+   ],
+   "table": {
+    "heading": "将被处理的凭证",
+    "columns": [
+     "（选择列）",
+     "凭证",
+     "项目",
+     "SD 凭证类别",
+     "处理状态",
+     "开.."
+    ],
+    "rows": [
+     [
+      "◉（单选选中）",
+      "80000000",
+      "",
+      "",
+      "",
+      ""
+     ]
+    ]
+   },
+   "uncertain": [
+    "表头最后两列列名被裁切"
+   ]
+  },
+  {
+   "n": 25,
+   "requested_path": "sd/t44/01_1_image1310.png",
+   "actual_path": "sd/t44/01_1_image1310.png",
+   "substituted": false,
+   "ui_language": "中文",
+   "window_title": "不清楚（截图为出具发票凭证屏幕局部，无标题栏）",
+   "toolbar_buttons": [
+    "绿色对勾",
+    "空输入框（带下拉箭头）",
+    "≡",
+    "保存（磁盘）",
+    "图表/报表",
+    "开票项目",
+    "会计",
+    "搜索（放大镜）",
+    "…",
+    "旗帜",
+    "取消"
+   ],
+   "fields": [
+    [
+     "出具发票凭证",
+     "90000000"
+    ]
+   ],
+   "sections": [
+    {
+     "heading": "更多的搜索标准",
+     "items": [
+      "凭证编号：（空）",
+      "公司代码：（空）",
+      "财年：（空）",
+      "参考：（空）"
+     ]
+    },
+    {
+     "heading": "按钮",
+     "items": [
+      "搜索"
+     ]
+    }
+   ],
+   "uncertain": [
+    "工具栏图标的具体含义未逐一确认"
+   ]
+  },
+  {
+   "n": 26,
+   "requested_path": "sd/t46/01_1_image1314.png",
+   "actual_path": "sd/t46/01_1_image1314.png",
+   "substituted": false,
+   "ui_language": "中文",
+   "window_title": "不清楚（截图为销售订单清单选择屏幕局部，无标题栏）",
+   "toolbar_buttons": [
+    "绿色对勾",
+    "空输入框（带下拉箭头）",
+    "显示变体",
+    "进一步的选择标准",
+    "机构数据",
+    "合作伙伴功能"
+   ],
+   "fields": [
+    [
+     "售达方",
+     "（空）"
+    ],
+    [
+     "物料",
+     "（空）"
+    ],
+    [
+     "采购订单编号",
+     "（空）"
+    ]
+   ],
+   "sections": [
+    {
+     "heading": "销售订单数据",
+     "items": [
+      "凭证日期：2021.04.1  至  2021.04.15"
+     ]
+    },
+    {
+     "heading": "选择标准",
+     "items": [
+      "○ 未清销售订单（未选中）",
+      "☐ 我的订单（未勾选）",
+      "● 所有订单（已选中）"
+     ]
+    }
+   ],
+   "uncertain": []
+  },
+  {
+   "n": 27,
+   "requested_path": "sd/t47/01_1_image1316.png",
+   "actual_path": "sd/t47/01_1_image1316.png",
+   "substituted": false,
+   "ui_language": "中文",
+   "window_title": "不清楚（截图为追溯/分析选择屏幕局部，无标题栏）",
+   "toolbar_buttons": [
+    "绿色对勾",
+    "空输入框（带下拉箭头）",
+    "保存（磁盘）",
+    "时钟/历史图标",
+    "执行（箭头）",
+    "⊖",
+    "选择版本",
+    "用户设置",
+    "标准追溯",
+    "取消"
+   ],
+   "fields": [
+    [
+     "售达方",
+     "（空）  到（空）"
+    ],
+    [
+     "物料",
+     "F999-100  到（空）"
+    ],
+    [
+     "销售组织",
+     "C999  到（空）"
+    ],
+    [
+     "分销渠道",
+     "Z1  到（空）"
+    ],
+    [
+     "产品组",
+     "Z1  到（空）"
+    ],
+    [
+     "分析期间",
+     "期间：2021.02  到  2021.04"
+    ],
+    [
+     "参数",
+     "分析货币：（空）",
+     "例外：（空）"
+    ]
+   ],
+   "uncertain": [
+    "「标准追溯」等按钮文字存在被裁切/辨认风险，已按所见抄录"
+   ]
+  }
+ ]
+}

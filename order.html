@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>受注伝票処理 · SAP SD トレーニングコース</title>
+<meta name="description" content="SAP SD（販売管理）トレーニングコース：概念 → 組織構造 → マスタ → 価格設定 → エンドツーエンドプロセス（引合・見積・受注・納入・出荷・請求・入金）→ 設定 → 分析。各段階に実際の SAP GUI システムのスクリーンショット（中国語インターフェース）と自作図のフロー図、構造図、マインドマップを用意します。">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/sd.css">
+</head>
+<body>
+<header class="site">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html"><span class="logo">SD</span><span class="txt">トレーニングコース</span></a>
+    <nav class="main">
+      <a href="index.html" title="コースマップと学習ルート">ホーム</a>
+      <a href="concept.html" title="SD とは何か、3 つの概念レイヤ、5 大伝票">基本概念</a>
+      <a href="org.html" title="企業構造 / 販売構造 / 出荷構造">組織</a>
+      <a href="master.html" title="得意先マスタ / 品目の販売ビュー / 条件レコード">マスタ</a>
+      <a href="pricing.html" title="条件技術の4要素と計算スキーマ決定">価格設定</a>
+      <a href="flow.html" title="エンドツーエンド O2C のフロー図と伝票フロー">プロセス</a>
+      <a class="active" href="order.html" title="引合 · 見積 · 受注伝票（部分的な詳細解説）">受注伝票</a>
+      <a href="delivery.html" title="出荷伝票 · ピッキング · 出庫過転記">納入</a>
+      <a href="billing.html" title="請求書 · FI への転記 · 入金">請求</a>
+      <a href="analysis.html" title="伝票フロー／受注一覧／販売分析">データ分析</a>
+      <a href="config.html" title="SPRO 設定ルート（48 タスク）">設定</a>
+      <a href="practice.html" title="実習タスクと完成基準">実習</a>
+      <a href="instructor.html" title="採点ポイント / 必ず問う質問 / 解答">講師</a>
+      <a href="worksheet.html" title="記入表（印刷可能）">受講者</a>
+      <a href="quiz.html" title="30 問のセルフチェック（合格 75%）">セルフチェックテスト</a>
+      <a href="glossary.html" title="中国語・英語対照 / T-code クイックリファレンス">用語</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+<main class="page">
+<article>
+<p class="breadcrumb"><a href="index.html">ホーム</a> / <a href="flow.html">プロセス</a> / <span>受注伝票</span></p>
+<h1>プロセス ① 受注伝票処理（部分詳解）</h1>
+<p class="kicker">引合 VA11 · 見積 VA21 · 受注伝票 VA01 · 参照登録 · 所要量確認 · ステータス</p>
+<div class="toc"><a href="#pos">1. 3 つの先行伝票の位置</a><a href="#quot">2. 見積：まず得意先に価格を提示する</a><a href="#order">3. 受注伝票：見積を参照して登録</a><a href="#fields">4. 受注画面の項目ごとの読み方</a><a href="#stock">5. 在庫が不足したらどうするか</a><a href="#after">6. 保存後に何を見るか</a><a href="#check">7. 練習とセルフチェック</a></div>
+<h2 id="pos">1. 3 つの先行伝票の位置づけ</h2>
+<p>受注伝票は必ずしも引合/見積から来る必要はありませんが、「参照登録」が標準的なやり方です：データを再入力せずに済み、出所まで追跡できます。</p>
+<figure class="dia"><a class="zoom" href="assets/diagrams/doc-flow.svg"><img src="assets/diagrams/doc-flow.svg" alt="伝票フロー構造図" loading="lazy"></a><figcaption><span class="n">フロー図</span><span class="cap">引合 → 見積 → 受注伝票 → 納入 → 請求書。いずれも前の伝票を参照して作成する</span><span class="src">当サイト自作の SVG</span></figcaption></figure>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>伝票</th><th>T-code</th><th>いつ使うか</th><th>教材のシナリオ</th></tr></thead><tbody><tr><td>引合 <code>VA11</code></td><td>IN</td><td>得意先が問い合わせているだけで、まだ購入は確定していない</td><td>教材ではステップごとの実演がないため、当サイトで標準プロセスに沿って説明を補足</td></tr><tr><td>見積 <code>VA21</code></td><td>QT</td><td>正式な価格提示。有効期間を含められる</td><td>教材タスク 40：远东造船厂向けに铸钢泵 170-230 を 30 件見積もる</td></tr><tr><td>受注伝票 <code>VA01</code></td><td>OR</td><td>得意先が注文を確定する</td><td>教材タスク 41：見積をひな形として正式な受注伝票を作成</td></tr></tbody></table></div>
+<div class="note ref"><span class="t">「参照」の 3 つの入口</span><ol><li>見積で「後続機能 → V-01 受注」をクリック（教材で使っているのはこのルート）；</li><li><code>VA01</code> で受注タイプを入力し、「参照」エリアに見積番号を入力して Enter；</li><li>一覧（<code>VA25</code> 見積一覧）で選択してから後続伝票を登録します。</li></ol></div>
+<h2 id="quot">2. 見積：まず得意先に価格を提示</h2>
+<p>教材タスク 40「見積の登録」のシナリオ：远东造船厂が<b>铸钢泵 170-230 を 30 件</b>購入したいと考え、販売組織が先に見積を出します。</p>
+<div class="pathline" data-copy="后勤 → 销售和分销 → 销售 → 报价 → VA21-创建"><b>教材のメニューパス（見積の登録）</b>ロジスティクス → 販売管理 → 販売 → 見積 → VA21-登録</div><div class="pathzh"><b>原教材の中国語パス</b><code>后勤 → 销售和分销 → 销售 → 报价 → VA21-创建</code></div>
+<figure class="shot"><a class="zoom" href="assets/img/sd/t40/01_1_image1288.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t40/01_1_image1288.png" width="664" height="309" alt="VA21 見積の登録：見積タイプ QT、組織データは販売組織 C999 颐宁销售 / 流通チャネル Z1 直販 / 製品部門 Z1 铸钢泵" loading="lazy"></a><figcaption><span class="n">画面 1</span><span class="cap">VA21 見積の登録：見積タイプ QT、組織データは販売組織 C999 颐宁销售 / 流通チャネル Z1 直販 / 製品部門 Z1 铸钢泵</span><span class="src">教材《S4.docx》・SD タスク 40 見積の登録</span></figcaption></figure>
+<div class="shot-grid"><figure class="shot narrow"><a class="zoom" href="assets/img/sd/t40/02_2_image1290.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t40/02_2_image1290.png" width="154" height="15" alt="品目と数量を入力する（見積の明細行）" loading="lazy"></a><figcaption><span class="n">画面 2</span><span class="cap">品目と数量を入力する（見積の明細行）</span><span class="src">教材《S4.docx》SD モジュール · image1290.png</span></figcaption></figure><figure class="shot"><a class="zoom" href="assets/img/sd/t40/03_1_image1291.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t40/03_1_image1291.png" width="882" height="439" alt="システムが価格（条件レコードから）と明細情報を取得する" loading="lazy"></a><figcaption><span class="n">画面 3</span><span class="cap">システムが価格（条件レコードから）と明細情報を取得する</span><span class="src">教材《S4.docx》SD モジュール · image1293.png</span></figcaption></figure></div>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>見積画面の重要項目（教材環境での実測値）</th><th>概要</th></tr></thead><tbody><tr><td>見積伝票タイプ</td><td><code>QT</code>（Quotation）</td></tr><tr><td>組織データ</td><td>C999 颐宁销售 / Z1 直販 / Z1 铸钢泵 —— 販売エリアがどの計算スキーマと条件レコードを使うかを決めます</td></tr><tr><td>品目と数量</td><td>F999-100 铸钢泵 170〜230</td></tr><tr><td>価格</td><td>条件レコード PR00 から取得される（8,000.00 RMB／PC）。手入力ではない</td></tr></tbody></table></div>
+<h2 id="order">3. 受注伝票：見積を参照して登録</h2>
+<p>得意先の確認後、見積から受注伝票へ進みます。教材のパスは「<b>ロジスティクス → 販売管理 → 販売 → 見積 → 後続機能 → V-01-受注</b>」で、その後、画面で「<b>参照して登録</b>」をクリックします。</p>
+<div class="pathline" data-copy="后勤 → 销售和分销 → 销售 → 报价 → 后继功能 → V-01-订单"><b>教材のメニューパス（受注伝票の登録）</b>ロジスティクス → 販売管理 → 販売 → 見積 → 後続機能 → V-01-受注</div><div class="pathzh"><b>原教材の中国語パス</b><code>后勤 → 销售和分销 → 销售 → 报价 → 后继功能 → V-01-订单</code></div>
+<figure class="shot"><a class="zoom" href="assets/img/sd/t41/01_1_image1297.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t41/01_1_image1297.png" width="338" height="409" alt="見積を参照して受注伝票を登録（後続機能 → V-01 受注）" loading="lazy"></a><figcaption><span class="n">画面 4</span><span class="cap">見積を参照して受注伝票を登録（後続機能 → V-01 受注）</span><span class="src">教材《S4.docx》・SD タスク 41 受注伝票の登録</span></figcaption></figure>
+<div class="shot-grid"><figure class="shot"><a class="zoom" href="assets/img/sd/t41/02_1_image1299.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t41/02_1_image1299.png" width="550" height="599" alt="「参照して登録」をクリック——見積のデータを受注伝票へ引き継ぐ" loading="lazy"></a><figcaption><span class="n">画面 5</span><span class="cap">「参照して登録」をクリック——見積のデータを受注伝票へ引き継ぐ</span><span class="src">教材《S4.docx》SD モジュール · image1299.png</span></figcaption></figure><figure class="shot"><a class="zoom" href="assets/img/sd/t41/03_1_image1300.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t41/03_1_image1300.png" width="651" height="390" alt="受注画面：ヘッダ（受注タイプ OR、受注先、販売エリア）+ 明細行（品目、数量、納入日）" loading="lazy"></a><figcaption><span class="n">画面 6</span><span class="cap">受注画面：ヘッダ（受注タイプ OR、受注先、販売エリア）+ 明細行（品目、数量、納入日）</span><span class="src">教材《S4.docx》SD モジュール · image1300.png</span></figcaption></figure></div>
+<div class="note tip"><span class="t">参照登録で何が引き継がれるか</span>得意先、品目、数量、価格条件、条件などがすべて引き継がれ、変更することもできます。引き継いだ後に得意先を変更すると、システムは価格設定の再実行を促します（教材では <b>Information: New pricing carried out</b> が表示されました）——価格は得意先に依存するためです（条件レコードのキーに得意先が含まれます）。</div>
+<h2 id="fields">4. 受注画面の項目ごとの読み方（ヘッダ → 明細 → ステータス → 条件）</h2>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>エリア</th><th>項目</th><th>意味／出所</th></tr></thead><tbody><tr><td>ヘッダ</td><td>受注タイプ</td><td>この受注伝票がどう流れるかを決定（教材では <code>OR</code> 標準受注伝票）</td></tr><tr><td>ヘッダ</td><td>販売エリア（販売組織 / 流通チャネル / 製品部門）</td><td>得意先マスタから引き継がれ、計算スキーマと条件レコードの範囲を決定</td></tr><tr><td>ヘッダ</td><td>受注先／出荷先／請求先／支払先</td><td>4 つのパートナ役割。出荷先が納入先を決定</td></tr><tr><td>ヘッダ</td><td>得意先参照 / 購買発注番号</td><td>得意先の PO 番号。照合に使用（現場で最も入力を求められる）</td></tr><tr><td>ヘッダ</td><td>受注日 / 要求納入日</td><td>業務上の希望日（システムが確定した日付とは異なります）</td></tr><tr><td>明細</td><td>品目 + 数量 + 販売単位</td><td>明細カテゴリは「伝票タイプ + 品目（明細カテゴリグループ）」で決定されます</td></tr><tr><td>明細</td><td>プラント</td><td>どのプラントから出荷するかを決定（品目マスタ＋輸送条件から導出）</td></tr><tr><td>明細</td><td>納入日 / 確認数量</td><td>所要量確認（ATP）の結果 —— <b>業務で本当に見るべき日付</b></td></tr><tr><td>明細</td><td>条件（価格）</td><td>計算スキーマの行ごとの結果：単価、割引、税、小計（正味価額）</td></tr><tr><td>ステータス</td><td>全体ステータス / 納入ステータス / 請求ステータス</td><td>この伝票がどこまで進んだかを判断</td></tr></tbody></table></div>
+<div class="note info"><span class="t">まずどの項目を見る？</span>現場で問題に対処するときの順序：<b>ステータス → 納入日/確認数量 → 条件（価格）→ 明細カテゴリ</b>。価格に問題があるときだけ条件タブを見ます。納期に問題があるときは確認タブを見ます。</div>
+<h2 id="stock">5. 在庫不足のときどうするか（教材の実際のメッセージ）</h2>
+<figure class="shot"><a class="zoom" href="assets/img/sd/t41/04_1_image1301.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t41/04_1_image1301.png" width="1147" height="619" alt="教材タスク 41 第 4 ステップ：システムが利用可能在庫なしと表示 → 「继续」をクリック。MB1C 501 の発注参照なし入庫で期首在庫を補充することを推奨" loading="lazy"></a><figcaption><span class="n">画面 7</span><span class="cap">教材タスク 41 第 4 ステップ：システムが利用可能在庫なしと表示 → 「继续」をクリック。MB1C 501 の発注参照なし入庫で期首在庫を補充することを推奨</span><span class="src">教材《S4.docx》・SD タスク 41 受注伝票の登録</span></figcaption></figure>
+<div class="box warn"><b class="t">ここには2つの要点があります</b><ol><li><b>所要量確認（ATP）は保存を阻止しない</b>：標準では確認日を示すだけ。保存を阻止するかどうかは設定によります（多くの企業では「納入時に厳格にチェック」と設定したり、重要得意先にブロックを追加したりします）。</li><li><b>在庫の補充には正しい移動タイプを使う</b>：教材では <code>MB1C</code> + 移動タイプ <b>501</b>（発注伝票なしの入庫）期首在庫を入力します。生産入庫は通常 101、購買入庫も（購買発注に対して）101 です。</li></ol><p>移動タイプは「この在庫変動をどの業務として扱うか」を決定します。間違えると原価やレポートに影響します。</p></div>
+<figure class="shot"><a class="zoom" href="assets/img/sd/t48/25_1_image1384.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t48/25_1_image1384.png" width="423" height="340" alt="教材タスク 48 第 23 ステップ：MB1C 501 で期首在庫を入力——教育環境で「VL01N で出荷伝票を作成できない」を解決する方法" loading="lazy"></a><figcaption><span class="n">画面 8</span><span class="cap">教材タスク 48 第 23 ステップ：MB1C 501 で期首在庫を入力——教育環境で「VL01N で出荷伝票を作成できない」を解決する方法</span><span class="src">教材《S4.docx》・SD タスク 48 貸借対照表を実行</span></figcaption></figure>
+<h2 id="after">6. 保存後に何を見るか</h2>
+<ol class="steps"><li>受注番号を取得します（これが以降すべての工程の入口です）。</li><li>受注伝票のヘッダに戻ります：全体ステータス、明細ステータス（納入ステータス／請求ステータス）。</li><li>「環境 → 伝票フローの照会」：受注伝票が伝票フローに入ったことを確認します（その後、納入と請求書が生成されます）。</li><li><code>VA05</code> 受注一覧：自分の一覧に表示されることを確認します（教材タスク 46）。</li><li>MTO シナリオの場合：<code>MD04</code> で所要量が生成済みかを確認します（当サイトの<a href="flow.html">プロセスページ</a>の統合ポイント）。</li></ol>
+<h2 id="check">7. 練習とセルフチェック</h2>
+<div class="box ok"><b class="t">セルフチェックの質問</b><ol><li>なぜ受注伝票で価格と得意先住所が自動的に表示されるのですか？（ヒント：マスタ + 設定）</li><li>「要求納入日」と「納入日の確定」のうち、システムが算出するのはどちらですか？</li><li>受注伝票の保存時に可用在庫なしと表示されたら、業務ではどうすべきですか？技術的な対処は何ですか？</li><li>受注伝票で得意先を変更したとき、なぜ再価格設定が必要ですか？</li></ol></div>
+<ol class="steps"><li>次ページ：<a href="delivery.html"><b>納入</b></a> —— 実際に商品を出荷します。</li><li>実習タスク：<a href="practice.html">タスク 2 見積 → 受注</a>。</li></ol>
+</article>
+</main>
+</div>
+
+<footer class="site">
+  <div class="inner">
+    <div class="cols">
+      <div>
+<h5>SAP SD トレーニングコース</h5>
+<p>販売管理 · 概念からプロセスへ · 全体から部分へ</p>
+      </div>
+      <div>
+<h5>コースセクション</h5>
+<p><a href="concept.html">概念</a> · <a href="org.html">組織</a> · <a href="master.html">マスタ</a> ·
+<a href="pricing.html">価格設定</a> · <a href="flow.html">プロセス</a> · <a href="config.html">設定</a></p>
+      </div>
+      <div>
+<h5>授業用付属資料</h5>
+<p><a href="practice.html">実習タスク</a> · <a href="instructor.html">講師用</a> ·
+<a href="worksheet.html">受講者用</a> · <a href="quiz.html">セルフチェックテスト</a> ·
+<a href="glossary.html">用語集</a></p>
+      </div>
+      <div>
+<h5>ひと言の免責</h5>
+<p>スクリーンショットは教材ドキュメントの実際の SAP GUI 画面（中国語インターフェース）。図と表は当サイトの自作です。
+標準値はリリース/業界ソリューションによって異なります。ページに記載の確認方法をご自身のシステムで確認してください。</p>
+      </div>
+    </div>
+<p class="copy">© <span data-year>2026</span> SAP SD トレーニングコース · 静的サイト、オフラインで利用可能</p>
+  </div>
+</footer>
+<script src="assets/main.js"></script>
+<script src="assets/quiz.js"></script>
+<script src="assets/sd.js"></script>
+</body>
+</html>

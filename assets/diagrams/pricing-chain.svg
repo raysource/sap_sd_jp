@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1340 900" width="1340" height="900" role="img" aria-label="条件技術と計算スキーマ決定（構造図）" font-family="'PingFang SC','Hiragino Sans GB','Noto Sans CJK SC','Microsoft YaHei',sans-serif">
+<title>条件技術と計算スキーマ決定（構造図）</title>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0a6ed1"/></marker><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#007272"/></marker><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ffffff"/></marker></defs>
+<rect width="1340" height="900" fill="#ffffff"/>
+<text x="40.0" y="48.0" font-size="20" fill="#1d2d3e" text-anchor="start" font-weight="700">価格設定の 4 層構造：条件テーブル → アクセス順序 → 条件タイプ → 計算スキーマ</text>
+<text x="40.0" y="70.0" font-size="13" fill="#6b7a8d" text-anchor="start" font-weight="400">「価格はどこから来るのか」は SD で最もよく聞かれる質問です。この 4 層がそれに答え、5 番目のステップが「どのスキーマを使うか」を決めます（当サイト自作図）</text>
+<rect x="60.0" y="108.0" width="560.0" height="118.0" rx="10" fill="#ffffff" stroke="#0a6ed1" stroke-width="1.4"/>
+<rect x="60.0" y="108.0" width="4.5" height="118.0" rx="2" fill="#0a6ed1" stroke="#0a6ed1" stroke-width="1.4"/>
+<circle cx="84.0" cy="132.0" r="12" fill="#0a6ed1"/><text x="84.0" y="136.3" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="700">1</text>
+<text x="106.0" y="137.0" font-size="16" fill="#0a6ed1" text-anchor="start" font-weight="700">条件テーブル Condition Table</text>
+<text x="78.0" y="160.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">「具体的な価格」を保存します。行 = キーの組み合わせ（得意先／品目／販売組織…）、値 =</text>
+<text x="78.0" y="177.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">金額またはパーセント。</text>
+<text x="78.0" y="214.0" font-size="11" fill="#6b7a8d" text-anchor="start" font-weight="400">教材シナリオ：PR00 のアクセス順序には「承認ステータスを持つ品目」などのステップが含まれます</text>
+<rect x="60.0" y="242.0" width="560.0" height="118.0" rx="10" fill="#ffffff" stroke="#007272" stroke-width="1.4"/>
+<rect x="60.0" y="242.0" width="4.5" height="118.0" rx="2" fill="#007272" stroke="#007272" stroke-width="1.4"/>
+<circle cx="84.0" cy="266.0" r="12" fill="#007272"/><text x="84.0" y="270.3" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="700">2</text>
+<text x="106.0" y="271.0" font-size="16" fill="#007272" text-anchor="start" font-weight="700">アクセス順序 Access Sequence</text>
+<text x="78.0" y="294.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">複数の条件テーブルを優先順位順に並べます。システムは最初のステップから検索し、見つかっ</text>
+<text x="78.0" y="311.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">た時点で停止します（見つからない場合のみ次へ進みます）。</text>
+<text x="78.0" y="348.0" font-size="11" fill="#6b7a8d" text-anchor="start" font-weight="400">意味：まずその得意先専用の価格を探し、次にその品目の一般価格を探す → …</text>
+<rect x="60.0" y="376.0" width="560.0" height="118.0" rx="10" fill="#ffffff" stroke="#8d6e00" stroke-width="1.4"/>
+<rect x="60.0" y="376.0" width="4.5" height="118.0" rx="2" fill="#8d6e00" stroke="#8d6e00" stroke-width="1.4"/>
+<circle cx="84.0" cy="400.0" r="12" fill="#8d6e00"/><text x="84.0" y="404.3" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="700">3</text>
+<text x="106.0" y="405.0" font-size="16" fill="#8d6e00" text-anchor="start" font-weight="700">条件タイプ Condition Type</text>
+<text x="78.0" y="428.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">価格、割引、運賃、税…はいずれも条件タイプです。条件タイプがアクセス順序、計算ルール、</text>
+<text x="78.0" y="445.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">勘定キーを導きます。</text>
+<text x="78.0" y="482.0" font-size="11" fill="#6b7a8d" text-anchor="start" font-weight="400">PR00 = 販売価格 / MWST = 売上税 / K004 系の割引と追加料金</text>
+<rect x="60.0" y="510.0" width="560.0" height="118.0" rx="10" fill="#ffffff" stroke="#5b3fa8" stroke-width="1.4"/>
+<rect x="60.0" y="510.0" width="4.5" height="118.0" rx="2" fill="#5b3fa8" stroke="#5b3fa8" stroke-width="1.4"/>
+<circle cx="84.0" cy="534.0" r="12" fill="#5b3fa8"/><text x="84.0" y="538.3" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="700">4</text>
+<text x="106.0" y="539.0" font-size="16" fill="#5b3fa8" text-anchor="start" font-weight="700">計算スキーマ Pricing Procedure</text>
+<text x="78.0" y="562.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">条件タイプをステップ順に1つの表に並べます：ステップ → 条件タイプ → 計算タイプ → 勘定キー</text>
+<text x="78.0" y="579.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400"> → 小計。</text>
+<text x="78.0" y="616.0" font-size="11" fill="#6b7a8d" text-anchor="start" font-weight="400">教材のシナリオ：RVAA01「標準」はシステムの定義済み設定で、コースで使用する計算スキーマ</text>
+<line x1="620.0" y1="167.0" x2="660.0" y2="167.0" stroke="#6b7a8d" stroke-width="1.6" marker-end="url(#ar)"/>
+<line x1="620.0" y1="301.0" x2="660.0" y2="301.0" stroke="#6b7a8d" stroke-width="1.6" marker-end="url(#ar)"/>
+<line x1="620.0" y1="435.0" x2="660.0" y2="435.0" stroke="#6b7a8d" stroke-width="1.6" marker-end="url(#ar)"/>
+<text x="668.0" y="140.0" font-size="12" fill="#6b7a8d" text-anchor="start" font-weight="400">階層ごとの参照：条件タイプはアクセス順序を参照し、</text>
+<text x="668.0" y="158.0" font-size="12" fill="#6b7a8d" text-anchor="start" font-weight="400">計算スキーマは条件タイプを参照</text>
+<text x="668.0" y="274.0" font-size="12" fill="#6b7a8d" text-anchor="start" font-weight="400">アクセス順序は条件テーブルを参照</text>
+<text x="668.0" y="408.0" font-size="12" fill="#6b7a8d" text-anchor="start" font-weight="400">スキーマに勘定キーがある → 転記勘定を決定する</text>
+<rect x="660.0" y="108.0" width="620.0" height="250.0" rx="11" fill="#e3f0fa" stroke="#0a6ed1" stroke-width="1.4"/>
+<text x="680.0" y="136.0" font-size="15" fill="#0854a0" text-anchor="start" font-weight="700">第 5 層：計算スキーマ決定（「どのスキーマを使うか」を決定）</text>
+<rect x="680.0" y="164.0" width="200.0" height="34.0" rx="8" fill="#ffffff" stroke="#0a6ed1" stroke-width="1.2"/>
+<text x="692.0" y="186.0" font-size="12.5" fill="#0854a0" text-anchor="start" font-weight="700">販売エリア</text>
+<text x="896.0" y="179.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">販売組織 + 流通チャネル + 製品部門</text>
+<rect x="680.0" y="210.0" width="200.0" height="34.0" rx="8" fill="#ffffff" stroke="#0a6ed1" stroke-width="1.2"/>
+<text x="692.0" y="232.0" font-size="12.5" fill="#0854a0" text-anchor="start" font-weight="700">得意先計算スキーマ</text>
+<text x="896.0" y="225.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">得意先マスタの「販売ビュー → 価格設定」にある項目（例：1 標準）</text>
+<rect x="680.0" y="256.0" width="200.0" height="34.0" rx="8" fill="#ffffff" stroke="#0a6ed1" stroke-width="1.2"/>
+<text x="692.0" y="278.0" font-size="12.5" fill="#0854a0" text-anchor="start" font-weight="700">伝票計算スキーマ</text>
+<text x="896.0" y="271.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">販売伝票タイプの価格設定項目（例：A 標準受注）</text>
+<text x="680.0" y="310.0" font-size="11.5" fill="#0854a0" text-anchor="start" font-weight="400">3 つのキー → 唯一の計算スキーマ（RVAA01）を決定 → システムはそれに従い明細ごとに価格を計算して転記します</text>
+<text x="680.0" y="332.0" font-size="11" fill="#6b7a8d" text-anchor="start" font-weight="400" font-family="'SF Mono',Menlo,Consolas,monospace">IMG：販売管理 → 基本機能 → 価格設定 → 価格設定管理 → 計算スキーマの定義と割当</text>
+<rect x="660.0" y="376.0" width="620.0" height="232.0" rx="11" fill="#e6f2ec" stroke="#177245" stroke-width="1.4"/>
+<text x="680.0" y="404.0" font-size="15" fill="#177245" text-anchor="start" font-weight="700">関連：勘定設定（収益をどの勘定に記録するか）</text>
+<text x="680.0" y="428.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">請求書の転記時には会計伝票を生成します。販売収益勘定は固定ではなく、3</text>
+<text x="680.0" y="445.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">つのキーによるテーブル検索（VKOA）で導出します：</text>
+<rect x="680.0" y="470.0" width="190.0" height="36.0" rx="8" fill="#ffffff" stroke="#177245" stroke-width="1.2"/>
+<text x="690.0" y="493.0" font-size="12" fill="#177245" text-anchor="start" font-weight="700">勘定キー Account Key</text>
+<text x="886.0" y="486.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">計算スキーマの各ステップの勘定キー。たとえば ERL = 収益</text>
+<rect x="680.0" y="514.0" width="190.0" height="36.0" rx="8" fill="#ffffff" stroke="#177245" stroke-width="1.2"/>
+<text x="690.0" y="537.0" font-size="12" fill="#177245" text-anchor="start" font-weight="700">品目の勘定割当グループ</text>
+<text x="886.0" y="530.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">品目マスタの販売ビューの項目（教材の例：M1 自製品 / M2 取引商品）</text>
+<rect x="680.0" y="558.0" width="190.0" height="36.0" rx="8" fill="#ffffff" stroke="#177245" stroke-width="1.2"/>
+<text x="690.0" y="581.0" font-size="12" fill="#177245" text-anchor="start" font-weight="700">得意先勘定割当グループ</text>
+<text x="886.0" y="574.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">得意先マスタの項目（教材の例：01 国内収益）</text>
+<text x="680.0" y="616.0" font-size="11" fill="#6b7a8d" text-anchor="start" font-weight="400" font-family="'SF Mono',Menlo,Consolas,monospace">IMG：販売管理 → 基本機能 → 勘定割当/原価 → 収益勘定設定</text>
+<rect x="60.0" y="640.0" width="1220.0" height="140.0" rx="10" fill="#f7fafc" stroke="#d9e1e8" stroke-width="1.4"/>
+<text x="78.0" y="668.0" font-size="14" fill="#1d2d3e" text-anchor="start" font-weight="700">コースシナリオの価格計算例（教材：铸钢泵 170-230 を 30〜120 個）</text>
+<rect x="78.0" y="686.0" width="223.2" height="44.0" rx="8" fill="#ffffff" stroke="#0a6ed1" stroke-width="1.2"/>
+<text x="91.0" y="706.0" font-size="12" fill="#1d2d3e" text-anchor="start" font-weight="400">品目 F999-100（铸钢泵 170-230）</text>
+<text x="91.0" y="722.0" font-size="10.5" fill="#6b7a8d" text-anchor="start" font-weight="400"></text>
+<line x1="303.2" y1="708.0" x2="307.2" y2="708.0" stroke="#6b7a8d" stroke-width="1.4" marker-end="url(#ar)"/>
+<rect x="313.2" y="686.0" width="102.3" height="44.0" rx="8" fill="#ffffff" stroke="#0a6ed1" stroke-width="1.2"/>
+<text x="326.2" y="706.0" font-size="12" fill="#1d2d3e" text-anchor="start" font-weight="400">数量：120 PC</text>
+<text x="326.2" y="722.0" font-size="10.5" fill="#6b7a8d" text-anchor="start" font-weight="400"></text>
+<line x1="417.5" y1="708.0" x2="421.5" y2="708.0" stroke="#6b7a8d" stroke-width="1.4" marker-end="url(#ar)"/>
+<rect x="427.5" y="686.0" width="136.4" height="44.0" rx="8" fill="#ffffff" stroke="#8d6e00" stroke-width="1.2"/>
+<text x="440.5" y="706.0" font-size="12" fill="#1d2d3e" text-anchor="start" font-weight="400">PR00 単価 8,000.00</text>
+<text x="440.5" y="722.0" font-size="10.5" fill="#6b7a8d" text-anchor="start" font-weight="400">条件タイプ：価格</text>
+<line x1="565.9" y1="708.0" x2="569.9" y2="708.0" stroke="#6b7a8d" stroke-width="1.4" marker-end="url(#ar)"/>
+<rect x="575.9" y="686.0" width="171.2" height="44.0" rx="8" fill="#ffffff" stroke="#8d6e00" stroke-width="1.2"/>
+<text x="588.9" y="706.0" font-size="12" fill="#1d2d3e" text-anchor="start" font-weight="400">正味価額 960,000.00 RMB</text>
+<text x="588.9" y="722.0" font-size="10.5" fill="#6b7a8d" text-anchor="start" font-weight="400">条件タイプ：小計</text>
+<line x1="749.0" y1="708.0" x2="753.0" y2="708.0" stroke="#6b7a8d" stroke-width="1.4" marker-end="url(#ar)"/>
+<rect x="759.0" y="686.0" width="145.8" height="44.0" rx="8" fill="#ffffff" stroke="#0a6ed1" stroke-width="1.2"/>
+<text x="772.0" y="706.0" font-size="12" fill="#1d2d3e" text-anchor="start" font-weight="400">MWST 売上税</text>
+<text x="772.0" y="722.0" font-size="10.5" fill="#6b7a8d" text-anchor="start" font-weight="400">税分類 + 税コードで計算</text>
+<line x1="906.8" y1="708.0" x2="910.8" y2="708.0" stroke="#6b7a8d" stroke-width="1.4" marker-end="url(#ar)"/>
+<rect x="916.8" y="686.0" width="143.5" height="44.0" rx="8" fill="#ffffff" stroke="#0a6ed1" stroke-width="1.2"/>
+<text x="929.8" y="706.0" font-size="12" fill="#1d2d3e" text-anchor="start" font-weight="400">請求書 F2 90000000</text>
+<text x="929.8" y="722.0" font-size="10.5" fill="#6b7a8d" text-anchor="start" font-weight="400">転記後に会計伝票を生成</text>
+<text x="78.0" y="760.0" font-size="11.5" fill="#6b7a8d" text-anchor="start" font-weight="400">注：単価と税率はコースシナリオの例示です。実際の金額は「条件レコード + 計算スキーマ + 税コード」が各システムで算出し、自システムで VA03 → 明細 → 条件タブ により照合してください。</text>
+</svg>

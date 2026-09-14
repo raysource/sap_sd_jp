@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1360 820" width="1360" height="820" role="img" aria-label="SAP SD 組織図" font-family="'PingFang SC','Hiragino Sans GB','Noto Sans CJK SC','Microsoft YaHei',sans-serif">
+<title>SAP SD 組織図</title>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0a6ed1"/></marker><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#007272"/></marker><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ffffff"/></marker></defs>
+<rect width="1360" height="820" fill="#ffffff"/>
+<text x="40.0" y="48.0" font-size="20" fill="#1d2d3e" text-anchor="start" font-weight="700">SD 組織構造（企業構造 → 販売構造 → 出荷構造）</text>
+<text x="40.0" y="70.0" font-size="13" fill="#6b7a8d" text-anchor="start" font-weight="400">同じ組織データが、マスタの作り方、伝票の流れ方、在庫の出所、収益の記帳方法を同時に決定します（当サイトの自作図）</text>
+<text x="60.0" y="110.0" font-size="15" fill="#0854a0" text-anchor="start" font-weight="700">A. 企業構造（Enterprise Structure）</text>
+<rect x="60.0" y="122.0" width="300.0" height="74.0" rx="9" fill="#e3f0fa" stroke="#0854a0" stroke-width="1.4"/>
+<rect x="60.0" y="122.0" width="4.5" height="74.0" rx="2" fill="#0854a0" stroke="#0854a0" stroke-width="1.4"/>
+<text x="72.0" y="144.0" font-size="14" fill="#0854a0" text-anchor="start" font-weight="700">会社コード / 会社</text>
+<text x="72.0" y="162.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">財務諸表と会計の最小単位</text>
+<rect x="60.0" y="216.0" width="300.0" height="74.0" rx="9" fill="#ffffff" stroke="#0a6ed1" stroke-width="1.4"/>
+<rect x="60.0" y="216.0" width="4.5" height="74.0" rx="2" fill="#0a6ed1" stroke="#0a6ed1" stroke-width="1.4"/>
+<text x="72.0" y="238.0" font-size="14" fill="#0a6ed1" text-anchor="start" font-weight="700">販売組織 (Sales Organization)</text>
+<text x="72.0" y="256.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">販売を担当する法的単位：製品責任、販売統計</text>
+<rect x="60.0" y="310.0" width="300.0" height="74.0" rx="9" fill="#ffffff" stroke="#007272" stroke-width="1.4"/>
+<rect x="60.0" y="310.0" width="4.5" height="74.0" rx="2" fill="#007272" stroke="#007272" stroke-width="1.4"/>
+<text x="72.0" y="332.0" font-size="14" fill="#007272" text-anchor="start" font-weight="700">プラント (Plant)</text>
+<text x="72.0" y="350.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">生産/保管場所が属する組織単位（出荷はここから発</text>
+<text x="72.0" y="366.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">生する）</text>
+<rect x="60.0" y="404.0" width="300.0" height="74.0" rx="9" fill="#f7fafc" stroke="#6b7a8d" stroke-width="1.4"/>
+<rect x="60.0" y="404.0" width="4.5" height="74.0" rx="2" fill="#6b7a8d" stroke="#6b7a8d" stroke-width="1.4"/>
+<text x="72.0" y="426.0" font-size="14" fill="#6b7a8d" text-anchor="start" font-weight="700">購買組織 / 出荷ポイントの調整</text>
+<text x="72.0" y="444.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">モジュール横断で共用：SD</text>
+<text x="72.0" y="460.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">はプラントと在庫だけを気にする</text>
+<path d="M 210 196 L 210 216" fill="none" stroke="#0a6ed1" stroke-width="1.6"/>
+<path d="M 210 290 L 210 310" fill="none" stroke="#007272" stroke-width="1.6"/>
+<path d="M 210 384 L 210 404" fill="none" stroke="#6b7a8d" stroke-width="1.6"/>
+<line x1="360.0" y1="160.0" x2="470.0" y2="160.0" stroke="#0a6ed1" stroke-width="1.8" marker-end="url(#ar)"/>
+<path d="M 360 253 L 470 253" fill="none" stroke="#0a6ed1" stroke-width="1.6"/>
+<text x="480.0" y="110.0" font-size="15" fill="#007272" text-anchor="start" font-weight="400">B. 販売構造（Sales Structure）</text>
+<rect x="480.0" y="122.0" width="250.0" height="74.0" rx="9" fill="#ffffff" stroke="#007272" stroke-width="1.4"/>
+<rect x="480.0" y="122.0" width="4.5" height="74.0" rx="2" fill="#007272" stroke="#007272" stroke-width="1.4"/>
+<text x="492.0" y="144.0" font-size="14" fill="#007272" text-anchor="start" font-weight="700">流通チャネル</text>
+<text x="492.0" y="162.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">製品が得意先にどう届くか：直販 / 卸売 /</text>
+<text x="492.0" y="178.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">小売</text>
+<rect x="480.0" y="216.0" width="250.0" height="74.0" rx="9" fill="#ffffff" stroke="#007272" stroke-width="1.4"/>
+<rect x="480.0" y="216.0" width="4.5" height="74.0" rx="2" fill="#007272" stroke="#007272" stroke-width="1.4"/>
+<text x="492.0" y="238.0" font-size="14" fill="#007272" text-anchor="start" font-weight="700">製品部門</text>
+<text x="492.0" y="256.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">製品をライン別にグループ化：完成品 /</text>
+<text x="492.0" y="272.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">スペアパーツ / サービス</text>
+<rect x="480.0" y="310.0" width="250.0" height="74.0" rx="9" fill="#ffffff" stroke="#007272" stroke-width="1.4"/>
+<rect x="480.0" y="310.0" width="4.5" height="74.0" rx="2" fill="#007272" stroke="#007272" stroke-width="1.4"/>
+<text x="492.0" y="332.0" font-size="14" fill="#007272" text-anchor="start" font-weight="700">販売事務所</text>
+<text x="492.0" y="350.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">地理的／責任範囲（地域で区分された販売</text>
+<text x="492.0" y="366.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">組織）</text>
+<rect x="480.0" y="404.0" width="250.0" height="74.0" rx="9" fill="#ffffff" stroke="#007272" stroke-width="1.4"/>
+<rect x="480.0" y="404.0" width="4.5" height="74.0" rx="2" fill="#007272" stroke="#007272" stroke-width="1.4"/>
+<text x="492.0" y="426.0" font-size="14" fill="#007272" text-anchor="start" font-weight="700">販売グループ</text>
+<text x="492.0" y="444.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">販売事務所の中の担当者グループ（責任分</text>
+<text x="492.0" y="460.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">担）</text>
+<path d="M 605 290 L 605 310" fill="none" stroke="#007272" stroke-width="1.6"/>
+<line x1="730.0" y1="160.0" x2="830.0" y2="160.0" stroke="#007272" stroke-width="1.8" marker-end="url(#ar)"/>
+<path d="M 730 253 L 830 253" fill="none" stroke="#007272" stroke-width="1.6"/>
+<path d="M 730 347 L 830 347" fill="none" stroke="#007272" stroke-width="1.6"/>
+<text x="840.0" y="110.0" font-size="15" fill="#5b3fa8" text-anchor="start" font-weight="400">C. 販売エリア = 販売組織 + 流通チャネル + 製品部門</text>
+<rect x="840.0" y="122.0" width="460.0" height="116.0" rx="10" fill="#f4f0ff" stroke="#5b3fa8" stroke-width="1.4"/>
+<text x="856.0" y="148.0" font-size="15" fill="#5b3fa8" text-anchor="start" font-weight="700">販売エリア（Sales Area）</text>
+<text x="856.0" y="168.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">業務上の意味：ある販売組織が「ある流通チャネルを通じて」「ある製品部門」を</text>
+<text x="856.0" y="184.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">扱う、ということです。得意先マスタ、品目マスタ（販売ビュー）、条件レコード</text>
+<text x="856.0" y="200.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">、すべての販売伝票の組織キーを決定します。計算スキーマ決定、勘定設定の入力</text>
+<text x="856.0" y="216.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">にもなります。</text>
+<rect x="840.0" y="250.0" width="460.0" height="84.0" rx="10" fill="#e6f2ec" stroke="#177245" stroke-width="1.4"/>
+<text x="856.0" y="274.0" font-size="13" fill="#177245" text-anchor="start" font-weight="700">例（教材シナリオ 颐宁）</text>
+<text x="856.0" y="294.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">1 つの販売組織 × 2 つの流通チャネル（直販 / 卸売）× 2 つの製品部門 → 4</text>
+<text x="856.0" y="310.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">つの販売エリアを、1 つずつ設定します。</text>
+<rect x="840.0" y="346.0" width="460.0" height="84.0" rx="10" fill="#e3f0fa" stroke="#0a6ed1" stroke-width="1.4"/>
+<text x="856.0" y="370.0" font-size="13" fill="#0854a0" text-anchor="start" font-weight="700">販売事務所 / 販売グループ</text>
+<text x="856.0" y="390.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">販売エリアへの割当（カスタマイジング）：統計と権限に使用され、単価の決定に</text>
+<text x="856.0" y="406.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">は影響しません。</text>
+<text x="60.0" y="520.0" font-size="15" fill="#007272" text-anchor="start" font-weight="400">D. 出荷構造（Shipping）</text>
+<rect x="60.0" y="532.0" width="210.0" height="96.0" rx="9" fill="#ffffff" stroke="#007272" stroke-width="1.4"/>
+<rect x="60.0" y="532.0" width="4.5" height="96.0" rx="2" fill="#007272" stroke="#007272" stroke-width="1.4"/>
+<text x="72.0" y="554.0" font-size="14" fill="#007272" text-anchor="start" font-weight="700">出荷ポイント</text>
+<text x="72.0" y="572.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">出荷の起点（プラントと多対多）</text>
+<text x="72.0" y="587.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">教材例：Z999 颐宁出荷ポイント</text>
+<rect x="290.0" y="532.0" width="210.0" height="96.0" rx="9" fill="#ffffff" stroke="#007272" stroke-width="1.4"/>
+<rect x="290.0" y="532.0" width="4.5" height="96.0" rx="2" fill="#007272" stroke="#007272" stroke-width="1.4"/>
+<text x="302.0" y="554.0" font-size="14" fill="#007272" text-anchor="start" font-weight="700">積込ポイント</text>
+<text x="302.0" y="572.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">積み込みの具体的な位置（出荷ポイ</text>
+<text x="302.0" y="587.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">ントごとに割当）</text>
+<rect x="520.0" y="532.0" width="210.0" height="96.0" rx="9" fill="#ffffff" stroke="#007272" stroke-width="1.4"/>
+<rect x="520.0" y="532.0" width="4.5" height="96.0" rx="2" fill="#007272" stroke="#007272" stroke-width="1.4"/>
+<text x="532.0" y="554.0" font-size="14" fill="#007272" text-anchor="start" font-weight="700">ピッキング保管場所</text>
+<text x="532.0" y="572.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">どの保管場所からピッキングするか</text>
+<text x="532.0" y="587.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">（出荷ポイント + プラント …</text>
+<rect x="750.0" y="532.0" width="210.0" height="96.0" rx="9" fill="#ffffff" stroke="#007272" stroke-width="1.4"/>
+<rect x="750.0" y="532.0" width="4.5" height="96.0" rx="2" fill="#007272" stroke="#007272" stroke-width="1.4"/>
+<text x="762.0" y="554.0" font-size="14" fill="#007272" text-anchor="start" font-weight="700">輸送条件</text>
+<text x="762.0" y="572.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">納入の輸送方式と時間（品目 /</text>
+<text x="762.0" y="587.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">プラントとともに出荷ポイントを…</text>
+<rect x="980.0" y="532.0" width="210.0" height="96.0" rx="9" fill="#ffffff" stroke="#007272" stroke-width="1.4"/>
+<rect x="980.0" y="532.0" width="4.5" height="96.0" rx="2" fill="#007272" stroke="#007272" stroke-width="1.4"/>
+<text x="992.0" y="554.0" font-size="14" fill="#007272" text-anchor="start" font-weight="700">積込グループ</text>
+<text x="992.0" y="572.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">品目マスタと共同で積込ポイントを</text>
+<text x="992.0" y="587.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">決定</text>
+<line x1="255.0" y1="580.0" x2="290.0" y2="580.0" stroke="#007272" stroke-width="1.8" marker-end="url(#ar)"/>
+<line x1="485.0" y1="580.0" x2="520.0" y2="580.0" stroke="#007272" stroke-width="1.8" marker-end="url(#ar)"/>
+<line x1="715.0" y1="580.0" x2="750.0" y2="580.0" stroke="#007272" stroke-width="1.8" marker-end="url(#ar)"/>
+<line x1="945.0" y1="580.0" x2="980.0" y2="580.0" stroke="#007272" stroke-width="1.8" marker-end="url(#ar)"/>
+<rect x="60.0" y="656.0" width="1240.0" height="124.0" rx="10" fill="#f7fafc" stroke="#d9e1e8" stroke-width="1.4"/>
+<text x="76.0" y="682.0" font-size="14" fill="#1d2d3e" text-anchor="start" font-weight="700">システムがこれらの組織データをどう自動的に見つけるか（自動決定のチェーン）</text>
+<rect x="76.0" y="700.0" width="229.0" height="34.0" rx="8" fill="#ffffff" stroke="#0a6ed1" stroke-width="1.2"/>
+<text x="87.0" y="722.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">得意先マスタ（販売エリア層の得意先）</text>
+<line x1="313.0" y1="717.0" x2="325.0" y2="717.0" stroke="#0a6ed1" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="331.0" y="700.0" width="211.4" height="34.0" rx="8" fill="#ffffff" stroke="#0a6ed1" stroke-width="1.2"/>
+<text x="342.0" y="722.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">販売伝票タイプ（例：OR 標準受注）</text>
+<line x1="550.4" y1="717.0" x2="562.4" y2="717.0" stroke="#0a6ed1" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="568.4" y="700.0" width="171.5" height="34.0" rx="8" fill="#ffffff" stroke="#0a6ed1" stroke-width="1.2"/>
+<text x="579.4" y="722.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">品目の品目マスタを入力する</text>
+<line x1="747.9" y1="717.0" x2="759.9" y2="717.0" stroke="#0a6ed1" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="765.9" y="700.0" width="151.0" height="34.0" rx="8" fill="#ffffff" stroke="#0a6ed1" stroke-width="1.2"/>
+<text x="776.9" y="722.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">プラント / 出荷ポイント</text>
+<line x1="924.9" y1="717.0" x2="936.9" y2="717.0" stroke="#0a6ed1" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="942.9" y="700.0" width="125.5" height="34.0" rx="8" fill="#ffffff" stroke="#0a6ed1" stroke-width="1.2"/>
+<text x="953.9" y="722.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">ピッキング保管場所</text>
+<text x="76.0" y="752.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">要点：組織データは「毎回手入力」するものではありません。伝票ヘッダ/明細の販売エリアは得意先マスタから引き継がれ、プラントは品目マスタと輸送条件から導出され、保管場所はカスタマイジングの設定で決まりま</text>
+<text x="76.0" y="770.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">す。設定を誤ると、伝票が流れないか、誤った在庫に流れてしまいます。</text>
+</svg>

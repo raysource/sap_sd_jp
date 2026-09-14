@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>エンドツーエンドプロセス · SAP SD トレーニングコース</title>
+<meta name="description" content="SAP SD（販売管理）トレーニングコース：概念 → 組織構造 → マスタ → 価格設定 → エンドツーエンドプロセス（引合・見積・受注・納入・出荷・請求・入金）→ 設定 → 分析。各段階に実際の SAP GUI システムのスクリーンショット（中国語インターフェース）と自作図のフロー図、構造図、マインドマップを用意します。">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/sd.css">
+</head>
+<body>
+<header class="site">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html"><span class="logo">SD</span><span class="txt">トレーニングコース</span></a>
+    <nav class="main">
+      <a href="index.html" title="コースマップと学習ルート">ホーム</a>
+      <a href="concept.html" title="SD とは何か、3 つの概念レイヤ、5 大伝票">基本概念</a>
+      <a href="org.html" title="企業構造 / 販売構造 / 出荷構造">組織</a>
+      <a href="master.html" title="得意先マスタ / 品目の販売ビュー / 条件レコード">マスタ</a>
+      <a href="pricing.html" title="条件技術の4要素と計算スキーマ決定">価格設定</a>
+      <a class="active" href="flow.html" title="エンドツーエンド O2C のフロー図と伝票フロー">プロセス</a>
+      <a href="order.html" title="引合 · 見積 · 受注伝票（部分的な詳細解説）">受注伝票</a>
+      <a href="delivery.html" title="出荷伝票 · ピッキング · 出庫過転記">納入</a>
+      <a href="billing.html" title="請求書 · FI への転記 · 入金">請求</a>
+      <a href="analysis.html" title="伝票フロー／受注一覧／販売分析">データ分析</a>
+      <a href="config.html" title="SPRO 設定ルート（48 タスク）">設定</a>
+      <a href="practice.html" title="実習タスクと完成基準">実習</a>
+      <a href="instructor.html" title="採点ポイント / 必ず問う質問 / 解答">講師</a>
+      <a href="worksheet.html" title="記入表（印刷可能）">受講者</a>
+      <a href="quiz.html" title="30 問のセルフチェック（合格 75%）">セルフチェックテスト</a>
+      <a href="glossary.html" title="中国語・英語対照 / T-code クイックリファレンス">用語</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+<main class="page">
+<article>
+<p class="breadcrumb"><a href="index.html">トップページ</a> / <span>エンドツーエンドプロセス</span></p>
+<h1>エンドツーエンドのプロセス：引合から入金まで</h1>
+<p class="kicker">Order to Cash · フロー図 · 伝票フロー · 統合ポイント · ステータス</p>
+<div class="toc"><a href="#chart">1. 全体フロー図</a><a href="#table">2. 6 つの段階の入力と出力</a><a href="#integ">3. 3 つの統合ポイント</a><a href="#status">4. ステータス：どこまで進んだかを知る方法</a><a href="#order">5. 順序は入れ替えられない（3 つの実際のエラー）</a><a href="#check">6. セルフチェック</a></div>
+<h2 id="chart">1. 全体フロー図</h2>
+<figure class="dia"><a class="zoom" href="assets/diagrams/o2c-flow.svg"><img src="assets/diagrams/o2c-flow.svg" alt="SD エンドツーエンドフロー図（Order to Cash）" loading="lazy"></a><figcaption><span class="n">フロー図</span><span class="cap">SD スイムレーン：引合→見積→受注→納入→請求書；MM スイムレーン：所要量確認→ピッキング→出庫過転記；FI スイムレーン：請求書転記→入金；下部は伝票フローのチェーン</span><span class="src">当サイト自作の SVG</span></figcaption></figure>
+<div class="note info"><span class="t">図を読む際の要点</span><ul><li>横軸は時間で、<b>矢印の向きがそのまま順序</b>です：まず受注があり、次に納入、納入があって初めて請求できます。</li><li>縦軸は責任です：同じ事象が 3 つのモジュールにまたがることがあります（例えば「出荷」は SD では納入伝票、MM では品目伝票、FI では原価です）。</li><li>点線は「同一の伝票」ではなく「トリガ」です：納入を登録すると出荷準備がトリガされ、出庫過転記が在庫変化をトリガします。</li></ul></div>
+<h2 id="table">2. 6 つの段階：誰が行い、何を入力し、何を生み出すか</h2>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>段階</th><th>誰が行うか</th><th>入力 / 前提条件</th><th>システムが行うこと</th><th>アウトプット</th><th>T-code</th></tr></thead><tbody><tr><td>① 引合</td><td>販売</td><td>得意先 + 品目 + 数量</td><td>拘束力のない引合伝票を作成</td><td>引合伝票（IN）</td><td><code>VA11</code></td></tr><tr><td>② 見積</td><td>販売</td><td>引合を参照するか、直接新規登録</td><td>価格と有効期間を示す</td><td>見積伝票（QT）</td><td><code>VA21</code></td></tr><tr><td>③ 受注伝票</td><td>販売 / カスタマサービス</td><td>得意先に販売ビュー、品目に販売ビュー、条件レコード、在庫または欠品許容がある</td><td>明細カテゴリ、価格設定、税、パートナ、所要量確認、納入日を決定</td><td>受注伝票（OR）</td><td><code>VA01</code></td></tr><tr><td>④ 出荷伝票</td><td>出荷／倉庫管理</td><td>受注伝票が存在し、明細行が納入を許可している</td><td>出荷ポイント、ピッキング保管場所、納入日を決定</td><td>納入伝票（LF）</td><td><code>VL01N</code></td></tr><tr><td>⑤ ピッキング + 出庫過転記</td><td>倉庫担当</td><td>納入伝票が存在し、在庫が十分</td><td>ピッキングで数量を確認。出庫過転記（移動タイプ 601）で実際に出庫します</td><td>品目伝票 + 納入ステータス「完了」</td><td><code>VL02N</code></td></tr><tr><td>⑥ 請求書 + 転記</td><td>請求 / 財務</td><td>納入完了、請求関連の設定が準備済み</td><td>納入を基準に請求し、税を計算し、転記して会計伝票を生成</td><td>請求書（F2）＋会計伝票</td><td><code>VF01</code> / <code>VF02</code></td></tr></tbody></table></div>
+<div class="note warn"><span class="t">最も多い誤解：「伝票を保存」すれば終わりだと思うこと</span>受注伝票はあくまで<b>約束</b>です。実際に商品を出荷し、代金を計上するのは、後続の納入と請求書です。したがって業務から「この伝票はいつ入荷するか」と聞かれたときに見るのは<b>納入日と確認数量</b>であり、受注伝票上の「要求納入日」ではありません。</div>
+<h2 id="integ">3. 3 つの統合ポイント（面接・試験でよく聞かれる）</h2>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>統合ポイント</th><th>SD 側で行ったこと</th><th>隣接モジュールで何が起きるか</th><th>どう検証するか</th></tr></thead><tbody><tr><td>所要量伝達（SD → PP）</td><td>受注伝票が保存され、明細行に所要量タイプ/所要量カテゴリが付く</td><td>MRP（<code>MD04</code>）にその品目の所要量が表示される</td><td><code>MD04</code> に品目を入力して「受注伝票」行を確認</td></tr><tr><td>所要量確認（SD ⇄ MM）</td><td>受注伝票の保存時/納入伝票の作成時に在庫をチェックする</td><td>在庫、購買の入荷予定、生産指図を合わせて考慮し、確認日を提示する</td><td>受注明細行 → 確認タブ；<code>MD04</code>；<code>CO09</code> 可用性概要</td></tr><tr><td>出庫過転記と記帳（SD → MM／FI）</td><td><code>VL02N</code> で出庫過転記をクリック</td><td>MM が品目伝票を生成し在庫が減少；FI/CO に出庫原価が現れます</td><td><code>MB51</code>（品目伝票）、<code>VL03N</code>（納入ステータス）、<code>MB52</code>（在庫）</td></tr><tr><td>請求記帳（SD → FI）</td><td><code>VF02</code> 請求書をリリース</td><td>FI が会計伝票を生成：得意先売掛金の借方 / 収益 + 売上税の貸方</td><td><code>VF03</code> → 環境 → 会計伝票；<code>FB03</code>；<code>FBL5N</code></td></tr></tbody></table></div>
+<h2 id="status">4. ステータス：この伝票がどこまで進んだかを知る方法</h2>
+<p>どの伝票にもステータス項目のセットがあります。ステータスを見れば「なぜ請求できないのか」が判断できます。よく使うステータス：</p>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>ステータス</th><th>どの伝票で</th><th>意味</th><th>影響</th></tr></thead><tbody><tr><td>全体ステータス Overall Status</td><td>受注伝票 / 納入 / 請求書</td><td>伝票全体の処理進捗</td><td>伝票が完了したかを判断</td></tr><tr><td>拒否理由 Rejection Reason</td><td>受注明細行</td><td>この行は省略します</td><td>この行は納入/請求の対象にならない</td></tr><tr><td>納入ステータス Delivery Status</td><td>受注明細行</td><td>未納入 / 部分納入 / 完全納入</td><td>請求できるか、あとどれだけ納入できるかを決定</td></tr><tr><td>出庫ステータス Goods Issue Status</td><td>納入伝票</td><td>出庫過転記（PGI）が完了しているか</td><td>出荷していないと請求できません</td></tr><tr><td>請求ステータス Billing Status</td><td>受注明細行 / 納入</td><td>未請求 / 部分請求 / 完全請求</td><td>後続でいくらまで請求できるかを決定</td></tr><tr><td>ピッキングステータス Picking Status</td><td>納入伝票</td><td>未ピッキング / 部分 / 完全</td><td>倉庫の作業進捗を表示</td></tr></tbody></table></div>
+<div class="note tip"><span class="t">現場で最も手早い質問の仕方</span><code>VA03</code> で受注伝票を開く → ヘッダ/明細の両方にステータスタブがあります；<b>または</b>「環境 → 伝票フローの照会」を使います。1 つの伝票からどの下流伝票（納入？請求書？）が生成済みか、それぞれのステータスが一目でわかります。本プロジェクトの <a href="analysis.html">分析ページ</a> には実際の画面があります。</div>
+<h2 id="order">5. 順序は崩せない：実際に遭遇する 3 つのエラー</h2>
+<ol class="oplist" start="1"><li class=""><b>「システムが可用在庫なしと表示」</b>（教材タスク 41 のステップ 4 の画面）：受注伝票の数量が可用在庫を上回っています。システムメッセージは出ますが続行できます（阻止するように設定されていない限り）。教材が示す解決パスは <b><code>MB1C</code> 移動タイプ 501 伝票参照なしの入庫</b>期首在庫を入力し、後続の納入が流れるようにします。</li><li class=""><b>納入を登録できない</b>：受注明細が納入を許可していない（明細カテゴリで納入関連が未チェック？明細が拒否済み？完納済み？）、または利用可能在庫/出荷ポイントがない。<code>VL01N</code> の「不完全ログ」でシステムメッセージを確認します。</li><li class=""><b>請求できない</b>：納入で出庫過転記をしていない、または請求関連の設定が欠けている（請求書タイプ、請求書日付、勘定設定）。<code>VF01</code> には「請求可能な納入」が一覧表示されます。一覧が空なら、上流が完了していません。</li></ol>
+<h2 id="check">6. セルフチェック：このフロー図を何も見ずに描けるか</h2>
+<div class="box ok"><b class="t">授業でのチェック（上の表を見ずに口頭で回答）</b><ol><li>5 つの伝票の順序は？それぞれどの T-code で登録しますか？</li><li>どのステップで実際に在庫が減りますか？移動タイプはいくつですか？</li><li>どのステップで会計伝票が生成されますか？借方と貸方はそれぞれ何ですか？</li><li>得意先から「なぜ自分の請求書がまだ発行されないのか」と聞かれたら、どの 3 つのステータスを確認しますか？</li><li>受注伝票の保存時に在庫不足が表示された場合、業務は続けられますか？その後どう解決しますか？</li></ol></div>
+<ol class="steps"><li>次の目的地：<a href="order.html"><b>受注</b></a> → <a href="delivery.html"><b>納入</b></a> → <a href="billing.html"><b>請求</b></a> と、段ごとに分解します。</li><li><a href="concept.html"><b>概念ページ</b></a> に戻って 3 つの概念層を復習します。</li></ol>
+</article>
+</main>
+</div>
+
+<footer class="site">
+  <div class="inner">
+    <div class="cols">
+      <div>
+<h5>SAP SD トレーニングコース</h5>
+<p>販売管理 · 概念からプロセスへ · 全体から部分へ</p>
+      </div>
+      <div>
+<h5>コースセクション</h5>
+<p><a href="concept.html">概念</a> · <a href="org.html">組織</a> · <a href="master.html">マスタ</a> ·
+<a href="pricing.html">価格設定</a> · <a href="flow.html">プロセス</a> · <a href="config.html">設定</a></p>
+      </div>
+      <div>
+<h5>授業用付属資料</h5>
+<p><a href="practice.html">実習タスク</a> · <a href="instructor.html">講師用</a> ·
+<a href="worksheet.html">受講者用</a> · <a href="quiz.html">セルフチェックテスト</a> ·
+<a href="glossary.html">用語集</a></p>
+      </div>
+      <div>
+<h5>ひと言の免責</h5>
+<p>スクリーンショットは教材ドキュメントの実際の SAP GUI 画面（中国語インターフェース）。図と表は当サイトの自作です。
+標準値はリリース/業界ソリューションによって異なります。ページに記載の確認方法をご自身のシステムで確認してください。</p>
+      </div>
+    </div>
+<p class="copy">© <span data-year>2026</span> SAP SD トレーニングコース · 静的サイト、オフラインで利用可能</p>
+  </div>
+</footer>
+<script src="assets/main.js"></script>
+<script src="assets/quiz.js"></script>
+<script src="assets/sd.js"></script>
+</body>
+</html>

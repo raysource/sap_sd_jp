@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>請求と財務転記 · SAP SD トレーニングコース</title>
+<meta name="description" content="SAP SD（販売管理）トレーニングコース：概念 → 組織構造 → マスタ → 価格設定 → エンドツーエンドプロセス（引合・見積・受注・納入・出荷・請求・入金）→ 設定 → 分析。各段階に実際の SAP GUI システムのスクリーンショット（中国語インターフェース）と自作図のフロー図、構造図、マインドマップを用意します。">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/sd.css">
+</head>
+<body>
+<header class="site">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html"><span class="logo">SD</span><span class="txt">トレーニングコース</span></a>
+    <nav class="main">
+      <a href="index.html" title="コースマップと学習ルート">ホーム</a>
+      <a href="concept.html" title="SD とは何か、3 つの概念レイヤ、5 大伝票">基本概念</a>
+      <a href="org.html" title="企業構造 / 販売構造 / 出荷構造">組織</a>
+      <a href="master.html" title="得意先マスタ / 品目の販売ビュー / 条件レコード">マスタ</a>
+      <a href="pricing.html" title="条件技術の4要素と計算スキーマ決定">価格設定</a>
+      <a href="flow.html" title="エンドツーエンド O2C のフロー図と伝票フロー">プロセス</a>
+      <a href="order.html" title="引合 · 見積 · 受注伝票（部分的な詳細解説）">受注伝票</a>
+      <a href="delivery.html" title="出荷伝票 · ピッキング · 出庫過転記">納入</a>
+      <a class="active" href="billing.html" title="請求書 · FI への転記 · 入金">請求</a>
+      <a href="analysis.html" title="伝票フロー／受注一覧／販売分析">データ分析</a>
+      <a href="config.html" title="SPRO 設定ルート（48 タスク）">設定</a>
+      <a href="practice.html" title="実習タスクと完成基準">実習</a>
+      <a href="instructor.html" title="採点ポイント / 必ず問う質問 / 解答">講師</a>
+      <a href="worksheet.html" title="記入表（印刷可能）">受講者</a>
+      <a href="quiz.html" title="30 問のセルフチェック（合格 75%）">セルフチェックテスト</a>
+      <a href="glossary.html" title="中国語・英語対照 / T-code クイックリファレンス">用語</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+<main class="page">
+<article>
+<p class="breadcrumb"><a href="index.html">トップページ</a> / <a href="flow.html">プロセス</a> / <span>請求と入金</span></p>
+<h1>プロセス ③ 請求と財務への転記（部分詳解）</h1>
+<p class="kicker">VF01 請求書登録 · VF02 転記（リリース）· 会計伝票 · 勘定設定 · 入金消込</p>
+<div class="toc"><a href="#what">1. 請求で何が解決するのか</a><a href="#create">2. 請求書の登録</a><a href="#post">3. FI への転記</a><a href="#fi">4. 会計伝票はどうやってできるのか</a><a href="#doc">5. 伝票チェーンと元伝票</a><a href="#pay">6. 入金と消込</a><a href="#check">7. 実際の画面とセルフチェック</a></div>
+<h2 id="what">1. 請求が解決すること</h2>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>問題</th><th>請求はどう答えるか</th></tr></thead><tbody><tr><td>いくらの金額を請求するか</td><td>納入数量 × 条件価格で正味価額を計算し、さらに売上税を加算</td></tr><tr><td>誰に発行するか</td><td>請求書送付先 / 支払先（パートナ役割）</td></tr><tr><td>いつ発行するか</td><td>納入完了（出庫過転記）後。請求書日付と請求一覧（<code>VF04</code>）で一括処理できます</td></tr><tr><td>財務上どう記録するか</td><td>転記時に会計伝票を生成：借方 得意先未収 / 貸方 収益 + 売上税（勘定は勘定設定で導出）</td></tr></tbody></table></div>
+<div class="note info"><span class="t">請求書と納入の関係</span>納入を基準とする請求（Delivery-related billing）が最も一般的な方式です：請求書は納入を参照して登録し、<b>請求数量は納入伝票の出庫済数量から来ます</b>。受注伝票を基準にすること（受注関連請求）や、貸方伝票（返品/取消）を作成することもできます。教材のシナリオは「納入 → 請求 → リリース」という標準的な流れです。</div>
+<h2 id="create">2. 請求書の登録（VF01）</h2>
+<div class="pathline" data-copy="后勤 → 销售和分销 → 出具发票 → 出具发票凭证 → VF01-创建"><b>教材のメニューパス（請求伝票の登録）</b>ロジスティクス → 販売管理 → 請求 → 請求伝票 → VF01-登録</div><div class="pathzh"><b>原教材の中国語パス</b><code>后勤 → 销售和分销 → 出具发票 → 出具发票凭证 → VF01-创建</code></div>
+<figure class="shot"><a class="zoom" href="assets/img/sd/t43/01_1_image1307.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t43/01_1_image1307.png" width="636" height="603" alt="請求期日一覧：請求対象の納入伝票 80000000 を選択します。右側の「缺失数据」には、請求タイプと請求書日付の入力が必要と表示されます" loading="lazy"></a><figcaption><span class="n">画面 1</span><span class="cap">請求期日一覧：請求対象の納入伝票 80000000 を選択します。右側の「缺失数据」には、請求タイプと請求書日付の入力が必要と表示されます</span><span class="src">教材《S4.docx》・SD タスク 43 請求伝票の登録</span></figcaption></figure>
+<figure class="shot narrow"><a class="zoom" href="assets/img/sd/t43/03_1_image1309.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t43/03_1_image1309.png" width="188" height="33" alt="教材タスク 43 第 3 ステップ：保存をクリック——請求伝票番号が生成されます" loading="lazy"></a><figcaption><span class="n">画面 2</span><span class="cap">教材タスク 43 第 3 ステップ：保存をクリック——請求伝票番号が生成されます</span><span class="src">教材《S4.docx》・SD タスク 43 請求伝票の登録</span></figcaption></figure>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>請求書画面の主要項目</th><th>意味</th><th>教材シナリオの値</th></tr></thead><tbody><tr><td>伝票タイプ</td><td>請求書タイプを決定（例：F2 請求書、G2 貸方伝票）</td><td><code>F2</code></td></tr><tr><td>請求書番号</td><td>システムが番号範囲に従って生成する</td><td>90000000</td></tr><tr><td>支払先</td><td>誰が支払うか（売掛金の対象を決定）</td><td>10000000</td></tr><tr><td>請求書日付</td><td>転記日に関連する伝票日付</td><td>2021.04.15</td></tr><tr><td>正味価額</td><td>条件計算の結果（税抜か税込かは設定と条件によって異なります）</td><td>960,000.00 RMB</td></tr><tr><td>明細 / 品目 / 請求数量</td><td>納入伝票からの出荷済み数量</td><td>铸钢泵 170-230 / 120 PC / 品目 F999-100</td></tr></tbody></table></div>
+<div class="note info"><span class="t">請求画面の「缺失数据」のメッセージはエラーではありません</span>教材タスク 43 の画面では、右側の「缺失数据」に請求タイプ、請求書日付など未入力の項目が一覧表示されます——これはシステムが<b>必須項目をメッセージで示している</b>もので、入力後に保存すれば OK です。「缺失数据」と表示されても慌てず、1 項目ずつ補ってください。</div>
+<div class="note ref"><span class="t">これらの数値はどこから来たのか</span>以上は教材環境の請求書画面に実際に表示される値です（当サイトが画面を確認済み）。あなたのシステムでは数値が必ず異なります。重要なのは<b>項目間の関係</b>です：請求数量は納入から来ます。正味価額は条件から、支払先は得意先マスタから取得します。</div>
+<h2 id="post">3. 財務会計への転記（リリース）VF02</h2>
+<p>請求書を保存しても SD の請求伝票が生成されるだけで、<b>まだ転記されていません</b>。財務会計へ渡すには「リリース」（Release to Accounting）が必要です。教材では <code>VF02</code> で変更し、「旗アイコン」ボタンを押すと、画面下部に <b>「凭证已经传送到记账」</b> と表示されます。</p>
+<div class="shot-grid"><figure class="shot"><a class="zoom" href="assets/img/sd/t44/01_1_image1310.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t44/01_1_image1310.png" width="643" height="376" alt="VF02 でリリースする請求書を開く" loading="lazy"></a><figcaption><span class="n">画面 3</span><span class="cap">VF02 でリリースする請求書を開く</span><span class="src">教材《S4.docx》SD モジュール · image1310.png</span></figcaption></figure><figure class="shot narrow"><a class="zoom" href="assets/img/sd/t44/02_1_image1311.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t44/02_1_image1311.png" width="170" height="46" alt="「旗アイコン」でリリースします。「凭证已经传送到记账」と表示され、横の「会计」をクリックすると会計伝票を確認できます" loading="lazy"></a><figcaption><span class="n">画面 4</span><span class="cap">「旗アイコン」でリリースします。「凭证已经传送到记账」と表示され、横の「会计」をクリックすると会計伝票を確認できます</span><span class="src">教材《S4.docx》SD モジュール · image1311.png</span></figcaption></figure></div>
+<figure class="shot"><a class="zoom" href="assets/img/sd/t44/03_1_image1312.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t44/03_1_image1312.png" width="375" height="356" alt="リリース後の請求書ステータスと後続操作の入口" loading="lazy"></a><figcaption><span class="n">画面 5</span><span class="cap">リリース後の請求書ステータスと後続操作の入口</span><span class="src">教材《S4.docx》・SD タスク 44 請求書のリリース</span></figcaption></figure>
+<div class="box ok"><b class="t">「リリース」という言葉を覚えましょう</b><p><b>保存 ≠ 転記。</b>請求書は保存後のステータスが「未転記/リリース待ち」で、リリース後に初めて：</p><ol><li>会計伝票を生成（FI）；</li><li>売掛金は得意先に計上されます（FBL5N で未消込項目を照会できます）。</li><li>請求ステータスは受注伝票と納入伝票に書き戻されます。</li></ol><p>一括リリースには <code>VF04</code>（請求一覧）/ <code>VF06</code> のバックグラウンドジョブが使えます。</p></div>
+<h2 id="fi">4. 会計伝票はどうやって作られるか（勘定設定）</h2>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>会計伝票の明細行</th><th>借方・貸方</th><th>金額の出所</th><th>勘定はどう決まるのか</th></tr></thead><tbody><tr><td>得意先売掛金</td><td>借方</td><td>請求書合計額（税込）</td><td>支払先の照合勘定（得意先マスタ + 統制勘定の設定）</td></tr><tr><td>販売収益</td><td>貸方</td><td>正味価額</td><td>勘定設定：勘定キー（計算スキーマの <code>ERL</code>）+ 品目の勘定割当グループ + 得意先の勘定割当グループ → VKOA</td></tr><tr><td>売上税</td><td>貸方</td><td>税額</td><td>税コード（得意先の税分類 + 品目の税分類で決定）に対応する税勘定</td></tr></tbody></table></div>
+<div class="note tip"><span class="t">「収益を別の勘定に記録したい」場合はどうするか</span>3 つの方法：<b>品目</b>の勘定割当グループを変える（例：自製品 vs 取引商品）、<b>得意先</b>の勘定割当グループを変える、または計算スキーマの<b>勘定キー</b>を変更します。教材のシナリオでは前者を使っています：M1 自製品 / M2 取引商品 → 2つの収益勘定。</div>
+<h2 id="doc">5. 伝票チェーン：「元伝票」をたどって受注伝票まで戻れる</h2>
+<p>教材のタスク 45「元伝票をクリック」は、このチェーン（請求書 → 納入 → 受注伝票）を検証するものです。これは SD で最も実用的な調査ツールです——得意先から「この請求書はどの受注伝票に対応するのか」と聞かれても、数回クリックするだけで答えられます。</p>
+<figure class="dia"><a class="zoom" href="assets/diagrams/doc-flow.svg"><img src="assets/diagrams/doc-flow.svg" alt="伝票フロー構造図" loading="lazy"></a><figcaption><span class="n">フロー図</span><span class="cap">参照関係により、各下流伝票から上流へたどれます：請求書 → 納入 → 受注 → 見積 → 引合</span><span class="src">当サイト自作の SVG</span></figcaption></figure>
+<figure class="shot"><a class="zoom" href="assets/img/sd/t45/01_1_image1313.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t45/01_1_image1313.png" width="968" height="226" alt="教材タスク 45：請求書から「原始凭证」をクリックして上流伝票を確認（請求書 F2 90000000 / 正味価額 960,000.00）" loading="lazy"></a><figcaption><span class="n">画面 6</span><span class="cap">教材タスク 45：請求書から「原始凭证」をクリックして上流伝票を確認（請求書 F2 90000000 / 正味価額 960,000.00）</span><span class="src">教材《S4.docx》・SD タスク 45 「元伝票」をクリック</span></figcaption></figure>
+<h2 id="pay">6. 入金と消込（プロセスの一巡）</h2>
+<p>入金は FI の日常業務であり、SD のアクションではありませんが、業務上はプロセスがどこで終わるかを知っておく必要があります：</p>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>アクション</th><th>T-code</th><th>説明</th></tr></thead><tbody><tr><td>得意先未消込項目の照会</td><td><code>FBL5N</code></td><td>この請求書がまだ未消込で残っているかを見る</td></tr><tr><td>入金と消込</td><td><code>F-28</code></td><td>得意先、金額、銀行勘定を入力し、消し込む請求書にチェックを入れる</td></tr><tr><td>自動入金（銀行明細）</td><td><code>FF67</code> など</td><td>銀行明細の自動照合（設定による）</td></tr><tr><td>督促</td><td><code>F150</code></td><td>期日未払いの督促状を自動生成</td></tr></tbody></table></div>
+<div class="note warn"><span class="t">教材の範囲に関する注意</span>教材の SD の流れは「請求書転記（VF02）→ 原始凭证をクリック」までで、<b>入金は実演していません</b>。上記の入金部分は本コースが標準プロセスに沿って補ったもので、教材と混同しないようここに注記します。</div>
+<h2 id="check">7. 実機画面とセルフチェック</h2>
+<div class="shot-grid"><figure class="shot"><a class="zoom" href="assets/img/sd/t43/02_1_image1308.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t43/02_1_image1308.png" width="937" height="312" alt="請求書画面の条件と金額の明細" loading="lazy"></a><figcaption><span class="n">画面 7</span><span class="cap">請求書画面の条件と金額の明細</span><span class="src">教材《S4.docx》SD モジュール · image1308.png</span></figcaption></figure><figure class="shot narrow"><a class="zoom" href="assets/img/sd/t44/02_1_image1311.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t44/02_1_image1311.png" width="170" height="46" alt="請求書リリース時のシステムメッセージ" loading="lazy"></a><figcaption><span class="n">画面 8</span><span class="cap">請求書リリース時のシステムメッセージ</span><span class="src">教材《S4.docx》SD モジュール · image1311.png</span></figcaption></figure></div>
+<div class="box ok"><b class="t">セルフチェックの質問</b><ol><li>請求書を保存した後、なぜさらに「リリース」が必要なのですか？リリースしないとどうなりますか？</li><li>請求書の正味価額 960,000 はどう計算される？どのオブジェクトから値を取る？</li><li>「取引商品」と「自製品」で収益勘定を 2 つに分けたい場合、どこを変更しますか？</li><li>得意先が請求書を受け取っていないと言うとき、システムが発行済みであることを何で証明しますか？（伝票フロー + ステータス + 出力決定）</li></ol></div>
+<ol class="steps"><li>次ページ：<a href="analysis.html"><b>分析とモニタリング</b></a> —— レポートと伝票フローでチェーン全体を管理します。</li><li>実習タスク：<a href="practice.html">タスク 4 請求と転記</a>。</li></ol>
+</article>
+</main>
+</div>
+
+<footer class="site">
+  <div class="inner">
+    <div class="cols">
+      <div>
+<h5>SAP SD トレーニングコース</h5>
+<p>販売管理 · 概念からプロセスへ · 全体から部分へ</p>
+      </div>
+      <div>
+<h5>コースセクション</h5>
+<p><a href="concept.html">概念</a> · <a href="org.html">組織</a> · <a href="master.html">マスタ</a> ·
+<a href="pricing.html">価格設定</a> · <a href="flow.html">プロセス</a> · <a href="config.html">設定</a></p>
+      </div>
+      <div>
+<h5>授業用付属資料</h5>
+<p><a href="practice.html">実習タスク</a> · <a href="instructor.html">講師用</a> ·
+<a href="worksheet.html">受講者用</a> · <a href="quiz.html">セルフチェックテスト</a> ·
+<a href="glossary.html">用語集</a></p>
+      </div>
+      <div>
+<h5>ひと言の免責</h5>
+<p>スクリーンショットは教材ドキュメントの実際の SAP GUI 画面（中国語インターフェース）。図と表は当サイトの自作です。
+標準値はリリース/業界ソリューションによって異なります。ページに記載の確認方法をご自身のシステムで確認してください。</p>
+      </div>
+    </div>
+<p class="copy">© <span data-year>2026</span> SAP SD トレーニングコース · 静的サイト、オフラインで利用可能</p>
+  </div>
+</footer>
+<script src="assets/main.js"></script>
+<script src="assets/quiz.js"></script>
+<script src="assets/sd.js"></script>
+</body>
+</html>

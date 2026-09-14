@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>納入と出庫過転記 · SAP SD トレーニングコース</title>
+<meta name="description" content="SAP SD（販売管理）トレーニングコース：概念 → 組織構造 → マスタ → 価格設定 → エンドツーエンドプロセス（引合・見積・受注・納入・出荷・請求・入金）→ 設定 → 分析。各段階に実際の SAP GUI システムのスクリーンショット（中国語インターフェース）と自作図のフロー図、構造図、マインドマップを用意します。">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/sd.css">
+</head>
+<body>
+<header class="site">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html"><span class="logo">SD</span><span class="txt">トレーニングコース</span></a>
+    <nav class="main">
+      <a href="index.html" title="コースマップと学習ルート">ホーム</a>
+      <a href="concept.html" title="SD とは何か、3 つの概念レイヤ、5 大伝票">基本概念</a>
+      <a href="org.html" title="企業構造 / 販売構造 / 出荷構造">組織</a>
+      <a href="master.html" title="得意先マスタ / 品目の販売ビュー / 条件レコード">マスタ</a>
+      <a href="pricing.html" title="条件技術の4要素と計算スキーマ決定">価格設定</a>
+      <a href="flow.html" title="エンドツーエンド O2C のフロー図と伝票フロー">プロセス</a>
+      <a href="order.html" title="引合 · 見積 · 受注伝票（部分的な詳細解説）">受注伝票</a>
+      <a class="active" href="delivery.html" title="出荷伝票 · ピッキング · 出庫過転記">納入</a>
+      <a href="billing.html" title="請求書 · FI への転記 · 入金">請求</a>
+      <a href="analysis.html" title="伝票フロー／受注一覧／販売分析">データ分析</a>
+      <a href="config.html" title="SPRO 設定ルート（48 タスク）">設定</a>
+      <a href="practice.html" title="実習タスクと完成基準">実習</a>
+      <a href="instructor.html" title="採点ポイント / 必ず問う質問 / 解答">講師</a>
+      <a href="worksheet.html" title="記入表（印刷可能）">受講者</a>
+      <a href="quiz.html" title="30 問のセルフチェック（合格 75%）">セルフチェックテスト</a>
+      <a href="glossary.html" title="中国語・英語対照 / T-code クイックリファレンス">用語</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+<main class="page">
+<article>
+<p class="breadcrumb"><a href="index.html">ホーム</a> / <a href="flow.html">プロセス</a> / <span>納入と出荷</span></p>
+<h1>プロセス ② 出荷伝票と出庫過転記（部分詳解）</h1>
+<p class="kicker">VL01N 登録 · 出荷ポイント · ピッキング · VL02N 出庫過転記（601）· 在庫と会計</p>
+<div class="toc"><a href="#what">1. 納入で何が解決するのか</a><a href="#create">2. 納入の登録</a><a href="#pick">3. ピッキング</a><a href="#pgi">4. 出庫過転記</a><a href="#effect">5. 在庫と会計への影響</a><a href="#shots">6. 実際の画面</a><a href="#check">7. トラブルシューティングとセルフチェック</a></div>
+<h2 id="what">1. 納入が解決すること</h2>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>問題</th><th>納入はどう答えるか</th></tr></thead><tbody><tr><td>何をいくつ出荷するか</td><td>明細行と数量（受注数量より少なくてもよい＝部分納入）</td></tr><tr><td>どこから出荷するか</td><td>出荷ポイント（プラント + 輸送条件で決定）+ ピッキング保管場所</td></tr><tr><td>いつ出荷するか</td><td>納入日 / 計画納入日</td></tr><tr><td>倉庫が何をするか</td><td>ピッキング（Picking）：実際に商品を取り出し、数量を確認</td></tr><tr><td>いつが実際の出庫か</td><td><b>出庫過転記（PGI）</b>：移動タイプ 601、品目伝票を生成</td></tr></tbody></table></div>
+<div class="note info"><span class="t">一言で順序を覚える</span><b>納入伝票は「出荷の計画」にすぎず、出庫過転記で初めて「実際の出荷」になります。</b>在庫と財務の面では、納入伝票を作成した時点では何も変わりません。出庫過転記を実行して初めて在庫が減り、原価が発生します。</div>
+<h2 id="create">2. 納入伝票の登録（VL01N）</h2>
+<div class="pathline" data-copy="后勤 → 销售和分销 → 装运和运输 → 外向交货 → 创建 → 单个凭证 → VL01N"><b>教材のメニューパス（出荷伝票の登録）</b>ロジスティクス → 販売管理 → 出荷と輸送 → 出荷伝票 → 登録 → 個別伝票 → VL01N</div><div class="pathzh"><b>原教材の中国語パス</b><code>后勤 → 销售和分销 → 装运和运输 → 外向交货 → 创建 → 单个凭证 → VL01N</code></div>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>入力</th><th>説明</th></tr></thead><tbody><tr><td>出荷ポイント Shipping Point</td><td>プラントと輸送条件から導出されます。教材のシナリオは <code>Z999</code> 颐宁装运点です</td></tr><tr><td>選択日付 / 納入日</td><td>どの受注明細が納入対象として選択できるかを決定（教材シナリオ <code>2021.04.15</code>）</td></tr><tr><td>受注伝票番号</td><td>納入する受注伝票を入力する。システムが納入可能な行を一覧表示する</td></tr></tbody></table></div>
+<figure class="shot"><a class="zoom" href="assets/img/sd/t42/01_1_image1303.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t42/01_1_image1303.png" width="362" height="403" alt="VL01N で出荷伝票を登録：出荷ポイント、納入日、受注伝票番号を入力" loading="lazy"></a><figcaption><span class="n">画面 1</span><span class="cap">VL01N で出荷伝票を登録：出荷ポイント、納入日、受注伝票番号を入力</span><span class="src">教材《S4.docx》・SD タスク 42 出荷伝票の登録</span></figcaption></figure>
+<div class="shot-grid"><figure class="shot"><a class="zoom" href="assets/img/sd/t42/01_2_image1304.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t42/01_2_image1304.png" width="449" height="395" alt="納入伝票ヘッダ（出荷ポイント、出荷先、納入日を含む）と明細" loading="lazy"></a><figcaption><span class="n">画面 2</span><span class="cap">納入伝票ヘッダ（出荷ポイント、出荷先、納入日を含む）と明細</span><span class="src">教材《S4.docx》SD モジュール · image1304.png</span></figcaption></figure><figure class="shot"><a class="zoom" href="assets/img/sd/t42/02_1_image1305.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t42/02_1_image1305.png" width="1151" height="426" alt="納入伝票の変更（VL02N）：ピッキングと出庫過転記はここで行います" loading="lazy"></a><figcaption><span class="n">画面 3</span><span class="cap">納入伝票の変更（VL02N）：ピッキングと出庫過転記はここで行います</span><span class="src">教材《S4.docx》SD モジュール · image1305.png</span></figcaption></figure></div>
+<h4>納入画面の項目ごとの読み方（教材環境の実測画面）</h4>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>項目／ボタン</th><th>教材シナリオの値</th><th>読み方</th></tr></thead><tbody><tr><td>出荷伝票番号</td><td><code>80000000</code></td><td>システムが番号範囲に従って生成する</td></tr><tr><td>伝票日付</td><td><code>2021.04.15</code></td><td>伝票日付（納入日とは別物）</td></tr><tr><td>出荷先</td><td><code>10000000</code> 远东造船厂 / 枫桥路 / 116088 辽宁、大连</td><td>得意先マスタからの出荷先住所</td></tr><tr><td>明細 / 品目 / プラント / 保管場所</td><td>明細 <code>10</code>、<code>F999-100</code>、プラント <code>P999</code>、保管場所 <code>003</code></td><td>保管場所はカスタマイジングの「ピッキング保管場所の割当」で決定（Z999 + P999 → 003）</td></tr><tr><td>納入数量 / ピッキング数量</td><td><code>120 PC</code> / <code>120 PC</code></td><td>ピッキングタブに実際にピッキングした数量を入力</td></tr><tr><td>ピッキングステータス</td><td><code>A 未ピッキング</code></td><td>ピッキング完了後は「完全ピッキング」に変わります</td></tr><tr><td>ボタン「过账发货」</td><td>—</td><td><b>出庫過転記（PGI）</b>はここでクリックします；クリックして初めて実際に出庫されます</td></tr></tbody></table></div>
+<div class="note tip"><span class="t">授業中に受講者に読み上げてもらう 3 つの文</span>① 納入番号 <code>80000000</code>、② ピッキングステータス <code>A</code>（まだピッキングしていない）、③ 保管場所 <code>003</code>。次に問いかける：「今、在庫は減りましたか？」——いいえ、減っていません。「出庫転記」をクリックする必要があります。</div>
+<h2 id="pick">3. ピッキング（Picking）</h2>
+<p>ピッキング＝倉庫が納入伝票に従って品物を取り、実際に取った数量を書き戻すことです（ピッキング数量）。このステップは倉庫担当者が次のものを使って行えます：<code>VL02N</code> で行い、ピッキングリスト/モバイル端末も使えます。ピッキング後は納入伝票の「ピッキングステータス」が更新されます。</p>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>ピッキング関連項目</th><th>意味</th></tr></thead><tbody><tr><td>ピッキング数量 Picked Quantity</td><td>実際にいくつピッキングしたか（納入数量と異なってもよい）</td></tr><tr><td>保管場所 Storage Location</td><td>どの保管場所から取るか（カスタマイジングの「ピッキング場所の割当」で決定）</td></tr><tr><td>バッチ / シリアル番号</td><td>品目がロット管理またはシリアル番号管理の場合、ピッキング時に指定が必要</td></tr><tr><td>ピッキングステータス</td><td>未ピッキング / 部分ピッキング / 完全ピッキング</td></tr></tbody></table></div>
+<h2 id="pgi">4. 出庫過転記（Post Goods Issue, PGI）</h2>
+<div class="box ok"><b class="t">このステップがプロセス全体の分かれ目です</b><p>「出庫過転記」を押すと：</p><ol><li>システムは<b>移動タイプ 601</b>で品目伝票を生成します；</li><li>在庫数量と金額が同時に減少（出庫）；</li><li>納入伝票の<b>出荷ステータス</b>が「完了」になります。</li><li>この時点で初めてこの納入が「請求可能」になります。請求書はこのステップを待ちます。</li></ol><p>取消には<code>VL09</code>（出庫過転記の取消）を使います。伝票を削除するだけでは済みません。</p></div>
+<h2 id="effect">5. 在庫と会計への影響（対照しながら理解する）</h2>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>影響対象</th><th>納入伝票の登録時</th><th>出庫過転記後</th><th>表示ツール</th></tr></thead><tbody><tr><td>在庫数量</td><td>変わらない</td><td>減少（移動タイプ 601 出庫）</td><td><code>MMBE</code> / <code>MB52</code> / <code>MB51</code></td></tr><tr><td>品目伝票</td><td>なし</td><td>品目伝票を 1 件生成する</td><td><code>MB03</code>（伝票番号を使用）/ <code>MB51</code></td></tr><tr><td>納入ステータス</td><td>未出荷</td><td>出庫ステータス：完了</td><td><code>VL03N</code></td></tr><tr><td>会計への影響</td><td>なし</td><td>原価出庫（CO 側の売上原価関連）</td><td>品目伝票の会計伝票ビュー / CO レポート</td></tr><tr><td>請求書</td><td>請求不可</td><td>請求可能（VF01 の請求可能一覧に入る）</td><td><code>VF01</code> / <code>VF04</code></td></tr></tbody></table></div>
+<div class="note tip"><span class="t">現場で必ず暗記すること</span>「在庫はいつ減る？」= 出庫過転記（601）。「請求書はいつ作れる？」= 出庫過転記の後。「出庫過転記を誤ったら？」= <code>VL09</code> で取消（後続伝票も順に処理します）。</div>
+<h2 id="shots">6. 実機画面のまとめ</h2>
+<div class="shot-grid"><figure class="shot narrow"><a class="zoom" href="assets/img/sd/t42/03_1_image1306.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t42/03_1_image1306.png" width="213" height="28" alt="納入の登録完了後にシステムが表示するメッセージ" loading="lazy"></a><figcaption><span class="n">画面 4</span><span class="cap">納入の登録完了後にシステムが表示するメッセージ</span><span class="src">教材《S4.docx》SD モジュール · image1306.png</span></figcaption></figure><figure class="shot"><a class="zoom" href="assets/img/sd/t48/25_2_image1385.jpeg" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t48/25_2_image1385.jpeg" width="867" height="633" alt="MB1C 501 期首在庫（在庫がない場合の対処）" loading="lazy"></a><figcaption><span class="n">画面 5</span><span class="cap">MB1C 501 期首在庫（在庫がない場合の対処）</span><span class="src">教材《S4.docx》SD モジュール · image1385.jpeg</span></figcaption></figure></div>
+<div class="note warn"><span class="t">今回の実習で起こりうるつまずき</span>教材タスク 48 には実際に起きたエラーがいくつか記録されており、当サイトでは <a href="analysis.html">分析ページ</a> の第 4 節にまとめています：「現在の業務トランザクショングループではない」「作業タイプを設定できない」「CLIENT COPY が不完全」など——これらはすべて<b>環境／設定が十分に整っていない</b>ことが原因で、操作ミスではありません。遭遇したときはまずエラー内の T-code とメッセージ番号を確認してください。</div>
+<h2 id="check">7. 問題の切り分けとセルフチェック</h2>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>現象</th><th>考えられる原因</th><th>どう調べるか</th></tr></thead><tbody><tr><td><code>VL01N</code> で受注番号を入力しても納入可能な明細がない</td><td>受注明細が納入不可 / 完納済み / 拒否済み / 日付範囲が正しくない</td><td>受注明細のステータスタブ；<code>VL01N</code> の不完全ログ；受注タイプの納入関連設定</td></tr><tr><td>在庫がない旨のメッセージが表示される</td><td>在庫不足、または在庫が他の伝票に引当てられている</td><td><code>MMBE</code> / <code>MD04</code> / <code>CO09</code>；対処：入庫（501/101）</td></tr><tr><td>出荷ポイントが見つからない</td><td>プラントに出荷ポイントが割り当てられていない、または輸送条件/積込グループが一致しない</td><td>カスタマイジングの「プラントへの出荷ポイント割当」。得意先マスタと品目マスタの輸送条件／積込グループ</td></tr><tr><td>出庫過転記後も在庫が変わらない</td><td>在庫タイプ/バッチを誤って見ている、または転記に失敗している</td><td><code>MB51</code> でその品目の当日の伝票を照会；<code>VL03N</code> で出荷ステータスを確認</td></tr></tbody></table></div>
+<div class="box ok"><b class="t">セルフチェックの質問</b><ol><li>納入伝票の登録と出庫過転記のうち、品目伝票を生成するのはどちらですか？移動タイプはいくつですか？</li><li>部分納入のとき、受注伝票の「納入ステータス」には何が表示されますか？その後さらに納入できますか？</li><li>出庫過転記後に誤出荷に気づいた場合、どの順序で処理しますか？</li></ol></div>
+<ol class="steps"><li>次ページ：<a href="billing.html"><b>請求</b></a> —— 入金の部分。</li><li>実習タスク：<a href="practice.html">タスク 3 納入と出庫過転記</a>。</li></ol>
+</article>
+</main>
+</div>
+
+<footer class="site">
+  <div class="inner">
+    <div class="cols">
+      <div>
+<h5>SAP SD トレーニングコース</h5>
+<p>販売管理 · 概念からプロセスへ · 全体から部分へ</p>
+      </div>
+      <div>
+<h5>コースセクション</h5>
+<p><a href="concept.html">概念</a> · <a href="org.html">組織</a> · <a href="master.html">マスタ</a> ·
+<a href="pricing.html">価格設定</a> · <a href="flow.html">プロセス</a> · <a href="config.html">設定</a></p>
+      </div>
+      <div>
+<h5>授業用付属資料</h5>
+<p><a href="practice.html">実習タスク</a> · <a href="instructor.html">講師用</a> ·
+<a href="worksheet.html">受講者用</a> · <a href="quiz.html">セルフチェックテスト</a> ·
+<a href="glossary.html">用語集</a></p>
+      </div>
+      <div>
+<h5>ひと言の免責</h5>
+<p>スクリーンショットは教材ドキュメントの実際の SAP GUI 画面（中国語インターフェース）。図と表は当サイトの自作です。
+標準値はリリース/業界ソリューションによって異なります。ページに記載の確認方法をご自身のシステムで確認してください。</p>
+      </div>
+    </div>
+<p class="copy">© <span data-year>2026</span> SAP SD トレーニングコース · 静的サイト、オフラインで利用可能</p>
+  </div>
+</footer>
+<script src="assets/main.js"></script>
+<script src="assets/quiz.js"></script>
+<script src="assets/sd.js"></script>
+</body>
+</html>

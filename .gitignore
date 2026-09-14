@@ -1,0 +1,6 @@
+# 生成物/一時物（サイトの内容そのものは必ず残す: assets/img の実機スクリーンショット、
+# assets/diagrams の自作図、16 個の HTML、Excel、tools/ と work/ のデータ）
+.DS_Store
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

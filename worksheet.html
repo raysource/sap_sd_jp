@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>受講者用（記入表） · SAP SD トレーニングコース</title>
+<meta name="description" content="SAP SD（販売管理）トレーニングコース：概念 → 組織構造 → マスタ → 価格設定 → エンドツーエンドプロセス（引合・見積・受注・納入・出荷・請求・入金）→ 設定 → 分析。各段階に実際の SAP GUI システムのスクリーンショット（中国語インターフェース）と自作図のフロー図、構造図、マインドマップを用意します。">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/sd.css">
+</head>
+<body>
+<header class="site">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html"><span class="logo">SD</span><span class="txt">トレーニングコース</span></a>
+    <nav class="main">
+      <a href="index.html" title="コースマップと学習ルート">ホーム</a>
+      <a href="concept.html" title="SD とは何か、3 つの概念レイヤ、5 大伝票">基本概念</a>
+      <a href="org.html" title="企業構造 / 販売構造 / 出荷構造">組織</a>
+      <a href="master.html" title="得意先マスタ / 品目の販売ビュー / 条件レコード">マスタ</a>
+      <a href="pricing.html" title="条件技術の4要素と計算スキーマ決定">価格設定</a>
+      <a href="flow.html" title="エンドツーエンド O2C のフロー図と伝票フロー">プロセス</a>
+      <a href="order.html" title="引合 · 見積 · 受注伝票（部分的な詳細解説）">受注伝票</a>
+      <a href="delivery.html" title="出荷伝票 · ピッキング · 出庫過転記">納入</a>
+      <a href="billing.html" title="請求書 · FI への転記 · 入金">請求</a>
+      <a href="analysis.html" title="伝票フロー／受注一覧／販売分析">データ分析</a>
+      <a href="config.html" title="SPRO 設定ルート（48 タスク）">設定</a>
+      <a href="practice.html" title="実習タスクと完成基準">実習</a>
+      <a href="instructor.html" title="採点ポイント / 必ず問う質問 / 解答">講師</a>
+      <a class="active" href="worksheet.html" title="記入表（印刷可能）">受講者</a>
+      <a href="quiz.html" title="30 問のセルフチェック（合格 75%）">セルフチェックテスト</a>
+      <a href="glossary.html" title="中国語・英語対照 / T-code クイックリファレンス">用語</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+<main class="page">
+<article>
+<p class="breadcrumb"><a href="index.html">ホーム</a> / <span>受講者用記入表</span></p>
+<h1>受講者用：記入表（印刷可）</h1>
+<p class="kicker">やりながら記録 · 伝票番号 / ステータス / 金額 · 印刷して手書き</p>
+<div class="note info"><span class="t">使い方</span><a href="practice.html">実習タスク</a> に沿って進め、1 ステップ終えるごとにシステム上の実値を下の表に書き写してください。表は印刷時に自動で改ページされます。A4 横置き・片面印刷を推奨します。記入欄が足りない場合は複数部印刷してください。</div>
+<h2 id="ws1">1. マスタの記録（タスク 1〜2 の前提）</h2>
+<div class="tblwrap"><table class="tbl ws idx"><thead><tr><th>#</th><th>記録する内容</th><th>システム上の値（書き写してください）</th><th>どう見るか</th></tr></thead><tbody><tr><td>1</td><td>販売組織の番号 / 名称</td><td></td><td>カスタマイジングの企業構造、または得意先マスタの販売ビューにある販売エリア</td></tr><tr><td>2</td><td>流通チャネル</td><td></td><td>上と同じ</td></tr><tr><td>3</td><td>製品部門</td><td></td><td>上と同じ</td></tr><tr><td>4</td><td>自システムの1つの販売エリア（3キーの組合せ）</td><td></td><td>カスタマイジングの「販売エリアの設定」一覧</td></tr><tr><td>5</td><td>得意先番号（受注先）</td><td></td><td>VA01 ヘッダ；<code>VD03</code></td></tr><tr><td>6</td><td>品目番号 + テキスト</td><td></td><td><code>MM03</code></td></tr><tr><td>7</td><td>PR00 条件レコードの金額と有効期間</td><td></td><td><code>VK13</code> 条件タイプ PR00</td></tr><tr><td>8</td><td>税コード / 税率（MWST）</td><td></td><td>受注明細 → 条件タブ</td></tr></tbody></table></div>
+<h2 id="ws2">2. 伝票チェーンの記録（タスク 2〜4）</h2>
+<div class="tblwrap"><table class="tbl ws"><thead><tr><th>段階</th><th>伝票番号</th><th>伝票タイプ</th><th>日付</th><th>金額 / 数量</th><th>ステータス</th></tr></thead><tbody><tr><td>見積</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>受注伝票</td><td></td><td></td><td>納入日の確認：</td><td>正味価額：</td><td>全体ステータス：</td></tr><tr><td>出荷伝票</td><td></td><td></td><td></td><td>納入数量：</td><td>出庫ステータス：</td></tr><tr><td>請求書</td><td></td><td></td><td></td><td>正味価額：</td><td>請求ステータス：</td></tr><tr><td>会計伝票</td><td></td><td>借方・貸方：</td><td></td><td>金額：</td><td>—</td></tr></tbody></table></div>
+<h2 id="ws3">3. 在庫と伝票フローの観察</h2>
+<div class="tblwrap"><table class="tbl ws"><thead><tr><th>観察ポイント</th><th>出庫過転記前</th><th>出庫過転記後</th><th>結論（自分で記入）</th></tr></thead><tbody><tr><td>品目の在庫数量（MMBE/MB52）</td><td></td><td></td><td></td></tr><tr><td>納入ステータス（VL03N）</td><td></td><td></td><td></td></tr><tr><td>受注伝票の納入ステータス（VA03）</td><td></td><td></td><td></td></tr><tr><td>請求可能一覧に表示されるか（VF04）</td><td></td><td></td><td></td></tr></tbody></table></div>
+<h2 id="ws4">4. 伝票フローのチェーン（3 つの番号を並べて書く）</h2>
+<div class="ws-block"><b>受注番号</b> → <b>納入番号</b> → <b>請求書番号</b> →（会計伝票番号）<div class="lines"><i></i><i></i></div></div>
+<div class="ws-block"><b>この 3 点がどうつながっているかをひとことで説明する</b>（ヒント：参照登録 + ステータス）<div class="lines"><i></i><i></i><i></i></div></div>
+<h2 id="ws5">5. 計算の追跡（自分で一度たどる）</h2>
+<div class="tblwrap"><table class="tbl ws"><thead><tr><th>ステップ</th><th>あなたの回答</th></tr></thead><tbody><tr><td>この受注伝票はどの計算スキーマを使ったのか？なぜそれなのか？（3 つのキー）</td><td></td></tr><tr><td>価格はどの条件レコードから来たのか？（条件タイプ / 金額 / 有効期間）</td><td></td></tr><tr><td>正味価額 = ？ 計算式を書き出してください</td><td></td></tr><tr><td>売上税はどう決定されるか？（得意先税分類 + 品目税分類 → 税コード）</td><td></td></tr><tr><td>収益勘定はどの3つのキーで決定されますか？</td><td></td></tr><tr><td>請求書の転記後の会計伝票の借方・貸方はそれぞれ何ですか？</td><td></td></tr></tbody></table></div>
+<h2 id="ws6">6. 自己評価（完了したらチェック）</h2>
+<div class="tblwrap"><table class="tbl ws"><thead><tr><th>能力項目</th><th>自己評価（○ / △ / ×）</th><th>△ や × が付いた場合、問題はどこか</th></tr></thead><tbody><tr><td>SD の組織図を描き、割当関係を説明できる</td><td></td><td></td></tr><tr><td>5 大伝票の順序と T-code を言える</td><td></td><td></td></tr><tr><td>受注伝票の価格がどこから来るかを説明できる</td><td></td><td></td></tr><tr><td>収益勘定の決まり方を説明できる</td><td></td><td></td></tr><tr><td>受注伝票 → 納入 → 出庫過転記 → 請求書 → リリース を一通り実行できる</td><td></td><td></td></tr><tr><td>伝票フローで「貨物がどこにあるか」に答えられる</td><td></td><td></td></tr><tr><td>出庫過転記は 601、取消は VL09 を使うと知っている</td><td></td><td></td></tr><tr><td>レポートにデータがない原因を説明できる</td><td></td><td></td></tr></tbody></table></div>
+<div class="note tip"><span class="t">課題提出</span>第 2 節の5つの伝票番号 + 第 4 節のチェーン + 第 5 節の推論を提出したものが、本コースの実技成績の根拠になります（<a href="instructor.html">講師用 第 4 節 評価基準</a> 参照）。</div>
+<ol class="steps"><li>セルフチェックテスト：<a href="quiz.html"><b>30 問（合格 75%）</b></a>。</li><li><a href="config.html"><b>設定ページ</b></a> に戻り、該当タスクの実際の画面を確認します。</li></ol>
+</article>
+</main>
+</div>
+
+<footer class="site">
+  <div class="inner">
+    <div class="cols">
+      <div>
+<h5>SAP SD トレーニングコース</h5>
+<p>販売管理 · 概念からプロセスへ · 全体から部分へ</p>
+      </div>
+      <div>
+<h5>コースセクション</h5>
+<p><a href="concept.html">概念</a> · <a href="org.html">組織</a> · <a href="master.html">マスタ</a> ·
+<a href="pricing.html">価格設定</a> · <a href="flow.html">プロセス</a> · <a href="config.html">設定</a></p>
+      </div>
+      <div>
+<h5>授業用付属資料</h5>
+<p><a href="practice.html">実習タスク</a> · <a href="instructor.html">講師用</a> ·
+<a href="worksheet.html">受講者用</a> · <a href="quiz.html">セルフチェックテスト</a> ·
+<a href="glossary.html">用語集</a></p>
+      </div>
+      <div>
+<h5>ひと言の免責</h5>
+<p>スクリーンショットは教材ドキュメントの実際の SAP GUI 画面（中国語インターフェース）。図と表は当サイトの自作です。
+標準値はリリース/業界ソリューションによって異なります。ページに記載の確認方法をご自身のシステムで確認してください。</p>
+      </div>
+    </div>
+<p class="copy">© <span data-year>2026</span> SAP SD トレーニングコース · 静的サイト、オフラインで利用可能</p>
+  </div>
+</footer>
+<script src="assets/main.js"></script>
+<script src="assets/quiz.js"></script>
+<script src="assets/sd.js"></script>
+</body>
+</html>

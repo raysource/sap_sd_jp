@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>概念と位置づけ · SAP SD トレーニングコース</title>
+<meta name="description" content="SAP SD（販売管理）トレーニングコース：概念 → 組織構造 → マスタ → 価格設定 → エンドツーエンドプロセス（引合・見積・受注・納入・出荷・請求・入金）→ 設定 → 分析。各段階に実際の SAP GUI システムのスクリーンショット（中国語インターフェース）と自作図のフロー図、構造図、マインドマップを用意します。">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/sd.css">
+</head>
+<body>
+<header class="site">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html"><span class="logo">SD</span><span class="txt">トレーニングコース</span></a>
+    <nav class="main">
+      <a href="index.html" title="コースマップと学習ルート">ホーム</a>
+      <a class="active" href="concept.html" title="SD とは何か、3 つの概念レイヤ、5 大伝票">基本概念</a>
+      <a href="org.html" title="企業構造 / 販売構造 / 出荷構造">組織</a>
+      <a href="master.html" title="得意先マスタ / 品目の販売ビュー / 条件レコード">マスタ</a>
+      <a href="pricing.html" title="条件技術の4要素と計算スキーマ決定">価格設定</a>
+      <a href="flow.html" title="エンドツーエンド O2C のフロー図と伝票フロー">プロセス</a>
+      <a href="order.html" title="引合 · 見積 · 受注伝票（部分的な詳細解説）">受注伝票</a>
+      <a href="delivery.html" title="出荷伝票 · ピッキング · 出庫過転記">納入</a>
+      <a href="billing.html" title="請求書 · FI への転記 · 入金">請求</a>
+      <a href="analysis.html" title="伝票フロー／受注一覧／販売分析">データ分析</a>
+      <a href="config.html" title="SPRO 設定ルート（48 タスク）">設定</a>
+      <a href="practice.html" title="実習タスクと完成基準">実習</a>
+      <a href="instructor.html" title="採点ポイント / 必ず問う質問 / 解答">講師</a>
+      <a href="worksheet.html" title="記入表（印刷可能）">受講者</a>
+      <a href="quiz.html" title="30 問のセルフチェック（合格 75%）">セルフチェックテスト</a>
+      <a href="glossary.html" title="中国語・英語対照 / T-code クイックリファレンス">用語</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+<main class="page">
+<article>
+<p class="breadcrumb"><a href="index.html">トップページ</a> / <span>概念と位置づけ</span></p>
+<h1>概念と位置づけ：SD は結局何を管理するのか</h1>
+<p class="kicker">販売管理 · 3 つの概念レイヤ · 5 つの伝票 · 統合の境界 · よくある誤解</p>
+<div class="toc"><a href="#real">0. まず実際のシステムを見る</a><a href="#what">1. ひと言で位置づけ</a><a href="#integ">2. 隣接モジュールとの役割分担（構造図）</a><a href="#layers">3. 3 つの概念レイヤ</a><a href="#docs">4. 5 大伝票と伝票フロー</a><a href="#area">5. 販売エリア：SD の座標</a><a href="#auto">6. 1 件の受注伝票の裏側にある自動決定</a><a href="#myth">7. 12 のよくある誤解</a><a href="#sum">8. 本ページのまとめ</a></div>
+<h2 id="real">0. まず実機のシステムを見る：このコースはこの画面から始まります</h2>
+<p>SAP のすべての業務操作は、このクライアント（SAP GUI）で行います：<b>ログオン → 「SAP イージーアクセス」のメニューツリーに入る →左上のコマンドフィールドにトランザクションコード（T-code）を入力 → Enter キーで該当機能へ進みます</b>。以下 3 枚は教材環境の実際の画面です。</p>
+<div class="shot-grid"><figure class="shot"><a class="zoom" href="assets/img/prep/t01/02_1_image2.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/prep/t01/02_1_image2.png" width="590" height="580" alt="SAP Logon 770（ログオン画面）：接続を選択して「Log On」でログオン（ログオン画面は英語）" loading="lazy"></a><figcaption><span class="n">画面 1</span><span class="cap">SAP Logon 770（ログオン画面）：接続を選択して「Log On」でログオン（ログオン画面は英語）</span><span class="src">教材《S4.docx》準備章 · image2.png</span></figcaption></figure><figure class="shot"><a class="zoom" href="assets/img/prep/t01/04_1_image4.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/prep/t01/04_1_image4.png" width="727" height="751" alt="システムエントリの属性：接続タイプとシステムパラメータ（クライアント Client、言語など）" loading="lazy"></a><figcaption><span class="n">画面 2</span><span class="cap">システムエントリの属性：接続タイプとシステムパラメータ（クライアント Client、言語など）</span><span class="src">教材《S4.docx》準備章 · image4.png</span></figcaption></figure><figure class="shot"><a class="zoom" href="assets/img/sd/t41/01_1_image1297.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t41/01_1_image1297.png" width="338" height="409" alt="「SAP イージーアクセス」メニューツリー（中国語インターフェース）：ロジスティクス → 販売管理 → 販売 → 見積 → 後続機能 → V-01-受注" loading="lazy"></a><figcaption><span class="n">画面 3</span><span class="cap">「SAP イージーアクセス」メニューツリー（中国語インターフェース）：ロジスティクス → 販売管理 → 販売 → 見積 → 後続機能 → V-01-受注</span><span class="src">教材《S4.docx》SD モジュール · image1297.png</span></figcaption></figure></div>
+<div class="note info"><span class="t">インターフェース言語に関する 2 つのこと</span>教材環境の<b>業務画面は中国語</b>（当サイトのスクリーンショットはすべてこの状態）ですが、<b>ログオン画面 SAP Logon 自体は英語</b>（<code>Connections</code> / <code>Log On</code> / <code>System Entry Properties</code>）。これは問題ではありません——ログオン画面はクライアントツールで、システムへ入った後の業務画面だけがログオン言語に従います。</div>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>インターフェース要素</th><th>どこで</th><th>役割</th></tr></thead><tbody><tr><td>コマンドフィールド（左上）</td><td>メニューバーの下にある最初のボックス</td><td>T-code を入力して直接ジャンプできます。例えば <code>VA01</code>、<code>VL01N</code>、<code>VF01</code></td></tr><tr><td>メニューツリー</td><td>左側のツリー構造</td><td>モジュール別に機能を閲覧（コードを覚えずに済む入口）</td></tr><tr><td>ツールバーのボタン</td><td>上部のアイコン列</td><td>保存、戻る（F3）、終了（Shift+F3）、新規エントリなど</td></tr><tr><td>ステータスバー（最下部）</td><td>ウィンドウの最下部</td><td>システムメッセージ、エラー/警告、および現在の対象のステータスを表示（例の <code>trn03</code>、<code>OVR</code> がステータス識別子です）</td></tr></tbody></table></div>
+<div class="note tip"><span class="t">授業での最初の練習</span>受講者にログイン後 3 つのことを行ってもらう：① メニューツリーで「販売管理」を見つける；② コマンドフィールドに <code>VA03</code> を入力して Enter キーを押す；③ <b>F1</b>（項目ヘルプを表示）、<b>F4</b>（入力候補一覧を表示）、<b>F3</b>（戻る）という 3 つのショートカットを覚えてください。コース全体でこれらを使用します。</div>
+<h2 id="what">1. ひとことで位置づけ</h2>
+<p>SD（Sales and Distribution、販売管理）は「得意先が買いたい」ということを、最終的に「お金が会社の口座に戻る」までつながります：<b>価格照会 → 見積 → 受注 → 出荷 → 請求 → 入金</b>。扱うのは<b>販売伝票</b>です（誰が買う、何を買う、いくらか、いつ出荷する、いくら請求する）。実際に在庫を減らすのは MM、実際に収益を計上するのは FI、実際に生産を計画するのは PP です。</p>
+<div class="box info"><b class="t">まずこの一言を覚えましょう</b><p>SD は 5 つの問いに答えます。各問いは 1 つのマスタまたは設定に対応します：</p><ul><li><b>何を売るか</b> → 品目マスタ（販売ビュー）+ 明細カテゴリ</li><li><b>誰に売るか</b> → 得意先マスタ + 4 つのパートナ役割</li><li><b>いくらか</b> → 条件レコード + 計算スキーマ（条件技術）</li><li><b>どう出荷するか</b> → 出荷ポイント / 積込ポイント / ピッキング保管場所 + 出荷伝票</li><li><b>どう請求して入金するか</b> → 納入関連請求 + 勘定設定（収益勘定）+ 入金消込</li></ul></div>
+<h2 id="integ">2. 隣接モジュールとの役割分担</h2>
+<p>「SD は 1 枚の受注伝票で会社全体を動かす」——この図はデータがどこへ流れ、どのステップが誰の責任かを示します。</p>
+<figure class="dia"><a class="zoom" href="assets/diagrams/integration.svg"><img src="assets/diagrams/integration.svg" alt="SD と FI / MM / PP / CO の統合を示す構造図" loading="lazy"></a><figcaption><span class="n">構造図</span><span class="cap">SD は販売伝票を、MM は品目伝票（在庫）を、FI は会計伝票を出力します；PP は所要量を、CO は収益と原価を受け取ります</span><span class="src">当サイト自作の SVG</span></figcaption></figure>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>イベント（SD で行うアクション）</th><th>SD が生み出すもの</th><th>隣接モジュールが何を生成するか</th><th>要点</th></tr></thead><tbody><tr><td>受注伝票を保存 <code>VA01</code></td><td>受注伝票（VBAK / VBAP）</td><td>PP：所要量が MRP に渡される（<code>MD04</code> で確認可能）</td><td>受注伝票の保存では在庫を<b>動かさない</b></td></tr><tr><td>出荷伝票を登録 <code>VL01N</code></td><td>納入伝票（LIPS）</td><td>MM：ピッキングの準備（この時点ではまだ在庫は減りません）</td><td>納入は出庫を「計画」するだけ</td></tr><tr><td>出庫過転記（PGI）<code>VL02N</code></td><td>納入ステータスの更新</td><td>MM：移動タイプ 601 の品目伝票で、在庫が減少</td><td><b>ここで初めて実際に出庫される</b></td></tr><tr><td>請求書を登録 <code>VF01</code></td><td>請求書（VBRK／VBRP）</td><td>—</td><td>納入を参照して請求</td></tr><tr><td>請求書の転記（リリース）<code>VF02</code></td><td>請求ステータスが更新され、「凭证已经传送到记账」と表示されます</td><td>FI：会計伝票（得意先売掛金の借方 / 収益 + 売上税の貸方）</td><td>勘定は勘定設定で導出される</td></tr><tr><td>入金 <code>F-28</code></td><td>—</td><td>FI：売掛金の消込で、プロセスが一巡</td><td><code>FBL5N</code> で未消込項目を照会できます</td></tr></tbody></table></div>
+<div class="note ref"><span class="t">自システムで確認する</span>受注伝票が実際に所要量を MRP へ伝達するかどうかは、品目マスタの MRP タイプと所要量伝達の設定によって決まります：<code>VA03</code> で受注伝票を開き → 明細 → 「納入日程行」タブで「所要量タイプ／所要量カテゴリ」に値があるか確認します。次に <code>MD04</code> で同じ品目を入力し、「受注伝票」の行があるか確認します。</div>
+<h2 id="layers">3. 3 つの概念レイヤ：組織 → マスタ → 伝票</h2>
+<p>SD のすべてはこの 3 つのレイヤに収まります。これが<b>設定の順序</b>でもあります：まず組織構造を組み、次にマスタを登録し、最後に伝票を動かします。</p>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>階層</th><th>何に答えるか</th><th>代表的な対象</th><th>それが無いと何が起きるか</th></tr></thead><tbody><tr><td>① 組織構造</td><td>会社がどこで売り、何を売り、どこから出荷するか</td><td>会社コード / 販売組織 / 流通チャネル / 製品部門 / 販売エリア / プラント / 出荷ポイント</td><td>伝票が登録できない：得意先マスタと品目の販売ビューの両方で販売エリアを入力する必要があり、販売エリアが存在しないと選択できません</td></tr><tr><td>② マスタ</td><td>誰に売るか、何を売るか、いくらで売るか</td><td>得意先マスタ、品目マスタ（販売ビュー）、条件レコード、得意先-品目情報レコード</td><td>伝票は作成できても中身がすべて誤り：得意先がなければ受注伝票を作成できない。条件レコードがなければ価格が 0 になるか不完全のメッセージが出る</td></tr><tr><td>③ 伝票</td><td>この商談は現在どのステップまで進んでいるか</td><td>引合 / 見積 / 受注伝票 / 納入 / 請求書（+ MM 品目伝票、FI 会計伝票）</td><td>伝票がなければ業務はありません。伝票同士は「参照」でつながって伝票フローになり、数量と価格の一致を保証します</td></tr></tbody></table></div>
+<div class="note tip"><span class="t">受講者への一言の語呂合わせ</span><b>組織が座標を定め、マスタがルールを定め、伝票がこの取引を定めます。</b>以降、SD の問題に遭遇したら、まず 3 層のどこに属するかを判断し、対応する設定またはマスタで答えを探します。</div>
+<h2 id="docs">4. 5 つの伝票と伝票フロー</h2>
+<figure class="dia"><a class="zoom" href="assets/diagrams/doc-flow.svg"><img src="assets/diagrams/doc-flow.svg" alt="伝票フロー構造図" loading="lazy"></a><figcaption><span class="n">フロー図</span><span class="cap">引合 → 見積 → 受注伝票 → 納入 → 請求書。いずれも前の伝票を「参照」して作成し、ステータスは業務の進行に伴って更新される</span><span class="src">当サイト自作の SVG</span></figcaption></figure>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>伝票</th><th>役割</th><th>T-code を登録</th><th>標準伝票タイプ</th><th>次のステップ</th></tr></thead><tbody><tr><td>引合 Inquiry</td><td>得意先の問い合わせで、拘束力はない</td><td><code>VA11</code></td><td>IN</td><td>見積へ転送可能</td></tr><tr><td>見積 Quotation</td><td>正式な見積。有効期間を付けられる</td><td><code>VA21</code></td><td>QT</td><td>受注伝票へ転送可能</td></tr><tr><td>受注伝票 Sales Order</td><td>受注：価格設定、所要量確認、納入日</td><td><code>VA01</code></td><td>OR</td><td>納入伝票を登録</td></tr><tr><td>出荷伝票 Delivery</td><td>出荷内容、出荷ポイント、ピッキングを決定</td><td><code>VL01N</code></td><td>LF</td><td>ピッキング → 出庫過転記</td></tr><tr><td>請求書 Billing Document</td><td>請求：収益と税を計算し、会計伝票を生成</td><td><code>VF01</code></td><td>F2</td><td>FI へ転記 → 入金</td></tr></tbody></table></div>
+<div class="note warn"><span class="t">伝票タイプ ≠ 伝票カテゴリ</span>上記の「OR / LF / F2」は<b>伝票タイプ（Document Type）</b>で、設定オブジェクトであり、この伝票の流れ方を決めます（価格設定の有無、所要量確認の有無、番号範囲など）。教材シナリオでは受注に OR、請求書に F2 を使用します。システムごとにカスタム伝票タイプは多くあります。見慣れないコードが出たら F4 で説明を見れば十分です。</div>
+<h2 id="area">5. 販売エリア：SD の座標</h2>
+<figure class="dia"><a class="zoom" href="assets/diagrams/org-structure.svg"><img src="assets/diagrams/org-structure.svg" alt="SD 組織構造図" loading="lazy"></a><figcaption><span class="n">構造図</span><span class="cap">企業構造 → 販売構造 → 出荷構造、およびそれらの割当関係と自動導出のチェーン</span><span class="src">当サイト自作の SVG</span></figcaption></figure>
+<p>販売エリア = <b>販売組織 + 流通チャネル + 製品部門</b>。教材のシナリオでは：1 つの販売組織 × 2 つの流通チャネル（直販 / 卸売）× 2 つの製品部門 → 合計 <b>4 つの販売エリア</b>を、1 つずつ設定します。それは以下に現れます：得意先マスタの販売ビュー、品目マスタの販売ビュー、条件レコード、すべての販売伝票のヘッダ。</p>
+<figure class="dia"><a class="zoom" href="assets/diagrams/order-internal.svg"><img src="assets/diagrams/order-internal.svg" alt="受注伝票の内部処理フロー図" loading="lazy"></a><figcaption><span class="n">フロー図</span><span class="cap">数行の情報を入力すると、システムが裏側で行う自動決定：明細カテゴリ、価格設定、税、パートナ、所要量確認</span><span class="src">当サイト自作の SVG</span></figcaption></figure>
+<div class="note ref"><span class="t">用語のちょっとした注意</span>教材では「販売エリア」を分かりやすく「販売部門」と呼んでいます。カスタマイジングで「部門」に関係するのは実際には<b>販売事務所（Sales Office）</b>と<b>販売グループ（Sales Group）</b>は別々のオブジェクトです。面接や試験では混同しないこと。システムの項目名（Sales Area / Sales Office / Sales Group）で確認するのが最も確実です。</div>
+<h2 id="auto">6. 受注伝票の背景にある自動決定（総覧）</h2>
+<p>SD で初心者が戸惑うところは、ほとんどが「システムがどうやって何かを自動決定するか」に起因します。この 4 つのチェーンを覚えれば、SD は半分理解できたも同然です：</p>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>何を決定するか</th><th>何で決定されるか（決定キー）</th><th>どこで設定するか</th><th>現象</th></tr></thead><tbody><tr><td>明細カテゴリ Item Category</td><td>販売伝票タイプ + 品目（明細カテゴリグループ）+ 用途 + 上位明細</td><td>IMG：<code>VOV4</code>（決定）/ <code>VOV7</code>（定義）</td><td>この明細で価格設定・納入・請求を行うかどうかを決定</td></tr><tr><td>計算スキーマ Pricing Procedure</td><td>販売エリア + 得意先計算スキーマ + 伝票計算スキーマ</td><td>IMG：販売管理 → 基本機能 → 価格設定 → 価格設定管理 → 計算スキーマの定義と割当</td><td>どの価格計算表を使うかを決定</td></tr><tr><td>税コード Tax Code</td><td>得意先税分類 + 品目税分類 + 税率（国）</td><td>IMG：販売管理 → 基本機能 → 税</td><td>売上税がいくらになるかを決定</td></tr><tr><td>収益勘定 Revenue Account</td><td>勘定キー（計算スキーマから）+ 品目の勘定割当グループ + 得意先の勘定割当グループ</td><td>IMG：販売管理 → 基本機能 → 勘定割当/原価 → 収益勘定設定</td><td>請求書の転記でどの収益勘定に記帳するかを決定</td></tr></tbody></table></div>
+<div class="note info"><span class="t">なぜこのように設計されているのか</span>毎回価格と勘定を手入力するとミスが多くなります。SAP の考え方は、<b>「どう計算するか」を設定として書くことです。「計算の根拠」をマスタ</b>として登録しておけば、伝票入力時にシステムが自動で参照します。つまり SD コンサルタントの仕事の大半は、この2つを登録することです。</div>
+<h2 id="myth">7. 12 のよくある誤解（授業で最もよく質問される）</h2>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>#</th><th>誤解</th><th>正しい理解</th></tr></thead><tbody><tr><td>1</td><td>SD が在庫を管理</td><td><b>違います</b>。在庫は MM の管轄です。SD の納入は「出庫を要求する」だけで、在庫が動くのは出庫過転記（601）です。</td></tr><tr><td>2</td><td>販売組織は会社コードである</td><td><b>いいえ</b>。1 つの販売組織は 1 つの会社コードにのみ属しますが、1 つの会社コードは複数の販売組織を持てます（多対一）。</td></tr><tr><td>3</td><td>価格は品目マスタで登録する</td><td><b>違います</b>。価格は<b>条件レコード</b>（<code>VK11</code>）にあります。品目の販売ビューが決めるのは「販売できるか、税分類、勘定割当グループ」などだけです。</td></tr><tr><td>4</td><td>納入で在庫が引かれる</td><td><b>いいえ</b>。納入伝票の登録はピッキングの準備にすぎず、<b>出庫過転記</b>（PGI、移動タイプ 601）で初めて品目伝票が生成されます。</td></tr><tr><td>5</td><td>在庫がなければ受注伝票を保存できない</td><td><b>保存できます</b>。所要量確認はデフォルトでは確定日を示すだけで、保存はブロックしません（ブロックするかどうかは設定と「ブロック」の有無によります）。</td></tr><tr><td>6</td><td>納入せずに直接請求できる</td><td><b>できません</b>（通常のプロセス）。請求書は通常、納入を参照して登録します。納入が完了していないと、請求時に請求可能な納入がないと表示されます。教材の順序は納入 → 請求書です。</td></tr><tr><td>7</td><td>得意先マスタを変更すると、既存の受注伝票も追随して変わります</td><td><b>自動では変わりません</b>。伝票にはその時点のスナップショットが保存されています；マスタを変更しても影響するのは新規作成の伝票だけです（または伝票を手で変更し再価格設定）。</td></tr><tr><td>8</td><td>1 つの得意先に番号は 1 つだけ</td><td><b>複数持てます</b>。受注先 / 出荷先 / 請求先 / 支払先は異なる得意先番号にでき、パートナ役割で関連付けます（教材で出荷先を受注先に割り当てるのがまさにこれです）。</td></tr><tr><td>9</td><td>得意先マスタの販売ビューは全販売エリアで1つを共用</td><td><b>販売エリアごとに個別に登録</b>。同じ得意先でも販売エリアによって異なるデータを持てます。</td></tr><tr><td>10</td><td>販売エリアは販売部門である</td><td>教材での分かりやすい呼び方です。<b>正式な対象</b>は販売エリア（Sales Area、組織キーの組合せ）と販売事務所（Sales Office、機関）です。</td></tr><tr><td>11</td><td>計算スキーマは割引表のようなもの</td><td><b>それだけではありません</b>。計算スキーマは価格・割引・運賃・税などの条件タイプをステップ順に並べ、さらに勘定キー（転記する勘定を決定）を持ちます。</td></tr><tr><td>12</td><td>請求書の転記で会計伝票を手作業で作る必要がある</td><td><b>不要</b>。請求書のリリース（<code>VF02</code>）時にシステムが自動的に会計伝票を生成し、「伝票はすでに転記に転送されました」と表示します。勘定は勘定設定から決まります。</td></tr></tbody></table></div>
+<h2 id="sum">8. 本ページのまとめと次のステップ</h2>
+<div class="box ok"><b class="t">このページを読み終えたら次に答えられるはずです</b><ul><li>SD が管理する 5 つのことは何ですか？それぞれどのマスタ/設定に支えられていますか？</li><li>なぜ受注伝票の保存は出荷ではなく、出荷は転記ではないのですか？</li><li>販売エリアはどの 3 つのキーで構成され、どのデータを決定しますか？</li><li>明細カテゴリ、計算スキーマ、収益勘定はそれぞれ何によって決まりますか？</li></ul></div>
+<ol class="steps"><li>次の目的地：<a href="org.html"><b>組織構造</b></a> —— 「座標」を築きます（SPRO の最初の 12 タスクに対応）。</li><li>業務の流れを直接見たい場合：<a href="flow.html"><b>プロセス</b></a>。</li><li>まず価格を理解したい場合：<a href="pricing.html"><b>価格設定</b></a>。</li></ol>
+</article>
+</main>
+</div>
+
+<footer class="site">
+  <div class="inner">
+    <div class="cols">
+      <div>
+<h5>SAP SD トレーニングコース</h5>
+<p>販売管理 · 概念からプロセスへ · 全体から部分へ</p>
+      </div>
+      <div>
+<h5>コースセクション</h5>
+<p><a href="concept.html">概念</a> · <a href="org.html">組織</a> · <a href="master.html">マスタ</a> ·
+<a href="pricing.html">価格設定</a> · <a href="flow.html">プロセス</a> · <a href="config.html">設定</a></p>
+      </div>
+      <div>
+<h5>授業用付属資料</h5>
+<p><a href="practice.html">実習タスク</a> · <a href="instructor.html">講師用</a> ·
+<a href="worksheet.html">受講者用</a> · <a href="quiz.html">セルフチェックテスト</a> ·
+<a href="glossary.html">用語集</a></p>
+      </div>
+      <div>
+<h5>ひと言の免責</h5>
+<p>スクリーンショットは教材ドキュメントの実際の SAP GUI 画面（中国語インターフェース）。図と表は当サイトの自作です。
+標準値はリリース/業界ソリューションによって異なります。ページに記載の確認方法をご自身のシステムで確認してください。</p>
+      </div>
+    </div>
+<p class="copy">© <span data-year>2026</span> SAP SD トレーニングコース · 静的サイト、オフラインで利用可能</p>
+  </div>
+</footer>
+<script src="assets/main.js"></script>
+<script src="assets/quiz.js"></script>
+<script src="assets/sd.js"></script>
+</body>
+</html>

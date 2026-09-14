@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>マスタ · SAP SD トレーニングコース</title>
+<meta name="description" content="SAP SD（販売管理）トレーニングコース：概念 → 組織構造 → マスタ → 価格設定 → エンドツーエンドプロセス（引合・見積・受注・納入・出荷・請求・入金）→ 設定 → 分析。各段階に実際の SAP GUI システムのスクリーンショット（中国語インターフェース）と自作図のフロー図、構造図、マインドマップを用意します。">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/sd.css">
+</head>
+<body>
+<header class="site">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html"><span class="logo">SD</span><span class="txt">トレーニングコース</span></a>
+    <nav class="main">
+      <a href="index.html" title="コースマップと学習ルート">ホーム</a>
+      <a href="concept.html" title="SD とは何か、3 つの概念レイヤ、5 大伝票">基本概念</a>
+      <a href="org.html" title="企業構造 / 販売構造 / 出荷構造">組織</a>
+      <a class="active" href="master.html" title="得意先マスタ / 品目の販売ビュー / 条件レコード">マスタ</a>
+      <a href="pricing.html" title="条件技術の4要素と計算スキーマ決定">価格設定</a>
+      <a href="flow.html" title="エンドツーエンド O2C のフロー図と伝票フロー">プロセス</a>
+      <a href="order.html" title="引合 · 見積 · 受注伝票（部分的な詳細解説）">受注伝票</a>
+      <a href="delivery.html" title="出荷伝票 · ピッキング · 出庫過転記">納入</a>
+      <a href="billing.html" title="請求書 · FI への転記 · 入金">請求</a>
+      <a href="analysis.html" title="伝票フロー／受注一覧／販売分析">データ分析</a>
+      <a href="config.html" title="SPRO 設定ルート（48 タスク）">設定</a>
+      <a href="practice.html" title="実習タスクと完成基準">実習</a>
+      <a href="instructor.html" title="採点ポイント / 必ず問う質問 / 解答">講師</a>
+      <a href="worksheet.html" title="記入表（印刷可能）">受講者</a>
+      <a href="quiz.html" title="30 問のセルフチェック（合格 75%）">セルフチェックテスト</a>
+      <a href="glossary.html" title="中国語・英語対照 / T-code クイックリファレンス">用語</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+<main class="page">
+<article>
+<p class="breadcrumb"><a href="index.html">ホーム</a> / <span>マスタデータ</span></p>
+<h1>マスタ：得意先、品目、価格</h1>
+<p class="kicker">得意先マスタの 3 層 · 4 つのパートナ役割 · 品目の販売ビュー · 条件レコード · 実機画面</p>
+<div class="toc"><a href="#three">1. 3 種類のマスタの役割分担</a><a href="#cust">2. 得意先マスタ</a><a href="#partner">3. 4 つのパートナ役割</a><a href="#mat">4. 品目マスタ（販売ビュー）</a><a href="#cond">5. 条件レコード：価格はどこに置くか</a><a href="#shots">6. 実際の画面</a><a href="#check">7. セルフチェック</a></div>
+<h2 id="three">1. 3 種類のマスタの役割分担</h2>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>マスタ</th><th>答え</th><th>階層</th><th>作成する T-code</th></tr></thead><tbody><tr><td>得意先マスタ</td><td>誰に売るか：誰が発注するか、どこへ納入するか、誰に請求するか、誰が支払うか。さらに販売エリア、支払条件、税分類なども導出されます</td><td>一般データ / 会社コードデータ / 販売エリアデータ（3 層）</td><td><code>VD01</code>（登録、販売ビュー）、<code>VD02</code>（変更）、<code>XD01</code>/<code>BP</code>（S/4HANA の得意先マスタ）</td></tr><tr><td>品目マスタ</td><td>何を売るか：販売可否、販売単位、税分類、勘定割当グループ、輸送条件</td><td>一般 / プラント / 購買 / 販売（販売エリアレベル）などのビュー</td><td><code>MM01</code>（登録）、<code>MM02</code>（変更）、<code>MM03</code>（照会）</td></tr><tr><td>条件レコード</td><td>いくらか：単価、割引、運賃、売上税</td><td>販売エリア / 得意先 / 品目などのキー組合せ別</td><td><code>VK11</code>（登録）、<code>VK12</code>（変更）、<code>VK13</code>（照会）</td></tr></tbody></table></div>
+<div class="note info"><span class="t">なぜ得意先マスタに「3 層」があるのか</span>1 つの会社が複数の会社コードと複数の販売エリアに対応することがあるためです：得意先の一般情報（名称、住所、税番号）は全社で共用します。会社コード層には支払条件、照合勘定などの財務情報を置きます。<b>販売エリア層</b>には販売関連データ（販売エリア、得意先計算スキーマ、輸送条件、パートナ役割など）。そのため「同じ得意先」でも販売エリアが違えば異なる設定を持てます。</div>
+<h2 id="cust">2. 得意先マスタ</h2>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>階層 / タブ</th><th>何を入れるか</th><th>何に影響するか</th></tr></thead><tbody><tr><td>一般データ（General）</td><td>名称、住所、税番号、担当者、連絡手段</td><td>全社で共用。住所は請求/納入の既定の送付先情報にもなります</td></tr><tr><td>会社コードデータ（Company Code）</td><td>照合勘定、支払条件、督促、利息</td><td>請求書の転記時の貸方の売掛金勘定、支払条件</td></tr><tr><td>販売エリアデータ（Sales Area）</td><td>販売エリア、得意先計算スキーマ、輸送条件、得意先グループ、税分類、勘定割当グループ、パートナ役割</td><td>価格、税、出荷方式、収益勘定を決定</td></tr></tbody></table></div>
+<div class="pathline" data-copy="财务会计(新) → 应收账款和应付账款 → 客户账户 → 主数据 → 创建客户主记录准备 → 定义带有屏幕格式的账户组（客户）"><b>IMG パス（得意先勘定グループの販売データ / 画面レイアウトの登録）</b>財務会計（新）→ 債権管理および債務管理 → 得意先勘定 → マスタデータ → 得意先マスタレコード登録の準備 → 画面レイアウト付きの勘定グループの定義（得意先）</div><div class="pathzh"><b>原教材の中国語パス</b><code>财务会计(新) → 应收账款和应付账款 → 客户账户 → 主数据 → 创建客户主记录准备 → 定义带有屏幕格式的账户组（客户）</code></div>
+<p>教材の最初のステップでは「得意先勘定グループ」を設定します：これは販売ビューで<b>どの項目が必須で、どれが見えて、どれが任意か</b>を決定します。これは「得意先マスタ画面がどのような見た目か」の切り替えです。コースのシナリオでは勘定グループ <b><code>K001</code>「受注先-颐宁」</b> を使います。</p>
+<figure class="shot"><a class="zoom" href="assets/img/sd/t21/03_1_image1167.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t21/03_1_image1167.png" width="357" height="371" alt="得意先勘定グループの画面レイアウトの登録：タブごとに項目を必須・任意・非表示のどれにするか決定します（画面には勘定グループ K001「受注先-颐宁」が表示されています）" loading="lazy"></a><figcaption><span class="n">画面 1</span><span class="cap">得意先勘定グループの画面レイアウトの登録：タブごとに項目を必須・任意・非表示のどれにするか決定します（画面には勘定グループ K001「受注先-颐宁」が表示されています）</span><span class="src">教材《S4.docx》・SD タスク 21 得意先勘定グループの販売データを登録</span></figcaption></figure>
+<div class="pathline" data-copy="后勤 → 销售和分销 → 主数据 → 业务伙伴 → 客户 → 创建 → VD01"><b>IMG パス（得意先の販売ビューの登録）</b>ロジスティクス → 販売管理 → マスタデータ → パートナ → 得意先 → 登録 → VD01</div><div class="pathzh"><b>原教材の中国語パス</b><code>后勤 → 销售和分销 → 主数据 → 业务伙伴 → 客户 → 创建 → VD01</code></div>
+<div class="shot-grid"><figure class="shot"><a class="zoom" href="assets/img/sd/t37/03_1_image1268.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t37/03_1_image1268.png" width="621" height="704" alt="VD01 得意先の登録：得意先番号、勘定グループ、会社コードを入力して販売ビューへ進む" loading="lazy"></a><figcaption><span class="n">画面 2</span><span class="cap">VD01 得意先の登録：得意先番号、勘定グループ、会社コードを入力して販売ビューへ進む</span><span class="src">教材《S4.docx》SD モジュール · image1268.png</span></figcaption></figure><figure class="shot"><a class="zoom" href="assets/img/sd/t37/06_1_image1272.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t37/06_1_image1272.png" width="522" height="572" alt="販売ビューの重要項目：販売エリア、得意先計算スキーマ、輸送条件、税分類" loading="lazy"></a><figcaption><span class="n">画面 3</span><span class="cap">販売ビューの重要項目：販売エリア、得意先計算スキーマ、輸送条件、税分類</span><span class="src">教材《S4.docx》SD モジュール · image1272.png</span></figcaption></figure></div>
+<h4>コースシナリオ（教材環境）の実際の値</h4>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>対象</th><th>値</th><th>出典（画面）</th></tr></thead><tbody><tr><td>得意先（受注先）</td><td><code>10000000</code> 远东造船厂 / 大连</td><td>VD01 の画面（画面 3）</td></tr><tr><td>出荷先</td><td><code>10000000</code> 远东造船厂 第三支社</td><td>VD02 初期画面</td></tr><tr><td>得意先勘定グループ</td><td><code>K001</code> 受注先-颐宁</td><td>勘定グループの登録画面（画面 1）</td></tr><tr><td>得意先販売ビュー（出荷）</td><td>輸送条件 <code>99</code>、納入プラント <code>P999</code>、納入優先度 <code>02</code>、「受注の組合せ」にチェックを入れる</td><td>VD01 販売ビュー（画面 3）</td></tr><tr><td>品目</td><td><code>F999-100</code> 铸钢泵 170-230（品目タイプ <code>FERT</code> 完成品、業界分野 <code>M</code> 機械工学）</td><td>MM01 の画面（画面 6）</td></tr><tr><td>販売価格（PR00）</td><td><code>8,000.00 RMB</code>／PC、有効期間 2021.01.01 – 9999.04.14</td><td>VK11 の画面（画面 8）</td></tr></tbody></table></div>
+<div class="note ref"><span class="t">これらの値の使い方</span>授業では受講者に自分のシステムで「同じ種類のデータがどうなっているか」を照会させ、<code>C999</code> / <code>F999-100</code> を暗記させませんこれらは練習用のコードです。スクリーンショットの数値は<b>教材環境の実際の値</b>で、項目の位置と相互関係を照合するためのものです。</div>
+<h2 id="partner">3. 4 つのパートナ役割（Partner Roles）</h2>
+<p>1 枚の受注伝票には 4 つの「役割」があり、同じ得意先のことも、別会社のこともあります：</p>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>役割</th><th>コード</th><th>意味</th><th>教材のシナリオ</th></tr></thead><tbody><tr><td>受注先 Sold-to Party</td><td><code>AG</code></td><td>発注した人（受注伝票の「得意先」項目）</td><td>远东造船厂（極東造船所）</td></tr><tr><td>出荷先 Ship-to Party</td><td><code>WE</code></td><td>商品を受け取る人/場所（納入はここに届く）</td><td>远东造船厂第三分公司（極東造船所第三支社）</td></tr><tr><td>請求書送付先 Bill-to Party</td><td><code>RE</code></td><td>請求書を誰に発行するか</td><td>通常は受注先と同じ</td></tr><tr><td>支払先 Payer</td><td><code>RG</code></td><td>誰が支払うか（売掛金を決定）</td><td>教材の請求画面の支払先 <code>10000000</code></td></tr></tbody></table></div>
+<div class="note tip"><span class="t">役割コードの見方</span>システムによってパートナ役割のコードは異なることがあります（教材では SH が納入先/出荷先を表し、標準設定では WE / SH の混用がよく見られます）。「出荷」ビューか「納入」ビューかで異なります）。自システムの F4 の入力候補を基準にしてください。</div>
+<div class="pathline" data-copy="后勤 → 销售和分销 → 主数据 → 业务合作伙伴 → 客户 → 更改 → VD02"><b>IMG パス（出荷先を受注先に割当）</b>ロジスティクス → 販売管理 → マスタデータ → 取引パートナ → 得意先 → 変更 → VD02</div><div class="pathzh"><b>原教材の中国語パス</b><code>后勤 → 销售和分销 → 主数据 → 业务合作伙伴 → 客户 → 更改 → VD02</code></div>
+<div class="shot-grid"><figure class="shot"><a class="zoom" href="assets/img/sd/t39/02_1_image1285.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t39/02_1_image1285.png" width="515" height="383" alt="VD02 得意先の変更：販売エリアデータへ進む" loading="lazy"></a><figcaption><span class="n">画面 4</span><span class="cap">VD02 得意先の変更：販売エリアデータへ進む</span><span class="src">教材《S4.docx》SD モジュール · image1285.png</span></figcaption></figure><figure class="shot"><a class="zoom" href="assets/img/sd/t39/04_1_image1287.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t39/04_1_image1287.png" width="698" height="439" alt="「パートナ機能」で出荷先（第三分公司）を受注先に追加" loading="lazy"></a><figcaption><span class="n">画面 5</span><span class="cap">「パートナ機能」で出荷先（第三分公司）を受注先に追加</span><span class="src">教材《S4.docx》SD モジュール · image1287.png</span></figcaption></figure></div>
+<h2 id="mat">4. 品目マスタ（販売ビュー）</h2>
+<p>品目マスタで SD に関係する項目は主に<b>販売ビュー</b>（販売組織 / 流通チャネルレベル）と<b>プラントレベル</b>にあります。コースシナリオでは 2 つの品目を外販します：完成品「铸钢泵 170-230」と取引商品「高速增压涡轮泵」。</p>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>項目</th><th>役割</th><th>影響する先</th></tr></thead><tbody><tr><td>販売単位 / 基本単位</td><td>得意先に販売する際の数量単位</td><td>受注数量と価格単位</td></tr><tr><td>品目グループ / 製品階層</td><td>統計と分類</td><td>レポート分析</td></tr><tr><td>明細カテゴリグループ Item Category Group</td><td>受注明細の<b>明細カテゴリ</b>を決定（価格設定の有無、納入の有無、請求の有無）</td><td>受注明細の動作</td></tr><tr><td>税分類 Tax Classification</td><td>得意先の税分類との組み合わせ → <b>税コード</b>（売上税）を決定</td><td>税額</td></tr><tr><td>勘定割当グループ Account Assignment Group</td><td>得意先の勘定割当グループ + 勘定キーとともに<b>収益勘定</b>を決定</td><td>会計伝票</td></tr><tr><td>輸送条件 / 積込グループ</td><td>得意先の輸送条件・プラントとともに<b>出荷ポイント</b>と積込ポイントを決定</td><td>どこから出荷するか</td></tr><tr><td>販売ステータス / 品目統計グループ</td><td>販売できるか。販売分析に入るか</td><td>VA01 でその品目を呼び出せるか；MCTA にデータがあるか</td></tr></tbody></table></div>
+<div class="pathline" data-copy="后勤 → 物料管理 → 物料主记录 → 物料 → 创建（一般） → MM01 立即"><b>IMG パス（品目マスタの販売ビューの登録）</b>ロジスティクス → 品目管理 → 品目マスタ → 品目 → 登録（一般） → MM01 即時</div><div class="pathzh"><b>原教材の中国語パス</b><code>后勤 → 物料管理 → 物料主记录 → 物料 → 创建（一般） → MM01 立即</code></div>
+<figure class="shot"><a class="zoom" href="assets/img/sd/t34/02_1_image1247.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t34/02_1_image1247.png" width="471" height="330" alt="MM01 品目の登録：ビューを選択（販売ビューでは販売組織と流通チャネルを指定）" loading="lazy"></a><figcaption><span class="n">画面 6</span><span class="cap">MM01 品目の登録：ビューを選択（販売ビューでは販売組織と流通チャネルを指定）</span><span class="src">教材《S4.docx》・SD タスク 34 品目マスタの販売ビューを登録</span></figcaption></figure>
+<h2 id="cond">5. 条件レコード：価格はどこに持つのか</h2>
+<p>価格は品目マスタではなく、<b>条件レコード</b>に入っています：条件タイプごとに（例えば <code>PR00</code> 販売価格、<code>MWST</code> 売上税）を登録します。キーの組み合わせは通常「販売組織 + 流通チャネル + 品目」です。<code>PR00</code> のアクセス順序が「どの価格を先に探すか」を決定します。</p>
+<div class="pathline" data-copy="后勤 → 销售和分销 → 主数据 → 条件 → 按条件类型选择 → VK11 → 创建"><b>IMG パス（品目の販売価格の登録）</b>ロジスティクス → 販売管理 → マスタデータ → 条件 → 条件タイプ別選択 → VK11 → 登録</div><div class="pathzh"><b>原教材の中国語パス</b><code>后勤 → 销售和分销 → 主数据 → 条件 → 按条件类型选择 → VK11 → 创建</code></div>
+<div class="shot-grid"><figure class="shot narrow"><a class="zoom" href="assets/img/sd/t35/02_1_image1257.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t35/02_1_image1257.png" width="468" height="143" alt="VK11 で条件レコードを登録：条件タイプ PR00（販売価格）を選択" loading="lazy"></a><figcaption><span class="n">画面 7</span><span class="cap">VK11 で条件レコードを登録：条件タイプ PR00（販売価格）を選択</span><span class="src">教材《S4.docx》SD モジュール · image1257.png</span></figcaption></figure><figure class="shot"><a class="zoom" href="assets/img/sd/t35/04_1_image1260.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t35/04_1_image1260.png" width="624" height="403" alt="キーの組み合わせと金額を入力する（F4 で品目を選択可能）——ここが「単価」の入力ポイントです" loading="lazy"></a><figcaption><span class="n">画面 8</span><span class="cap">キーの組み合わせと金額を入力する（F4 で品目を選択可能）——ここが「単価」の入力ポイントです</span><span class="src">教材《S4.docx》SD モジュール · image1260.png</span></figcaption></figure></div>
+<figure class="shot"><a class="zoom" href="assets/img/sd/t36/02_1_image1263.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t36/02_1_image1263.png" width="1149" height="367" alt="売上税 MWST も VK11 で税率を登録します。税率は得意先税分類 + 品目税分類によって自動決定されます" loading="lazy"></a><figcaption><span class="n">画面 9</span><span class="cap">売上税 MWST も VK11 で税率を登録します。税率は得意先税分類 + 品目税分類によって自動決定されます</span><span class="src">教材《S4.docx》・SD タスク 36 売上税率の登録</span></figcaption></figure>
+<div class="note warn"><span class="t">よくある 3 つの質問</span><ul><li><b>受注伝票の価格が空/0</b>：条件レコードが未登録、または条件レコードのキーが受注伝票の販売エリア/得意先と一致していない、または条件レコードが期限切れです。</li><li><b>価格を変更しても既存の受注伝票は変わらない</b>：伝票にはその時点の価格スナップショットが保存されています；手動で再価格設定が必要です。</li><li><b>特定の得意先専用の価格を作りたい</b>：得意先を含む条件テーブルで得意先専用の条件レコードを登録し、そのアクセス順序を一般価格より前に置きます。</li></ul></div>
+<h2 id="shots">6. マスタ関連タスクの索引（教材）</h2>
+<div class="tblwrap"><table class="tbl idx"><thead><tr><th>タスク</th><th>タイトル</th><th>教材 IMG / メニューパス</th><th>T-code</th><th>画面の数</th></tr></thead><tbody><tr><td><a href="config.html#task21">タスク 21</a></td><td>得意先勘定グループの販売データを登録</td><td><code>財務会計（新）→ 債権管理および債務管理 → 得意先勘定 → マスタデータ → 得意先マスタレコード登録の準備 → 画面レイアウト付きの勘定グループの定義（得意先）</code></td><td>—</td><td>16</td></tr><tr><td><a href="config.html#task34">タスク 34</a></td><td>品目マスタの販売ビューを登録</td><td><code>ロジスティクス → 品目管理 → 品目マスタ → 品目 → 登録（一般） → MM01 即時</code></td><td><code>MM01</code></td><td>10</td></tr><tr><td><a href="config.html#task35">タスク 35</a></td><td>品目の販売価格を登録</td><td><code>ロジスティクス → 販売管理 → マスタデータ → 条件 → 条件タイプ別選択 → VK11 → 登録</code></td><td><code>VK11</code></td><td>5</td></tr><tr><td><a href="config.html#task36">タスク 36</a></td><td>売上税率の登録</td><td><code>ロジスティクス → 販売管理 → マスタデータ → 条件 → 条件タイプ別選択 → VK11 → 登録</code></td><td><code>VK11</code></td><td>4</td></tr><tr><td><a href="config.html#task37">タスク 37</a></td><td>受注先マスタの販売ビューを登録</td><td><code>ロジスティクス → 販売管理 → マスタデータ → パートナ → 得意先 → 登録 → VD01</code></td><td><code>VD01</code></td><td>13</td></tr><tr><td><a href="config.html#task38">タスク 38</a></td><td>出荷先の販売ビューを登録</td><td><code>ロジスティクス → 販売管理 → マスタデータ → 取引パートナ → 得意先 → 登録 VD01</code></td><td><code>VD01</code></td><td>6</td></tr><tr><td><a href="config.html#task39">タスク 39</a></td><td>出荷先の受注先への割当</td><td><code>ロジスティクス → 販売管理 → マスタデータ → 取引パートナ → 得意先 → 変更 → VD02</code></td><td><code>VD02</code></td><td>4</td></tr></tbody></table></div>
+<h2 id="check">7. セルフチェック</h2>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>確認すべきこと</th><th>どう確認するか</th></tr></thead><tbody><tr><td>得意先が特定の販売エリアに販売ビューを持つかどうか</td><td><code>VD03</code> / <code>XD03</code> で得意先と販売エリアを入力；テーブル <code>KNVV</code></td></tr><tr><td>品目に販売ビューがあるか</td><td><code>MM03</code> → 追加 → 販売組織データ；テーブル <code>MVKE</code></td></tr><tr><td>価格はどこから来るのか</td><td><code>VA03</code> → 明細 → <b>条件</b>タブで、各行の条件タイプとソース（アクセス順序の何番目で見つかったか）を確認</td></tr><tr><td>税額がなぜこの数値なのか</td><td><code>VA03</code> の明細条件で <code>MWST</code> の行を見て、得意先/品目の税分類（カスタマイジング）と照合する</td></tr></tbody></table></div>
+<ol class="steps"><li>次ページ：<a href="pricing.html"><b>価格設定</b></a> —— 上記の条件技術を詳しく解説します。</li><li>実際に手を動かしたい場合：<a href="practice.html"><b>実習タスク</b></a>。</li></ol>
+</article>
+</main>
+</div>
+
+<footer class="site">
+  <div class="inner">
+    <div class="cols">
+      <div>
+<h5>SAP SD トレーニングコース</h5>
+<p>販売管理 · 概念からプロセスへ · 全体から部分へ</p>
+      </div>
+      <div>
+<h5>コースセクション</h5>
+<p><a href="concept.html">概念</a> · <a href="org.html">組織</a> · <a href="master.html">マスタ</a> ·
+<a href="pricing.html">価格設定</a> · <a href="flow.html">プロセス</a> · <a href="config.html">設定</a></p>
+      </div>
+      <div>
+<h5>授業用付属資料</h5>
+<p><a href="practice.html">実習タスク</a> · <a href="instructor.html">講師用</a> ·
+<a href="worksheet.html">受講者用</a> · <a href="quiz.html">セルフチェックテスト</a> ·
+<a href="glossary.html">用語集</a></p>
+      </div>
+      <div>
+<h5>ひと言の免責</h5>
+<p>スクリーンショットは教材ドキュメントの実際の SAP GUI 画面（中国語インターフェース）。図と表は当サイトの自作です。
+標準値はリリース/業界ソリューションによって異なります。ページに記載の確認方法をご自身のシステムで確認してください。</p>
+      </div>
+    </div>
+<p class="copy">© <span data-year>2026</span> SAP SD トレーニングコース · 静的サイト、オフラインで利用可能</p>
+  </div>
+</footer>
+<script src="assets/main.js"></script>
+<script src="assets/quiz.js"></script>
+<script src="assets/sd.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1340 880" width="1340" height="880" role="img" aria-label="受注伝票の内部処理フロー図" font-family="'PingFang SC','Hiragino Sans GB','Noto Sans CJK SC','Microsoft YaHei',sans-serif">
+<title>受注伝票の内部処理フロー図</title>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0a6ed1"/></marker><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#007272"/></marker><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ffffff"/></marker></defs>
+<rect width="1340" height="880" fill="#ffffff"/>
+<text x="40.0" y="48.0" font-size="20" fill="#1d2d3e" text-anchor="start" font-weight="700">受注伝票の内部処理：1 枚の図で「自動決定」を理解する</text>
+<text x="40.0" y="70.0" font-size="13" fill="#6b7a8d" text-anchor="start" font-weight="400">VA01 では数行の情報を入力しただけですが、システムは裏でこれだけのことをしています（当サイトの自作図）</text>
+<rect x="60.0" y="116.0" width="700.0" height="142.0" rx="10" fill="#ffffff" stroke="#0a6ed1" stroke-width="1.4"/>
+<rect x="60.0" y="116.0" width="4.5" height="142.0" rx="2" fill="#0a6ed1" stroke="#0a6ed1" stroke-width="1.4"/>
+<text x="78.0" y="144.0" font-size="15.5" fill="#0a6ed1" text-anchor="start" font-weight="700">① ヘッダの入力</text>
+<text x="78.0" y="166.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· 受注タイプ（教材：OR 標準受注）</text>
+<text x="78.0" y="183.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· 受注先／出荷先／請求先／支払先</text>
+<text x="78.0" y="200.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· 受注日、購買発注番号（得意先 PO）</text>
+<text x="78.0" y="217.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· 販売エリア：得意先マスタから引き継がれます</text>
+<rect x="60.0" y="270.0" width="700.0" height="122.0" rx="10" fill="#ffffff" stroke="#0a6ed1" stroke-width="1.4"/>
+<rect x="60.0" y="270.0" width="4.5" height="122.0" rx="2" fill="#0a6ed1" stroke="#0a6ed1" stroke-width="1.4"/>
+<text x="78.0" y="298.0" font-size="15.5" fill="#0a6ed1" text-anchor="start" font-weight="700">② 明細の入力</text>
+<text x="78.0" y="320.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· 品目 + 数量 + 納入日</text>
+<text x="78.0" y="337.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· プラント（品目マスタ / 輸送条件から導出）</text>
+<text x="78.0" y="354.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· 価格は条件レコードから「探し出」される</text>
+<rect x="60.0" y="404.0" width="700.0" height="142.0" rx="10" fill="#ffffff" stroke="#007272" stroke-width="1.4"/>
+<rect x="60.0" y="404.0" width="4.5" height="142.0" rx="2" fill="#007272" stroke="#007272" stroke-width="1.4"/>
+<text x="78.0" y="432.0" font-size="15.5" fill="#007272" text-anchor="start" font-weight="700">③ 自動決定</text>
+<text x="78.0" y="454.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· 明細カテゴリ（TAN など）：伝票タイプ + 品目 → 価格設定／納入／請求の可否を決定</text>
+<text x="78.0" y="471.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· 計算スキーマ：販売エリア＋得意先計算スキーマ＋伝票計算スキーマ → 行ごとに価格計算</text>
+<text x="78.0" y="488.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· 税分類 + 税コード → 売上税</text>
+<text x="78.0" y="505.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· パートナ：得意先マスタから受注先などの役割を導出</text>
+<rect x="60.0" y="558.0" width="700.0" height="122.0" rx="10" fill="#ffffff" stroke="#8d6e00" stroke-width="1.4"/>
+<rect x="60.0" y="558.0" width="4.5" height="122.0" rx="2" fill="#8d6e00" stroke="#8d6e00" stroke-width="1.4"/>
+<text x="78.0" y="586.0" font-size="15.5" fill="#8d6e00" text-anchor="start" font-weight="700">④ チェック</text>
+<text x="78.0" y="608.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· 所要量確認 ATP：納入日を確定（不足でも伝票は保存可能。ブロックを設定した場合を除く）</text>
+<text x="78.0" y="625.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· 不完全性チェック：必須項目が未入力だと保存できない（保存できても伝票フローでは赤くマークされます）</text>
+<text x="78.0" y="642.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· 与信管理（有効な場合）：超過すると自動で納入ブロックが設定されます</text>
+<rect x="60.0" y="692.0" width="700.0" height="142.0" rx="10" fill="#ffffff" stroke="#177245" stroke-width="1.4"/>
+<rect x="60.0" y="692.0" width="4.5" height="142.0" rx="2" fill="#177245" stroke="#177245" stroke-width="1.4"/>
+<text x="78.0" y="720.0" font-size="15.5" fill="#177245" text-anchor="start" font-weight="700">⑤ 保存と後続への影響</text>
+<text x="78.0" y="742.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· 受注伝票番号が生成され、伝票フローに入る</text>
+<text x="78.0" y="759.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· 所要量は MRP / 計画へ伝達（MD04 で確認可能）</text>
+<text x="78.0" y="776.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· 出力決定：受注確認書を印刷/メール送信できる</text>
+<text x="78.0" y="793.0" font-size="12" fill="#354a5f" text-anchor="start" font-weight="400">· ステータス項目が更新され、VA05 や後続の段階で使用される</text>
+<rect x="800.0" y="116.0" width="500.0" height="190.0" rx="11" fill="#e3f0fa" stroke="#0a6ed1" stroke-width="1.4"/>
+<text x="818.0" y="144.0" font-size="14.5" fill="#0a6ed1" text-anchor="start" font-weight="700">決定チェーン 1：明細カテゴリ（Item Category）</text>
+<rect x="818.0" y="160.0" width="99.0" height="34.0" rx="8" fill="#ffffff" stroke="#0a6ed1" stroke-width="1.2"/>
+<text x="829.0" y="182.0" font-size="11" fill="#354a5f" text-anchor="start" font-weight="400">販売伝票タイプ</text>
+<line x1="918.0" y1="177.0" x2="932.0" y2="177.0" stroke="#0a6ed1" stroke-width="1.3" marker-end="url(#ar)"/>
+<rect x="935.0" y="160.0" width="209.0" height="34.0" rx="8" fill="#ffffff" stroke="#0a6ed1" stroke-width="1.2"/>
+<text x="946.0" y="182.0" font-size="11" fill="#354a5f" text-anchor="start" font-weight="400">品目マスタ（明細カテゴリグループ）</text>
+<line x1="1145.0" y1="177.0" x2="1159.0" y2="177.0" stroke="#0a6ed1" stroke-width="1.3" marker-end="url(#ar)"/>
+<rect x="1162.0" y="160.0" width="110.0" height="34.0" rx="8" fill="#ffffff" stroke="#0a6ed1" stroke-width="1.2"/>
+<text x="1173.0" y="182.0" font-size="11" fill="#354a5f" text-anchor="start" font-weight="400">用途（用途項目）</text>
+<path d="M 1273 177 h 10 v 44 h -479 h 12" fill="none" stroke="#0a6ed1" stroke-width="1.3" marker-end="url(#ar)"/>
+<rect x="818.0" y="204.0" width="143.0" height="34.0" rx="8" fill="#ffffff" stroke="#0a6ed1" stroke-width="1.2"/>
+<text x="829.0" y="226.0" font-size="11" fill="#354a5f" text-anchor="start" font-weight="400">上位明細（空値もキー）</text>
+<text x="818.0" y="274.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">「この明細をどう処理するか」を決定します。価格設定を行うか、納入するか、請求する</text>
+<text x="818.0" y="291.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">か、在庫をどこから出すか（特別在庫 E など）。教材のツール：VOV4 / VOV7。</text>
+<rect x="800.0" y="322.0" width="500.0" height="163.0" rx="11" fill="#e6f2f2" stroke="#007272" stroke-width="1.4"/>
+<text x="818.0" y="350.0" font-size="14.5" fill="#007272" text-anchor="start" font-weight="700">決定チェーン 2：計算スキーマ（Pricing Procedure）</text>
+<rect x="818.0" y="366.0" width="77.0" height="34.0" rx="8" fill="#ffffff" stroke="#007272" stroke-width="1.2"/>
+<text x="829.0" y="388.0" font-size="11" fill="#354a5f" text-anchor="start" font-weight="400">販売エリア</text>
+<line x1="896.0" y1="383.0" x2="910.0" y2="383.0" stroke="#007272" stroke-width="1.3" marker-end="url(#ar)"/>
+<rect x="913.0" y="366.0" width="121.0" height="34.0" rx="8" fill="#ffffff" stroke="#007272" stroke-width="1.2"/>
+<text x="924.0" y="388.0" font-size="11" fill="#354a5f" text-anchor="start" font-weight="400">得意先計算スキーマ</text>
+<line x1="1035.0" y1="383.0" x2="1049.0" y2="383.0" stroke="#007272" stroke-width="1.3" marker-end="url(#ar)"/>
+<rect x="1052.0" y="366.0" width="110.0" height="34.0" rx="8" fill="#ffffff" stroke="#007272" stroke-width="1.2"/>
+<text x="1063.0" y="388.0" font-size="11" fill="#354a5f" text-anchor="start" font-weight="400">伝票計算スキーマ</text>
+<text x="818.0" y="436.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">3 つのキーで唯一のスキーマ（教材では</text>
+<text x="818.0" y="453.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">RVAA01）が決まり、スキーマ内にステップごとに条件タイプが並びます。IMG：販売管</text>
+<text x="818.0" y="470.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">理 → 基本機能 → 価格設定 → 価格設定管理 → 計算スキーマの定義と割当。</text>
+<rect x="800.0" y="501.0" width="500.0" height="153.0" rx="11" fill="#e6f2ec" stroke="#177245" stroke-width="1.4"/>
+<text x="818.0" y="529.0" font-size="14.5" fill="#177245" text-anchor="start" font-weight="700">決定チェーン 3：勘定設定（記帳勘定）</text>
+<text x="818.0" y="571.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">請求書の転記時：勘定キー（ERL</text>
+<text x="818.0" y="588.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">など、計算スキーマから）＋品目の勘定割当グループ＋得意先の勘定割当グループ →</text>
+<text x="818.0" y="605.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">テーブル検索（VKOA）→ 収益勘定。</text>
+<text x="818.0" y="622.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">つまり「収益をどの勘定に記録するか」は、プログラムに固定されているわけでも手入力</text>
+<text x="818.0" y="639.0" font-size="11.5" fill="#354a5f" text-anchor="start" font-weight="400">するわけでもありません。</text>
+</svg>

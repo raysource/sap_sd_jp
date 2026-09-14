@@ -1,0 +1,3326 @@
+{
+ "kind": "model",
+ "files": {
+  "work/sd_source.json": "778840ebdfd24f5e5771ad3ac3eb7886"
+ },
+ "atoms": {
+  "bb7cb4adc2": {
+   "text": "定义销售组织",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      0,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "d8d739db52": {
+   "text": "企业结构 → 定义 → 销售和分销 → 定义、复制、删除、检查销售组织",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      0,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "95ac3730e0": {
+   "text": "按回车",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      0,
+      "notes",
+      0,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "e91e2a6c56": {
+   "text": "双击“定义销售组织”",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      0,
+      "steps",
+      1,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "6a65ee23e0": {
+   "text": "点击保存",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      0,
+      "steps",
+      3,
+      "caption"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      42,
+      "steps",
+      2,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "066ae8d7d6": {
+   "text": "后台",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      0,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      1,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      2,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      3,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      4,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      5,
+      "notes",
+      0,
+      "text"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      6,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      7,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      8,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      9,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      11,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      12,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      13,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      14,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      15,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      16,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      17,
+      "notes",
+      0,
+      "text"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      18,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      19,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      20,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      21,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      22,
+      "notes",
+      0,
+      "text"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      23,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      24,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      25,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      26,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      27,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      28,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      29,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      30,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      31,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      32,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      38,
+      "notes",
+      0,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "7927533858": {
+   "text": "定义分销渠道",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      1,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "b1bdf3b435": {
+   "text": "企业结构 → 定义 → 销售和分销 → 定义、复制、删除、检查分销渠道",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      1,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "0d9e531b21": {
+   "text": "企业结构－定义－销售和分销－定义、复制、删除、检查分销渠道",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      1,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "14c81abd22": {
+   "text": "点击定义分销渠道",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      1,
+      "steps",
+      2,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "163190d8a8": {
+   "text": "点击“新条目”",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      1,
+      "steps",
+      3,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "802020cfdc": {
+   "text": "定义产品组",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      2,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "5fff7b6459": {
+   "text": "企业结构 → 定义 → 后勤常规 → 定义、复制、删除、检查产品组",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      2,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "858ed31892": {
+   "text": "Z1 铸钢泵",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      2,
+      "notes",
+      0,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "bbd7faa2bb": {
+   "text": "企业结构－定义－后勤常规－定义、复制、删除、检查产品组",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      2,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "aff9a4695b": {
+   "text": "点击“定义产品组”",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      2,
+      "steps",
+      1,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "e163675b6e": {
+   "text": "点击“新条目”点击“新条目”\nZ2 增压泵",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      2,
+      "steps",
+      2,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "6867e0cc19": {
+   "text": "将销售组织分配给公司代码",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      3,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "6b0943c544": {
+   "text": "企业结构 → 分配 → 销售和分销 → 给公司代码分配销售组织",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      3,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "348894ebeb": {
+   "text": "解释：在 SAP 中一个销售组织只可以分配给一个公司代码，但是一个公司代码可以有多个销售组织。但是销售组织分配给一个公司代码，只是意味着这个销售组织的销售收入和在财务上是属于这个公司代码的。如果是集团公司，销售组织仍然可以销售其他公司代码的产品，这样就构成了跨公司销售。",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      3,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "638ac07ed8": {
+   "text": "直接录入公司代码CoCd为C999",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      3,
+      "steps",
+      2,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "8967acd425": {
+   "text": "将分销渠道分配给销售组织",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      4,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "d36eb4abd7": {
+   "text": "企业结构 → 分配 → 销售和分销 → 给销售组织分配分销渠道",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      4,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "b3b657bb37": {
+   "text": "点击新条目",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      4,
+      "notes",
+      0,
+      "text"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      6,
+      "notes",
+      0,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "89aa50644d": {
+   "text": "解释：我们将“直销”和“批发”两个分销渠道分配给“颐宁销售组织”，这个分配意味着 “颐宁销售组织”可以从事“直销”和“批发”两种渠道的销售，其他的销售组织也可能从事这两种渠道的销售，所以分配是多对多的关系",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      4,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "19eeb82608": {
+   "text": "将产品组分配给销售组织",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      5,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "c3f46f5b33": {
+   "text": "企业结构 → 分配 → 销售和分销 → 给销售组织分配部门",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      5,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "01b5b43868": {
+   "text": "解释：本步中将“铸钢泵”和“增压泵”分配给“颐宁销售组织”。这意味着“颐宁销售组织”可以从事“铸钢泵”和“增压泵”的销售。其他销售组织也可能从事这两个产品组的销售，所以这个分配也是多对多",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      5,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "d228a0f460": {
+   "text": "设置销售范围",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      6,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "f85068ad6e": {
+   "text": "企业结构 → 分配 → 销售和分销 → 设置销售范围",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      6,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "b5f09f9feb": {
+   "text": "解释：SAP 把销售组织、分销渠道和产品组的组合称为“销售范围”，它的业务含义是某个销售组织通过某种分销渠道经营某个产品组。在颐宁销售组织中，我们可以分配通过直销 和批发经营两种产品组的销售，一共有四个销售范围，我们分别设置，销售范围也叫销售部门",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      6,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "9c8f349bae": {
+   "text": "定义销售办公室",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      7,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "d455a3faab": {
+   "text": "企业结构 → 定义 → 销售和分销 → 维护销售办公室",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      7,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "d5ce1d5ace": {
+   "text": "企业结构－定义－销售和分销－维护销售办公室",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      7,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "ea2deaca30": {
+   "text": "Z001 颐宁北方销售公司",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      7,
+      "steps",
+      2,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "4740a3d2b0": {
+   "text": "定义销售组",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      8,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "eb2de96c13": {
+   "text": "企业结构 → 定义 → 销售和分销 → 维护销售组",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      8,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "ffc70f1017": {
+   "text": "Z01 东北销售组 Z02 西北销售组 Z03 东南销售组 Z04 西南销售组",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      8,
+      "notes",
+      0,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "667a180351": {
+   "text": "在 SD 中我们还可以定义“销售组”来统计和分析。在颐宁公司，我们定义东北、西北、东南、西南四个销售组。他们分别隶属于北方和南方销售办公室。销售组和销售办公室在 SD都是可选的组织结构，不是必选的\n企业结构－定义－销售和分销－维护销售组",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      8,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "31399075e3": {
+   "text": "给销售范围分配销售办公室",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      9,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "3b54cbbe9d": {
+   "text": "企业结构 → 分配 → 销售和分销 → 给销售范围分配销售办公室",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      9,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "3c56dc1b59": {
+   "text": "颐宁公司的北方和南方两个销售办公室都可以从事铸钢泵和增压泵的批发和直销，所以我们将这两个销售办公室分配给这四个销售范围",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      9,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "ae6d59ba40": {
+   "text": "简单的排列组合，总共8种组合",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      10,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "ac31949c2d": {
+   "text": "将销售组分配给销售办公室",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      11,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "eb953d49a4": {
+   "text": "企业结构 → 分配 → 销售和分销 → 给销售办公室分配销售组",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      11,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "857ea80160": {
+   "text": "将工厂分配给销售组织/分销渠道",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      12,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "c344e89d3e": {
+   "text": "企业结构 → 分配 → 销售和分销 → 分配销售组织-分销渠道-工厂",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      12,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "d6bb9dfaf5": {
+   "text": "解释：我们将颐宁机械工厂分配给颐宁销售组织的直销和批发两个分销渠道。这个含义是销售组织和分销渠道可以销售该工厂的库存，所以他们的分配关系也是多对多的",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      12,
+      "notes",
+      0,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "5bacf7d486": {
+   "text": "企业结构－分配－销售和分销－分配销售组织-分销渠道-工厂",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      12,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "91bd62d183": {
+   "text": "定义起运点",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      13,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "706d207d0a": {
+   "text": "企业结构 → 定义 → 后勤执行 → 定义、复制、删除、检查起运点",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      13,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "94268e0efb": {
+   "text": "企业结构－定义－后勤执行－定义、复制、删除、检查起运点",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      13,
+      "steps",
+      1,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "e3220b9c17": {
+   "text": "Z999 颐宁装运点",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      13,
+      "steps",
+      2,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "053acf81e5": {
+   "text": "定义装载点",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      14,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "584c6316f9": {
+   "text": "企业结构 → 定义 → 后勤执行 → 维护装载点",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      14,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "11614a0b08": {
+   "text": "解释：起运点之下可以再细分装载点，来指明确定的装载地点，如一个卡车起运点中可能按仓库的大门分成三个装载点等等。本步骤我们将定义装载点。发货单中可以注明装载点。单装载点是 SD 中可选的组织结构。没有装载点的定义. SD 也能使用。\n企业结构－定义－后勤执行－维护装载点",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      14,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "1dec22308e": {
+   "text": "输入工作范围",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      14,
+      "steps",
+      1,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "e0dc2456ff": {
+   "text": "点击新条目，输入新的装载点",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      14,
+      "steps",
+      2,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "c34a2d7e12": {
+   "text": "将起运点分配给工厂",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      15,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "77f0b0555e": {
+   "text": "企业结构 → 分配 → 后勤执行 → 给工厂分配起运点",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      15,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "a038289ecf": {
+   "text": "解释：一个工厂可以有几个起运点，如公路、水路等。一个起运点也可以是几个工厂公用的，所以两者是多对多的关系。",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      15,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "59487d30d9": {
+   "text": "点击分配",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      15,
+      "steps",
+      2,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "23871fcd2b": {
+   "text": "定义运送条件",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      16,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "f5caddcab6": {
+   "text": "后勤执行 → 装运 → 基本发运功能 → 装运点和收货点确认 → 定义运送条件",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      16,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "caf1b32d94": {
+   "text": "后勤执行－装运－基本发运功能－装运点和收货点确认－定义运送条件",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      16,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "012ff873eb": {
+   "text": "定义装载组",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      17,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "0fe1a789be": {
+   "text": "后勤执行 → 装运 → 基本发运功能 → 装运点和收货点确认 → 定义装载组",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      17,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "d98143b3ea": {
+   "text": "后勤执行－装运－基本发运功能－装运点和收货点确认－定义装载组",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      17,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "3e73ea1ab6": {
+   "text": "Z999 叉车-颐宁",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      17,
+      "steps",
+      2,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "f2cdc21fe0": {
+   "text": "分配起运点",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      18,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "d0e0c82af6": {
+   "text": "后勤执行 → 装运 → 装运点和收货点确认 → 分配运送地点",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      18,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "1aeb90f390": {
+   "text": "点击新条目\n99 Z999 P999 Z999",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      18,
+      "steps",
+      1,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "bc84e8e4f4": {
+   "text": "分配拣配库存地点",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      19,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "c515a90e10": {
+   "text": "后勤执行 → 装运 → 拣配 → 确定拣配地点 → 分配拣配地点",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      19,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "ce974260fa": {
+   "text": "解释：在处理销售订单的过程中，SAP 系统除了可以自动建立起运点之外，还可以自动建立货物从哪个库存地点拣配。本配置可以根据起运点、工厂和存储条件（物料主数据的一个 参数）确定销售地点拣配的库存地点。本文中我们只需要选用起运点和工厂两个条件。",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      19,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "fb3bbff833": {
+   "text": "解释：前三个灰色字段是起决定作用的起运点、工厂和存储条件。",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      19,
+      "steps",
+      2,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "f8708f8b43": {
+   "text": "维护客户账户组的销售数据",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      20,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "0904d4d7dd": {
+   "text": "财务会计(新) → 应收账款和应付账款 → 客户账户 → 主数据 → 创建客户主记录准备 → 定义带有屏幕格式的账户组（客户）",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      20,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "efb486ca1c": {
+   "text": "双击",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      20,
+      "values",
+      0,
+      "k"
+     ]
+    ]
+   ]
+  },
+  "52001a051f": {
+   "text": "双击“销售”进入如下设置如下",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      20,
+      "notes",
+      0,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "076ad2446a": {
+   "text": "解释：在本步骤中，我们将根据不停的客户账户组维护客户销售视图中哪些参数是必须输入的，哪些是不能输入的，哪些是可选输入的。\n财务会计(新)－应收账款和应付账款－客户账户－主数据－创建客户主记录准备－定义带有屏幕格式的账户组（客户）",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      20,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "3200a662bb": {
+   "text": "我们已经创建了两个客户账户组，在这里我们需要修改这两个客户账户组。双击 K001",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      20,
+      "steps",
+      2,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "85a4ab3868": {
+   "text": "返回，点击“发货”",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      20,
+      "steps",
+      4,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "82c25bb6ff": {
+   "text": "返回点击“计费”",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      20,
+      "steps",
+      5,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "159e96625e": {
+   "text": "进入“销售数据”双击“销售”\n设置如下",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      20,
+      "steps",
+      7,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "eb6d9d0ac5": {
+   "text": "返回，双击“计费”",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      20,
+      "steps",
+      9,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "d9cf0255d7": {
+   "text": "定义定价过程",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      21,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "0fddb3f604": {
+   "text": "销售和分销 → 基本功能 → 定价 → 定价控制 → 定义并分配定价过程",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      21,
+      "path"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      22,
+      "path"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      23,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "31b2f4922f": {
+   "text": "点击维护定价过程",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      21,
+      "notes",
+      0,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "cf860fe858": {
+   "text": "解释：“ RVAA01 标准”就是我们将要使用的系统预配置的定价过程。屏幕中 “ Ctyp”列， SAP 称之为价格“条件类型”，销售原价、折扣、返利、运费、保费、佣金、增值税等等都是条件类型。具体的价格是在条件类型中维护的，我们将在后面 6.34 维护物料的销售价格和 6.35 维护销项税税率中分别维护销售价格 PR00 和销项税 MWST 两个条件类型的价格。而定价过程中每个步骤对应的“账码”如 ERL 决定了这个条件类型记帐的科目，我们将在",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      21,
+      "notes",
+      1,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "65b93738b4": {
+   "text": "6.29 维护销售收入的总帐科目中维护科目。",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      21,
+      "notes",
+      2,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "9791cb3a38": {
+   "text": "销售和分销－基本功能－定价－定价控制－定义并分配定价过程",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      21,
+      "steps",
+      0,
+      "caption"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      22,
+      "steps",
+      0,
+      "caption"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      23,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "43bf11d8fc": {
+   "text": "弹出",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      21,
+      "steps",
+      1,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "05d71fe5fa": {
+   "text": "选中过程“RVAA01 ”，点击左侧的“控制数据”",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      21,
+      "steps",
+      3,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "8855f58d24": {
+   "text": "定义客户和单据定价过程",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      22,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "26f4be8bc6": {
+   "text": "双击定义单据定价过程",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      22,
+      "notes",
+      1,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "ebcbe145a6": {
+   "text": "我们将使用 OR 订单，OR 订单使用 A 标准，所以不必新建。",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      22,
+      "notes",
+      2,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "9998f1a197": {
+   "text": "解释：颐宁公司采用统一的定价过程，所以我们只需要使用系统标准的客户定价过程就可以了。这个客户定价过程参数我们将在定义客户主数据时 6.36 维护订货方主数据的销售视 图中分配。\n返回",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      22,
+      "steps",
+      2,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "94fff43fb3": {
+   "text": "双击定义客户定价过程",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      22,
+      "desc",
+      0
+     ]
+    ]
+   ]
+  },
+  "2c9f2d537a": {
+   "text": "定义定价过程确定",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      23,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "bd7a64e04e": {
+   "text": "C999Z1Z1A1RVAA01 标准PR00价格C999Z1Z2A1RVAA01 标准PR00价格C999Z2Z1A1RVAA01 标准PR00价格C999Z2Z2A1RVAA01 标准PR00价格C999Z1Z1A1RVAA01 标准PR00价格C999Z1Z2A1RVAA01 标准PR00价格C999Z2Z1A1RVAA01 标准PR00价格C999Z2Z2A1RVAA01 标准PR00价格双击定义定价过程确定",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      23,
+      "notes",
+      0,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "f65659535c": {
+   "text": "我们来定义颐宁公司新的定价确认点击新条目",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      23,
+      "steps",
+      2,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "a310c3e507": {
+   "text": "激活销售单据的物料清单和排斥",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      24,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "8a825ee699": {
+   "text": "后勤执行 → 装运 → 基本发运功能 → 列表/排斥",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      24,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "67b21137a9": {
+   "text": "后勤执行－装运－基本发运功能－列表/排斥",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      24,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "3ed5ed0b55": {
+   "text": "双击“根据销售单据类型激活清单/排斥”",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      24,
+      "steps",
+      1,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "57a91e4a48": {
+   "text": "解释：SAP 使用和销售定价类似的技术（称之为条件技术）来定义“清单”和“排斥”。根据屏幕的 7 个步骤，用户可以定义灵活的“ 清单” 和“ 排斥” 规则。在本部分我们采用 A00001清单过程和 B00001 排斥过程，都是简单地按客户来决定哪些物料是可以销售（“ 清单”），哪些物料是不可以销售（“ 排斥”）\nQT 和 OR 是本次要用的，我们将预定义的“清单”和“排斥”分配给他们。",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      24,
+      "steps",
+      2,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "b8161fdfa8": {
+   "text": "维护销售单据的物料确定",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      25,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "7c51a52a44": {
+   "text": "后勤执行 → 装运 → 基本发运功能 → 物料确定 → 分配过程到销售凭证类型",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      25,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "107baa8ea7": {
+   "text": "维护",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      25,
+      "values",
+      0,
+      "k"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      25,
+      "values",
+      1,
+      "k"
+     ]
+    ]
+   ]
+  },
+  "f2b85fb531": {
+   "text": "解释：在有些情况下，销售订单需要输入的商品代码不是本公司标准的物料主数据代码，比如需要输入客户的物料代码，或者需要输入国际物品编码（IAN）等。在 SAP 里不需要将这些特殊的代码维护成物料主数据，而只需要维护一个 “ 物料确定” 的规则，让系统将这些特殊代码自动替换成物料主数据。“ 物料确定”规则是由销售单据的类型决定。\n后勤执行－装运－基本发运功能－物料确定－分配过程到销售凭证类型",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      25,
+      "steps",
+      1,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "a50b634124": {
+   "text": "定义税收确定规则",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      26,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "4a54f7f38e": {
+   "text": "销售和分销 → 基本功能 → 税收 → 定义税收确定规则",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      26,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "126f680424": {
+   "text": "解释：在 SAP 标准系统里已经将 MWST 分配给 CN 了",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      26,
+      "notes",
+      0,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "29106950f8": {
+   "text": "定义客户税分类和物料税分类",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      27,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "51ebca8b05": {
+   "text": "销售和分销 → 基本功能 → 税收 → 定义主记录数据相关性",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      27,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "a6c230dc37": {
+   "text": "返回，双击“物料税款”",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      27,
+      "notes",
+      0,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "737dcefb1c": {
+   "text": "解释：在销售订单定价的过程中，销项税（条件类型 MWST）的具体税率是由客户和物料两个因素决定的。客户是通过客户主数据中的 “ 税分类” 参数决定的，而物料是通过物料主数据中的“税分类”参数决定的。",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      27,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "84a6e65683": {
+   "text": "点击“客户”税款",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      27,
+      "steps",
+      1,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "ee9a5cbcdf": {
+   "text": "税分类会维护在客户主数据中，在销售订单的处理过程会根据客户和物料中的税分类决定适用税率",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      27,
+      "steps",
+      3,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "b6b6f5740c": {
+   "text": "定义物料账户分配组",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      28,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "ec01066e0b": {
+   "text": "销售和分销 → 基本功能 → 科目分配/成本 → 收入账户确定 → 检查科目分配的相关主数据",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      28,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "dca36de11a": {
+   "text": "M2 贸易商品-颐宁",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      28,
+      "notes",
+      0,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "f5cd0fa755": {
+   "text": "解释：在销售订单开票时，系统会自动生成发票的会计凭证，其中销售收入科目在系统中可以由物料、客户等因素决定。颐宁公司对于销售收入科目只需要按物料分成 “ 自制产品” 和 “贸易商品” 两个科目。物料对销售收入科目的决定作用是通过物料主数据中的 “ 账户分配组”实现的。\n销售和分销－基本功能－科目分配/成本－收入账户确定－检查科目分配的相关主数据",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      28,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "e16f885c67": {
+   "text": "双击物料：账户分配组",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      28,
+      "steps",
+      2,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "ae9c5f53d0": {
+   "text": "M1 自制产品-颐宁\n返回，双击“客户：科目分配组”",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      28,
+      "steps",
+      4,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "616dac0eb1": {
+   "text": "维护销售收入的总帐科目",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      29,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "0b6fe94087": {
+   "text": "销售和分销 → 基本功能 → 科目分配/成本 → 收入账户确定 → 分配总帐科目",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      29,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "fded29e98f": {
+   "text": "销售和分销－基本功能－科目分配/成本－收入账户确定－分配总帐科目",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      29,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "297009341f": {
+   "text": "销售收入科目可能收到各种因素的影响，但颐宁公司的是由物料决定的。双击“表格 3 物料组/账户关键字”",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      29,
+      "steps",
+      1,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "26bb841878": {
+   "text": "新建",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      29,
+      "steps",
+      2,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "6b997e92c5": {
+   "text": "在销售单据抬头等级分配更新组",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      30,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "867cb17215": {
+   "text": "后勤常规 → 后勤信息系统 → 后勤数据仓库 → 更新 → 更新控制 → 设置：销售和分销 → 更新组 → 在抬头等级分配更新组",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      30,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "4dbe6e121c": {
+   "text": "后勤常规－后勤信息系统－后勤数据仓库－更新－更新控制－设置：销售和分销－更新组－在抬头等级分配更新组",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      30,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "1ff720ff74": {
+   "text": "解释：SAP 后勤系统包含了很多分析工具和分析报表，对于销售和分销我们需要在本步骤和下一个步骤中激活业务数据对后勤信息系统的信息更新，这样这些报表才会包含数据。本步骤是销售单据抬头的更新规则，是由销售范围、客户和销售单据类型来决定的。\n解释：上图是所有已经激活更新后勤信息系统的销售凭证抬头的清单点击新建",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      30,
+      "steps",
+      2,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "7de2adace4": {
+   "text": "设置其他抬头等级分配更新组。",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      30,
+      "steps",
+      3,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "568709f74f": {
+   "text": "在销售单据项目等级分配更新组",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      31,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "a6578a0205": {
+   "text": "后勤常规 → 后勤信息系统 → 后勤数据仓库 → 更新 → 更新控制 → 设置：销售和分销 → 更新组 → 在项目等级分配更新组",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      31,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "ab951b5524": {
+   "text": "后勤常规－后勤信息系统－后勤数据仓库－更新－更新控制－设置：销售和分销－更新组－在项目等级分配更新组",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      31,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "66e5f54532": {
+   "text": "解释：SAP 后勤信息系统包含很多分析工具和分析报表。对于 SD，我们需要在本步骤和上步骤激活业务数据对后勤信息系统的信息更新，这些报表才会包含数据。本步骤是销售单据项目级别的更新规则，是由销售范围、客户、物料销售单据类型、行项目类别决定的。\n解释：列表中是已经激活更新后勤信息系统的销售凭证行项目级别的清单，点击新条目",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      31,
+      "steps",
+      2,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "595675a0df": {
+   "text": "设置合作伙伴确定",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      32,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "95a65963a5": {
+   "text": "销售和分销 → 基本功能 → 合作伙伴确定 → 设置合作伙伴确定",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      32,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "15d3a29452": {
+   "text": "双击“账户组－功能分配”",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      32,
+      "notes",
+      0,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "4889a48417": {
+   "text": "销售和分销－基本功能－合作伙伴确定－设置合作伙伴确定",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      32,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "7d39e23313": {
+   "text": "解释：系统中合作伙伴的确定受很多因素影响，也非常灵活，本次我们只增加客户主数据的相关配置，其他的使用系统预定义的内容。",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      32,
+      "steps",
+      1,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "edd8f64595": {
+   "text": "双击“设置客户主数据的合作伙伴确认”\n解释：和客户主数据相关的配置也有很多，我们基本采用预定义的内容，只是维护颐宁公司新建的客户账户组的功能分配，即各客户账户组可以扮演什么合作伙伴功能角色。",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      32,
+      "steps",
+      2,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "b92d1c8abd": {
+   "text": "维护物料主数据的销售视图",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      33,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "7cbbbabe52": {
+   "text": "后勤 → 物料管理 → 物料主记录 → 物料 → 创建（一般） → MM01 立即",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      33,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "4b1df0cad7": {
+   "text": "解释：颐宁公司的产成品“铸钢泵 170－23”和贸易商品“高速增压涡轮泵”会对外销售，在使用这两个物料时需要维护这两种物料主数据的销售视图\n后勤－物料管理－物料主记录－物料－创建（一般）－MM01 立即",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      33,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "bd13a76c41": {
+   "text": "前台",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      33,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      34,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      35,
+      "notes",
+      0,
+      "text"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      37,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      41,
+      "notes",
+      0,
+      "text"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      42,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      45,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      46,
+      "fb"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      47,
+      "fb"
+     ]
+    ]
+   ]
+  },
+  "82701673eb": {
+   "text": "维护物料的销售价格",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      34,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "3058d121bb": {
+   "text": "后勤 → 销售和分销 → 主数据 → 条件 → 按条件类型选择 → VK11 → 创建",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      34,
+      "path"
+     ]
+    ],
+    [
+     "work/sd_source.json",
+     [
+      35,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "36fdc3c887": {
+   "text": "解释：系统为销售订单在价格表中查找价格的时候，会遵循着一个顺序，比如先查找对这个客户，这种物料的专用价格，如果没有找到就用这种物料在这个分销渠道下的一般价格等等。这个查找顺序被称为“条件类型 存取顺序”。“ PR00”的存取顺序就是屏幕中的三个步骤。选中“具有审批状态的物料”",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      34,
+      "notes",
+      0,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "2872f6739d": {
+   "text": "解释：在前面，我们定义了销售价格的计算过程。在本步骤中，我们将实际维护价格表，为颐宁公司的“铸钢泵 170－230”和“高速增压涡轮泵”维护销售价格。SAP 是按照定价过程中的条件类型来维护的，本步骤维护的是条件类型 PR00 物料价格\n后勤－销售和分销－主数据－条件－按条件类型选择－VK11－创建",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      34,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "1748ade683": {
+   "text": "PR00 代表销售价格",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      34,
+      "steps",
+      1,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "2b5fb2581f": {
+   "text": "如果有层级报价，双击物料进入层级定价",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      34,
+      "steps",
+      3,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "45526ec442": {
+   "text": "维护销项税税率",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      35,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "9cc2ccc017": {
+   "text": "解释：销项税也是在销售订单定价过程中计算的，条件类型 MWST。着也是作为一种价格维护，所不同的是通过税码来间接得到税率的。",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      35,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "44ee1e42f7": {
+   "text": "维护订货方主数据的销售视图",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      36,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "527b1e01ed": {
+   "text": "后勤 → 销售和分销 → 主数据 → 业务伙伴 → 客户 → 创建 → VD01",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      36,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "5fc44212da": {
+   "text": "装运条件即“运送条件”和物料、工厂一起决定了交货的起运点",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      36,
+      "notes",
+      0,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "f1fe2480bf": {
+   "text": "解释：K001 订货方－颐宁账户组下的客户只创建了财务数据，没有建立销售视图前台\n后勤－销售和分销－主数据－业务伙伴－客户－创建－VD01",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      36,
+      "steps",
+      1,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "919ae4cc87": {
+   "text": "账户分配组，01 为国内收入。客户的账户分配组也可以影响自动确定销售收入的总帐科目，但是我们在6.29 维护销售收入的总帐科目中只维护了颐宁公司根据物料确定销售收入科\n目，所以客户主数据中这个参数不起作用",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      36,
+      "steps",
+      4,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "6fbe1a00a2": {
+   "text": "维护收货方的销售视图",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      37,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "4abc58e4bd": {
+   "text": "后勤 → 销售和分销 → 主数据 → 业务合作伙伴 → 客户 → 创建 VD01",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      37,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "61c7a4b06a": {
+   "text": "重复上述方法，把在渠道 Z1 产品组Z2 下的数据也维护了交货优先权 02 装运条件 99 税 1",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      37,
+      "notes",
+      0,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "5debf78edf": {
+   "text": "后勤－销售和分销－主数据－业务合作伙伴－客户－创建 VD01",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      37,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "01b16966a2": {
+   "text": "远东造船三厂只是远东造船厂的销售订单的送达方，所以销售页面没什么要维护的。点击发送，进入",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      37,
+      "steps",
+      1,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "f1f31956a8": {
+   "text": "将收货方分配给订货方",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      38,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "aab3d785eb": {
+   "text": "后勤 → 销售和分销 → 主数据 → 业务合作伙伴 → 客户 → 更改 → VD02",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      38,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "6b96f7f326": {
+   "text": "切换到合伙人功能，添加 SH 20000000",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      38,
+      "notes",
+      1,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "0b2277d76b": {
+   "text": "解释：颐宁公司的客户远东造船厂的销售订单，收货方还有可能是它的分公司远东造船厂第三分公司。要处理这样的关系，我们在远东造船厂的客户主数据中必须将第三分公司作为“ 送达方”维护\n后勤－销售和分销－主数据－业务合作伙伴－客户－更改－VD02",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      38,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "55d94bf4d0": {
+   "text": "点击销售区域数据",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      38,
+      "steps",
+      2,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "b272d2a0d5": {
+   "text": "创建报价",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      39,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "c6a0114133": {
+   "text": "后勤 → 销售和分销 → 销售 → 报价 → VA21-创建",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      39,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "76d9116272": {
+   "text": "同样的方法创建其他报价单",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      39,
+      "notes",
+      0,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "9ac95eaf2c": {
+   "text": "解释：远东造船厂有一个销售意向，要求颐宁销售组织提供 30 件铸钢泵 170-230，我们在本步骤来报价\n后勤－销售和分销－销售－报价－VA21-创建",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      39,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "3dc683cad8": {
+   "text": "创建销售订单",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      40,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "f05735ce8f": {
+   "text": "后勤 → 销售和分销 → 销售 → 报价 → 后继功能 → V-01-订单",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      40,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "cee1d16230": {
+   "text": "解释：远东造船厂接受了颐宁公司的报价，我们在本步骤中以报价单为蓝本，创建正式的销售订单",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      40,
+      "notes",
+      0,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "f299271542": {
+   "text": "点击复制",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      40,
+      "notes",
+      1,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "5c4088404f": {
+   "text": "同样的方法将 20000001、20000000 均参照创建了",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      40,
+      "notes",
+      2,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "5e4b85f0a1": {
+   "text": "后勤－销售和分销－销售－报价－后继功能－V-01-订单",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      40,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "2bbd96307f": {
+   "text": "点击有参照创建",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      40,
+      "steps",
+      1,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "e3d6f9bccd": {
+   "text": "系统显示无可用库存，点击继续（建议通过MB1C 501无订单收货后再做后续的操作）",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      40,
+      "steps",
+      3,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "e5ca449876": {
+   "text": "创建外向交货",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      41,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "0f7cc640de": {
+   "text": "后勤 → 销售和分销 → 装运和运输 → 外向交货 → 创建 → 单个凭证 → VL01N",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      41,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "1cde469d7b": {
+   "text": "后勤－销售和分销－装运和运输－外向交货－创建－单个凭证－VL01N",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      41,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "a6fb181631": {
+   "text": "后勤－销售和分销－装运和运输－外向交货－更改－VL01N-单个凭证",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      41,
+      "steps",
+      1,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "3fc8affd71": {
+   "text": "创建发票凭证",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      42,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "680cd69722": {
+   "text": "后勤 → 销售和分销 → 出具发票 → 出具发票凭证 → VF01-创建",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      42,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "e61669ee0c": {
+   "text": "后勤－销售和分销－出具发票－出具发票凭证－VF01-创建",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      42,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "4abc60f7f8": {
+   "text": "下达发票",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      43,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "a9479634eb": {
+   "text": "后勤 → 销售和分销 → 出具发票 → 出具发票凭证 → VF02-修改",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      43,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "75f410a20e": {
+   "text": "将上步的销售发票凭证过账到财务会计前台\n后勤－销售和分销－出具发票－出具发票凭证－VF02-修改",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      43,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "89b1c11df2": {
+   "text": "按小旗子，屏幕下方会提示凭证已经传送到记账，点击会计",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      43,
+      "steps",
+      1,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "7a60d2299d": {
+   "text": "点击原始凭证",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      44,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "567b24e667": {
+   "text": "显示销售订单明细清单",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      45,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "134192580d": {
+   "text": "后勤 → 销售和分销 → 销售 → 信息系统 → 订单 → VA05-销售订单清单",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      45,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "fcbbe0bf5e": {
+   "text": "销售分析",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      46,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "8741171c96": {
+   "text": "后勤 → 销售和分销 → 销售信息系统 → 标准分析 → MCTA-客户",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      46,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "4dd37e437b": {
+   "text": "本步骤需在 30 和 31 中事先激活，并在客户和物料主数据中维护统计组，这些标准分析才会有数据",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      46,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "da96ed6ace": {
+   "text": "点击转换细分",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      46,
+      "steps",
+      1,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "215878ad67": {
+   "text": "运行资产负债表",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      47,
+      "title"
+     ]
+    ]
+   ]
+  },
+  "0d8adcfcac": {
+   "text": "会计 → 财务会计 → 总分类帐 → 信息系统 → 总帐报表 → 资产负债表/损益表/现金流 → 一般的",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      47,
+      "path"
+     ]
+    ]
+   ]
+  },
+  "885f101610": {
+   "text": "不要分配到成本中心，会计年度没有激活的解决办法",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      47,
+      "notes",
+      0,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "a0371a9194": {
+   "text": "物料R999-100 的强制帐户设置 (输入帐户设置类别)",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      47,
+      "notes",
+      2,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "6e8093bdf0": {
+   "text": "不可能为条目A999 BSX CN01确立帐户",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      47,
+      "notes",
+      3,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "2974d49683": {
+   "text": "因为不允许对公司代码 C999 科目 12010101 进行销项/进项税相关操作，所以税码 J1 无效",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      47,
+      "notes",
+      4,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "8577742fb1": {
+   "text": "没有内部作业 LAB 1001 的价格可被确定",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      47,
+      "notes",
+      5,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "fa5b96553e": {
+   "text": "物料 F999-100 不存在于存储地点 P999 003",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      47,
+      "notes",
+      6,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "6620308e4c": {
+   "text": "通过T-CODE OBYC ，按照如下方式维护，可以解决此问题",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      47,
+      "notes",
+      7,
+      "text"
+     ]
+    ]
+   ]
+  },
+  "4a086b2a72": {
+   "text": "会计－财务会计－总分类帐－信息系统－总帐报表－资产负债表/损益表/现金流－一般的",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      47,
+      "steps",
+      0,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "8aa624a5c6": {
+   "text": "路径：SPRO -> 财务会计（新）-> 财务会计全局设置（新）-> 销售/购置税 -> 基本设置 -> 向计算程序分配国家",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      47,
+      "steps",
+      2,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "992665b061": {
+   "text": "作业类型无法设置，也可以通过该办法解决",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      47,
+      "steps",
+      4,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "4d5634d636": {
+   "text": "客户化错误：非当前业务交易组",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      47,
+      "steps",
+      5,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "45d7726d74": {
+   "text": "其二RK811XUP（对所有的集团）目前用 RK811UPD 代替前者",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      47,
+      "steps",
+      7,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "20bb199585": {
+   "text": "是CLIENT COPY 不完整造成的，\n请运行se38一下，执行两个程序中的一个：其一RK811XST(仅在当前的集团），",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      47,
+      "steps",
+      8,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "4d80fc95ac": {
+   "text": "“+”代表只允许销项税。 “*”代表允许所有的税类型。\n然后就能正常入发票付款了。注意，退出MIRO 重新进入！",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      47,
+      "steps",
+      14,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "044a19e9db": {
+   "text": "通过CK11N要，按照如下方式维护价格，即可。",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      47,
+      "steps",
+      16,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "f50c9a1e61": {
+   "text": "退出CK11N，然后重新执行CK24",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      47,
+      "steps",
+      18,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "42d53b69e5": {
+   "text": "MB1C 501 录入期初库存，可以解决无法创建VL01N外向交货单的问题",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      47,
+      "steps",
+      22,
+      "caption"
+     ]
+    ]
+   ]
+  },
+  "6f1fefa928": {
+   "text": "解决方法：",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      47,
+      "desc",
+      0
+     ]
+    ]
+   ]
+  },
+  "b9f0b50690": {
+   "text": "问题：因为不允许对公司代码 C999 科目 12010101 进行销项/进项税相关操作，所以税码 J1 无效消息号FS217",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      47,
+      "desc",
+      1
+     ]
+    ]
+   ]
+  },
+  "76be8df168": {
+   "text": "思路：所以就同意科目代码12010101允许进行销项/进项贺岁相关操作。执行：FS00---输入总账科目12010101，在控制数据中，税务类型中选择： “-”代表只允许进项税。",
+   "occs": [
+    [
+     "work/sd_source.json",
+     [
+      47,
+      "desc",
+      2
+     ]
+    ]
+   ]
+  }
+ }
+}

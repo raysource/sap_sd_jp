@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>組織構造 · SAP SD トレーニングコース</title>
+<meta name="description" content="SAP SD（販売管理）トレーニングコース：概念 → 組織構造 → マスタ → 価格設定 → エンドツーエンドプロセス（引合・見積・受注・納入・出荷・請求・入金）→ 設定 → 分析。各段階に実際の SAP GUI システムのスクリーンショット（中国語インターフェース）と自作図のフロー図、構造図、マインドマップを用意します。">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/sd.css">
+</head>
+<body>
+<header class="site">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html"><span class="logo">SD</span><span class="txt">トレーニングコース</span></a>
+    <nav class="main">
+      <a href="index.html" title="コースマップと学習ルート">ホーム</a>
+      <a href="concept.html" title="SD とは何か、3 つの概念レイヤ、5 大伝票">基本概念</a>
+      <a class="active" href="org.html" title="企業構造 / 販売構造 / 出荷構造">組織</a>
+      <a href="master.html" title="得意先マスタ / 品目の販売ビュー / 条件レコード">マスタ</a>
+      <a href="pricing.html" title="条件技術の4要素と計算スキーマ決定">価格設定</a>
+      <a href="flow.html" title="エンドツーエンド O2C のフロー図と伝票フロー">プロセス</a>
+      <a href="order.html" title="引合 · 見積 · 受注伝票（部分的な詳細解説）">受注伝票</a>
+      <a href="delivery.html" title="出荷伝票 · ピッキング · 出庫過転記">納入</a>
+      <a href="billing.html" title="請求書 · FI への転記 · 入金">請求</a>
+      <a href="analysis.html" title="伝票フロー／受注一覧／販売分析">データ分析</a>
+      <a href="config.html" title="SPRO 設定ルート（48 タスク）">設定</a>
+      <a href="practice.html" title="実習タスクと完成基準">実習</a>
+      <a href="instructor.html" title="採点ポイント / 必ず問う質問 / 解答">講師</a>
+      <a href="worksheet.html" title="記入表（印刷可能）">受講者</a>
+      <a href="quiz.html" title="30 問のセルフチェック（合格 75%）">セルフチェックテスト</a>
+      <a href="glossary.html" title="中国語・英語対照 / T-code クイックリファレンス">用語</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+<main class="page">
+<article>
+<p class="breadcrumb"><a href="index.html">ホーム</a> / <span>組織構造</span></p>
+<h1>組織構造：まずデータに座標を与える</h1>
+<p class="kicker">企業構造 · 販売構造 · 出荷構造 · 割当関係 · 実機のシステム画面</p>
+<div class="toc"><a href="#why">1. なぜ組織を先に扱うのか</a><a href="#map">2. 全体図</a><a href="#ent">A. 企業構造</a><a href="#sales">B. 販売構造</a><a href="#area">C. 販売エリア</a><a href="#ship">D. 出荷構造</a><a href="#assign">E. 割当関係一覧</a><a href="#shots">F. 実際の画面：組織を登録する 12 のタスク</a><a href="#check">G. セルフチェック</a></div>
+<h2 id="why">1. なぜ組織を先に説明するのか</h2>
+<p>以降のすべてが組織に紐づくからです：得意先マスタには販売エリアを入力し、品目の販売ビューにも販売エリアを入力します。条件レコードには販売組織/流通チャネルを入力し、受注伝票のヘッダには販売エリアを引き継ぎ、出荷ではプラントと出荷ポイントを選択します。<b>組織構造が 1 層でもずれると、以降のデータはすべて作り直しになります。</b></p>
+<div class="note tip"><span class="t">推奨する学習順序</span>このページは教材 SPRO の最初の部分（企業構造 / ロジスティクス実行）に対応します。推奨する授業の順序：まずホワイトボードに 3 つの矩形（販売組織 / 流通チャネル / 製品部門）を描き、線で結んで販売エリアにします。その後システムで実際に設定します。割当関係を理解すれば、設定はすぐにできます。</div>
+<h2 id="map">2. 全体図</h2>
+<figure class="dia"><a class="zoom" href="assets/diagrams/org-structure.svg"><img src="assets/diagrams/org-structure.svg" alt="SD 組織構造図" loading="lazy"></a><figcaption><span class="n">構造図</span><span class="cap">A 企業構造 → B 販売構造 → C 販売エリア → D 出荷構造、および下部の「システムがこれらのデータをどう自動的に見つけるか」のチェーン</span><span class="src">当サイト自作の SVG</span></figcaption></figure>
+<h2 id="ent">A. 企業構造（Enterprise Structure）</h2>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>対象</th><th>意味</th><th>SD での役割</th><th>教材のシナリオ</th></tr></thead><tbody><tr><td>会社コード / 会社</td><td>対外財務諸表を作成する会計単位</td><td>販売業務がどの会計に載るかを決定（収益・売掛金はすべてこの会社コード内）</td><td>一対多：1 つの会社コードに複数の販売組織を持てます</td></tr><tr><td>販売組織 Sales Organization</td><td>販売を担当する法的単位：製品責任、販売統計</td><td>販売データの最上位組織キー。得意先／品目の販売ビューはこれに紐づきます</td><td>教材：颐宁販売組織</td></tr><tr><td>プラント Plant</td><td>生産と在庫の単位（出荷はここから発生する）</td><td>受注明細のプラントが出荷元と在庫の出所を決定する</td><td>教材：颐宁机械工厂 を直販と卸売の2つの流通チャネルに割当</td></tr></tbody></table></div>
+<div class="pathline" data-copy="企业结构 → 定义 → 销售和分销 → 定义、复制、删除、检查销售组织"><b>IMG パス（販売組織の定義）</b>企業構造 → 定義 → 販売管理 → 販売組織の登録、コピー、削除、チェック</div><div class="pathzh"><b>原教材の中国語パス</b><code>企业结构 → 定义 → 销售和分销 → 定义、复制、删除、检查销售组织</code></div>
+<p>下の画面は教材の「販売組織の定義」の実際の画面です：まずカスタマイジングのメニューから入り、「販売組織の定義」をダブルクリックします。</p>
+<figure class="shot"><a class="zoom" href="assets/img/sd/t01/03_1_image1080.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t01/03_1_image1080.png" width="231" height="544" alt="「販売組織の定義」をダブルクリック" loading="lazy"></a><figcaption><span class="n">画面 1</span><span class="cap">「販売組織の定義」をダブルクリック</span><span class="src">教材《S4.docx》・SD タスク 01 販売組織の定義</span></figcaption></figure>
+<figure class="shot"><a class="zoom" href="assets/img/sd/t01/05_1_image1082.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t01/05_1_image1082.png" width="466" height="221" alt="販売組織を新規登録したら&lt;b&gt;保存をクリック&lt;/b&gt;——組織データは設定なので、保存した時点で有効になります" loading="lazy"></a><figcaption><span class="n">画面 2</span><span class="cap">販売組織を新規登録したら<b>保存をクリック</b>——組織データは設定なので、保存した時点で有効になります</span><span class="src">教材《S4.docx》・SD タスク 01 販売組織の定義</span></figcaption></figure>
+<h2 id="sales">B. 販売構造（Sales Structure）</h2>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>対象</th><th>意味</th><th>教材でのやり方</th><th>スクリーンショットの次のステップ</th></tr></thead><tbody><tr><td>流通チャネル Distribution Channel</td><td>製品がどの経路で得意先に届くか：直販 / 卸売 / 小売</td><td>2 つ定義（直販、卸売）</td><td>販売組織への割当</td></tr><tr><td>製品部門 Division</td><td>製品をライン別にグループ化（完成品 / スペアパーツ / サービス）</td><td>2 つ定義</td><td>販売組織への割当</td></tr><tr><td>販売事務所 Sales Office</td><td>地域や責任で区分された販売機関</td><td>定義後に販売エリアへ割当</td><td>統計と権限に使用</td></tr><tr><td>販売グループ Sales Group</td><td>販売事務所の中の担当者グループ</td><td>定義後に販売事務所へ割当</td><td>責任をさらに細分化</td></tr></tbody></table></div>
+<div class="pathline" data-copy="企业结构 → 定义 → 销售和分销 → 定义、复制、删除、检查分销渠道"><b>IMG パス（流通チャネルの定義）</b>企業構造 → 定義 → 販売管理 → 流通チャネルの登録、コピー、削除、チェック</div><div class="pathzh"><b>原教材の中国語パス</b><code>企业结构 → 定义 → 销售和分销 → 定义、复制、删除、检查分销渠道</code></div>
+<div class="shot-grid"><figure class="shot"><a class="zoom" href="assets/img/sd/t02/03_1_image1086.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t02/03_1_image1086.png" width="380" height="278" alt="流通チャネルの定義：「新規エントリ」をクリックしてチャネルを追加" loading="lazy"></a><figcaption><span class="n">画面 3</span><span class="cap">流通チャネルの定義：「新規エントリ」をクリックしてチャネルを追加</span><span class="src">教材《S4.docx》SD モジュール · image1086.png</span></figcaption></figure><figure class="shot"><a class="zoom" href="assets/img/sd/t03/01_1_image1088.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t03/01_1_image1088.png" width="348" height="249" alt="製品部門の定義（ロジスティクス一般 → 製品部門の登録、コピー、削除、チェック）" loading="lazy"></a><figcaption><span class="n">画面 4</span><span class="cap">製品部門の定義（ロジスティクス一般 → 製品部門の登録、コピー、削除、チェック）</span><span class="src">教材《S4.docx》SD モジュール · image1088.png</span></figcaption></figure></div>
+<div class="pathline" data-copy="企业结构 → 定义 → 销售和分销 → 维护销售办公室　｜　企业结构 → 定义 → 销售和分销 → 维护销售组"><b>IMG パス（販売事務所 / 販売グループの登録）</b>企業構造 → 定義 → 販売管理 → 販売事務所の登録　｜　企業構造 → 定義 → 販売管理 → 販売グループの登録</div><div class="pathzh"><b>原教材の中国語パス</b><code>企业结构 → 定义 → 销售和分销 → 维护销售办公室　｜　企业结构 → 定义 → 销售和分销 → 维护销售组</code></div>
+<div class="shot-grid"><figure class="shot"><a class="zoom" href="assets/img/sd/t08/02_1_image1110.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t08/02_1_image1110.png" width="619" height="723" alt="販売事務所を登録：先に組織を作成し、販売エリアに割り当てる" loading="lazy"></a><figcaption><span class="n">画面 5</span><span class="cap">販売事務所を登録：先に組織を作成し、販売エリアに割り当てる</span><span class="src">教材《S4.docx》SD モジュール · image1110.png</span></figcaption></figure><figure class="shot"><a class="zoom" href="assets/img/sd/t09/02_1_image1118.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t09/02_1_image1118.png" width="339" height="201" alt="販売グループを登録：販売事務所に所属させる" loading="lazy"></a><figcaption><span class="n">画面 6</span><span class="cap">販売グループを登録：販売事務所に所属させる</span><span class="src">教材《S4.docx》SD モジュール · image1118.png</span></figcaption></figure></div>
+<h2 id="area">C. 販売エリア（Sales Area）—— SD の座標</h2>
+<p><b>販売エリア = 販売組織 + 流通チャネル + 製品部門</b>。業務上の意味：ある販売組織が「ある流通チャネルを通じて」「特定の製品部門」を扱います。得意先マスタ、品目の販売ビュー（販売エリアレベルのデータ）、条件レコード、販売伝票のヘッダを決定します。</p>
+<div class="box info"><b class="t">教材の原文（タスク 07 販売エリアの設定）</b><p>「SAP は販売組織・流通チャネル・製品部門の組み合わせを『販売エリア』と呼びます……颐宁の販売組織では、直販と卸売の 2 つの製品部門による販売を割り当てることができ、全部で 4 つの販売エリアになります。」</p><p>→ 1 × 2 × 2 = <b>4 つの販売エリア</b>となり、1 つずつ設定する必要があります。</p></div>
+<div class="pathline" data-copy="企业结构 → 分配 → 销售和分销 → 设置销售范围"><b>IMG パス（販売エリアの設定）</b>企業構造 → 割当 → 販売管理 → 販売エリアの設定</div><div class="pathzh"><b>原教材の中国語パス</b><code>企业结构 → 分配 → 销售和分销 → 设置销售范围</code></div>
+<div class="shot-grid"><figure class="shot"><a class="zoom" href="assets/img/sd/t07/02_1_image1106.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t07/02_1_image1106.png" width="775" height="283" alt="販売エリアの設定：販売組織 × 流通チャネル × 製品部門の組み合わせを 1 つずつ作成する" loading="lazy"></a><figcaption><span class="n">画面 7</span><span class="cap">販売エリアの設定：販売組織 × 流通チャネル × 製品部門の組み合わせを 1 つずつ作成する</span><span class="src">教材《S4.docx》SD モジュール · image1106.png</span></figcaption></figure><figure class="shot"><a class="zoom" href="assets/img/sd/t07/03_1_image1107.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t07/03_1_image1107.png" width="779" height="250" alt="同じ販売エリア内で他の組み合わせを引き続き追加" loading="lazy"></a><figcaption><span class="n">画面 8</span><span class="cap">同じ販売エリア内で他の組み合わせを引き続き追加</span><span class="src">教材《S4.docx》SD モジュール · image1107.png</span></figcaption></figure></div>
+<h4>コースシナリオ（教材環境）に実在する値</h4>
+<p>以下の値は教材画面の表から一字ずつ読み取ったものです（スクリーンショットの説明には「コースシナリオ値」と記載されています）。授業ではこれをそのまま使って、受講者自身のシステムのデータと照合できます。</p>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>対象</th><th>値</th><th>説明</th></tr></thead><tbody><tr><td>販売組織</td><td><code>C999</code> 颐宁销售</td><td>教材環境の販売組織コード</td></tr><tr><td>流通チャネル</td><td><code>Z1</code> 直販 / <code>Z2</code> 卸売</td><td>2 つのチャネル</td></tr><tr><td>製品部門</td><td><code>Z1</code> 铸钢泵 / <code>Z2</code> 增压泵</td><td>2 つの製品部門</td></tr><tr><td>販売エリア（4 つの組み合わせ）</td><td><code>C999/Z1/Z1</code>、<code>C999/Z2/Z1</code>、<code>C999/Z1/Z2</code>、<code>C999/Z2/Z2</code></td><td>「販売エリアの設定」画面の 4 行（画面 7）</td></tr><tr><td>プラント</td><td><code>P999</code> 颐宁机械工厂</td><td>C999 に割り当てられた Z1、Z2 の 2 チャネル</td></tr><tr><td>出荷ポイント</td><td><code>Z999</code> 颐宁装运点</td><td>プラント P999 に割当</td></tr><tr><td>ピッキング保管場所</td><td><code>Z999</code> + <code>P999</code> → 保管場所 <code>003</code></td><td>「ピッキング場所の割当」画面の 1 行</td></tr></tbody></table></div>
+<div class="note tip"><span class="t">コードがなぜ Z で始まるのか</span>教材環境では <code>C999</code> / <code>Z999</code> / <code>P999</code> のような<b>練習用コード</b> を使っており、実際の得意先では <code>1000</code>、<code>1010</code>（数字）や得意先が独自に作成した Z コードが一般的です。コードを暗記するのではなく、「このコードが組織図のどこに位置するか」を見られるようにしましょう。</div>
+<div class="note warn"><span class="t">よくあるエラー</span>販売組織だけを登録して得意先マスタを作成しようとすると、販売ビューで販売エリアが選択できず、得意先を登録できません。販売エリアは「設定」して作るもので、自動生成されません。</div>
+<h2 id="ship">D. 出荷構造（Shipping）</h2>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>対象</th><th>何を決定するか</th><th>関係</th><th>教材の実例</th></tr></thead><tbody><tr><td>出荷ポイント Shipping Point</td><td>どの地点から出荷するか（出荷の起点）</td><td>プラントとは多対多</td><td><code>Z999</code> 颐宁装运点</td></tr><tr><td>積込ポイント Loading Point</td><td>積み込みの具体的な位置</td><td>出荷ポイントに紐付け</td><td>積込ポイントを定義後、必要に応じて割当</td></tr><tr><td>ピッキング保管場所</td><td>どの保管場所からピッキングするか</td><td>出荷ポイント + プラント + 保管条件で決定</td><td>教材では最初の2つの条件のみ有効化</td></tr><tr><td>輸送条件 Shipping Conditions</td><td>輸送手段と時間</td><td>品目 / プラントとともに出荷ポイントを決定</td><td>得意先マスタと品目マスタの両方にあります</td></tr><tr><td>積込グループ Loading Group</td><td>積込ポイントを決定</td><td>品目マスタと併用</td><td>品目マスタで登録</td></tr></tbody></table></div>
+<div class="pathline" data-copy="企业结构 → 定义 → 后勤执行 → 定义、复制、删除、检查起运点"><b>IMG パス（出荷ポイントの定義）</b>企業構造 → 定義 → ロジスティクス実行 → 出荷ポイントの登録、コピー、削除、チェック</div><div class="pathzh"><b>原教材の中国語パス</b><code>企业结构 → 定义 → 后勤执行 → 定义、复制、删除、检查起运点</code></div>
+<p>教材では出荷ポイントの名称は<b>Z999 颐宁装运点</b>（画面で確認できます）で、その後プラントに割り当てます：</p>
+<div class="shot-grid"><figure class="shot"><a class="zoom" href="assets/img/sd/t14/03_1_image1136.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t14/03_1_image1136.png" width="604" height="746" alt="出荷ポイントの定義：Z999 颐宁出荷ポイント" loading="lazy"></a><figcaption><span class="n">画面 9</span><span class="cap">出荷ポイントの定義：Z999 颐宁出荷ポイント</span><span class="src">教材《S4.docx》SD モジュール · image1136.png</span></figcaption></figure><figure class="shot"><a class="zoom" href="assets/img/sd/t13/02_1_image1129.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t13/02_1_image1129.png" width="757" height="199" alt="プラントを販売組織 / 流通チャネルに割当（多対多）" loading="lazy"></a><figcaption><span class="n">画面 10</span><span class="cap">プラントを販売組織 / 流通チャネルに割当（多対多）</span><span class="src">教材《S4.docx》SD モジュール · image1129.png</span></figcaption></figure></div>
+<div class="pathline" data-copy="后勤执行 → 装运 → 拣配 → 确定拣配地点 → 分配拣配地点"><b>IMG パス（ピッキング保管場所の割当）</b>ロジスティクス実行 → 出荷 → ピッキング → ピッキング場所の決定 → ピッキング場所の割当</div><div class="pathzh"><b>原教材の中国語パス</b><code>后勤执行 → 装运 → 拣配 → 确定拣配地点 → 分配拣配地点</code></div>
+<figure class="shot narrow"><a class="zoom" href="assets/img/sd/t20/03_1_image1161.png" title="クリックで拡大（1×〜4×、ESC で閉じる）"><img src="assets/img/sd/t20/03_1_image1161.png" width="311" height="150" alt="ピッキング保管場所の割当：先頭 3 つのグレーの項目が決定に効く出荷ポイント、プラント、保管条件です" loading="lazy"></a><figcaption><span class="n">画面 11</span><span class="cap">ピッキング保管場所の割当：先頭 3 つのグレーの項目が決定に効く出荷ポイント、プラント、保管条件です</span><span class="src">教材《S4.docx》・SD タスク 20 ピッキング保管場所の割当</span></figcaption></figure>
+<h2 id="assign">E. 割当関係一覧（1 つの表で多対多を説明）</h2>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>割当</th><th>関係</th><th>教材でのやり方</th><th>IMG パス</th></tr></thead><tbody><tr><td>販売組織 → 会社コード</td><td>多対一</td><td>販売組織を会社コードに割り当てる</td><td>企業構造 → 割当 → 販売管理 → 会社コードへの販売組織割当</td></tr><tr><td>流通チャネル → 販売組織</td><td>多対多</td><td>直販と卸売はどちらも颐宁販売組織に割り当てる</td><td>企業構造 → 割当 → 販売管理 → 販売組織への流通チャネル割当</td></tr><tr><td>製品部門 → 販売組織</td><td>多対多</td><td>2 つの製品部門をどちらも割当</td><td>企業構造 → 割当 → 販売管理 → 販売組織への部門割当</td></tr><tr><td>販売エリア</td><td>3 つのキーの組み合わせで決定</td><td>計 4 つの組み合わせ</td><td>企業構造 → 割当 → 販売管理 → 販売エリアの設定</td></tr><tr><td>販売事務所 → 販売エリア</td><td>多対多</td><td>地域単位で紐付け</td><td>企業構造 → 割当 → 販売管理 → 販売エリアへの販売事務所割当</td></tr><tr><td>販売グループ → 販売事務所</td><td>多対多</td><td>グループ単位で紐付け</td><td>企業構造 → 割当 → 販売管理 → 販売事務所への販売グループ割当</td></tr><tr><td>プラント → 販売組織 / 流通チャネル</td><td>多対多</td><td>颐宁机械工厂 → 直販 + 卸売</td><td>企業構造 → 割当 → 販売管理 → 販売組織-流通チャネル-プラントの割当</td></tr><tr><td>出荷ポイント → プラント</td><td>多対多</td><td>1 つのプラントに複数の出荷ポイント（道路、水路…）を持て、1 つの出荷ポイントを複数のプラントで共用することもできます</td><td>企業構造 → 割当 → ロジスティクス実行 → プラントへの出荷ポイント割当</td></tr><tr><td>ピッキング保管場所</td><td>出荷ポイント + プラント（+ 保管条件）で決定</td><td>最初の 2 つの条件だけを有効化</td><td>ロジスティクス実行 → 出荷 → ピッキング → ピッキング場所の決定 → ピッキング場所の割当</td></tr></tbody></table></div>
+<div class="note tip"><span class="t">記憶法</span>「割当」という言葉はほぼ多対多を意味し、「エリア」「決定」という言葉は、複数のキーを組み合わせてテーブルを検索し求めることを意味します。教材タスク 11 が特に「単純な順列組合せで全 8 通り」と述べているのは、2 チャネル × 2 製品部門の多重割当を整理して考えるという意味です。</div>
+<h2 id="shots">F. 実機画面：組織を構築する 12 のタスク（索引）</h2>
+<p>以下は教材 SD モジュールの「組織構造」に属するタスク一覧です（パスとタスク番号は教材と一致。原文で照合できます）。完全なステップごとの手順は<a href="config.html">設定ページ</a>を参照してください。</p>
+<div class="tblwrap"><table class="tbl idx"><thead><tr><th>タスク</th><th>タイトル</th><th>教材 IMG パス</th><th>画面の数</th></tr></thead><tbody><tr><td><a href="config.html#task01">タスク 01</a></td><td>販売組織の定義</td><td><code>企業構造 → 定義 → 販売管理 → 販売組織の登録、コピー、削除、チェック</code></td><td>6</td></tr><tr><td><a href="config.html#task02">タスク 02</a></td><td>流通チャネルの定義</td><td><code>企業構造 → 定義 → 販売管理 → 流通チャネルの登録、コピー、削除、チェック</code></td><td>4</td></tr><tr><td><a href="config.html#task03">タスク 03</a></td><td>製品部門の定義</td><td><code>企業構造 → 定義 → ロジスティクス一般 → 製品部門の登録、コピー、削除、チェック</code></td><td>4</td></tr><tr><td><a href="config.html#task04">タスク 04</a></td><td>販売組織の会社コードへの割当</td><td><code>企業構造 → 割当 → 販売管理 → 会社コードへの販売組織割当</code></td><td>3</td></tr><tr><td><a href="config.html#task05">タスク 05</a></td><td>流通チャネルの販売組織への割当</td><td><code>企業構造 → 割当 → 販売管理 → 販売組織への流通チャネル割当</code></td><td>6</td></tr><tr><td><a href="config.html#task06">タスク 06</a></td><td>製品部門の販売組織への割当</td><td><code>企業構造 → 割当 → 販売管理 → 販売組織への部門割当</code></td><td>3</td></tr><tr><td><a href="config.html#task07">タスク 07</a></td><td>販売エリアの設定</td><td><code>企業構造 → 割当 → 販売管理 → 販売エリアの設定</code></td><td>4</td></tr><tr><td><a href="config.html#task08">タスク 08</a></td><td>販売事務所の定義</td><td><code>企業構造 → 定義 → 販売管理 → 販売事務所の登録</code></td><td>5</td></tr><tr><td><a href="config.html#task09">タスク 09</a></td><td>販売グループの定義</td><td><code>企業構造 → 定義 → 販売管理 → 販売グループの登録</code></td><td>5</td></tr><tr><td><a href="config.html#task10">タスク 10</a></td><td>販売エリアへの販売事務所割当</td><td><code>企業構造 → 割当 → 販売管理 → 販売エリアへの販売事務所割当</code></td><td>5</td></tr><tr><td><a href="config.html#task12">タスク 12</a></td><td>販売グループの販売事務所への割当</td><td><code>企業構造 → 割当 → 販売管理 → 販売事務所への販売グループ割当</code></td><td>4</td></tr><tr><td><a href="config.html#task13">タスク 13</a></td><td>プラントの販売組織／流通チャネルへの割当</td><td><code>企業構造 → 割当 → 販売管理 → 販売組織-流通チャネル-プラントの割当</code></td><td>5</td></tr></tbody></table></div>
+<h2 id="check">G. セルフチェック：自分のシステムではどう確認するか</h2>
+<div class="tblwrap"><table class="tbl"><thead><tr><th>確認すべきこと</th><th>どう確認するか</th></tr></thead><tbody><tr><td>どの販売組織、流通チャネル、製品部門があるか</td><td>カスタマイジングで企業構造を直接確認します。またはテーブル <code>TVKO</code>（販売組織）、<code>TVTW</code>（流通チャネル）、<code>TSPA</code>（製品部門）</td></tr><tr><td>販売エリアはどれを作成したか</td><td>カスタマイジングの「販売エリアの設定」一覧。または <code>VA03</code> の任意の受注伝票ヘッダで販売エリア項目を確認</td></tr><tr><td>プラントはどの販売組織に割り当てられているか</td><td>カスタマイジングの「販売組織-流通チャネル-プラントの割当」。または受注明細でプラントと「出荷ポイント」を確認</td></tr><tr><td>出荷ポイント / ピッキング保管場所</td><td>カスタマイジングの「プラントへの出荷ポイント割当」「ピッキング場所の割当」。または納入伝票 <code>VL03N</code> のヘッダで出荷ポイントを確認</td></tr><tr><td>項目の意味が不明なとき</td><td>カーソルを項目に合わせて<b>F1</b> を押します。値一覧は<b>F4</b> です</td></tr></tbody></table></div>
+<ol class="steps"><li>次のステップ：<a href="master.html"><b>マスタ</b></a> —— 得意先・品目・価格を登録します。</li><li>カスタマイジングを参照：<a href="config.html"><b>設定ページ</b></a> に 48 タスクの完全なパスがあります。</li></ol>
+</article>
+</main>
+</div>
+
+<footer class="site">
+  <div class="inner">
+    <div class="cols">
+      <div>
+<h5>SAP SD トレーニングコース</h5>
+<p>販売管理 · 概念からプロセスへ · 全体から部分へ</p>
+      </div>
+      <div>
+<h5>コースセクション</h5>
+<p><a href="concept.html">概念</a> · <a href="org.html">組織</a> · <a href="master.html">マスタ</a> ·
+<a href="pricing.html">価格設定</a> · <a href="flow.html">プロセス</a> · <a href="config.html">設定</a></p>
+      </div>
+      <div>
+<h5>授業用付属資料</h5>
+<p><a href="practice.html">実習タスク</a> · <a href="instructor.html">講師用</a> ·
+<a href="worksheet.html">受講者用</a> · <a href="quiz.html">セルフチェックテスト</a> ·
+<a href="glossary.html">用語集</a></p>
+      </div>
+      <div>
+<h5>ひと言の免責</h5>
+<p>スクリーンショットは教材ドキュメントの実際の SAP GUI 画面（中国語インターフェース）。図と表は当サイトの自作です。
+標準値はリリース/業界ソリューションによって異なります。ページに記載の確認方法をご自身のシステムで確認してください。</p>
+      </div>
+    </div>
+<p class="copy">© <span data-year>2026</span> SAP SD トレーニングコース · 静的サイト、オフラインで利用可能</p>
+  </div>
+</footer>
+<script src="assets/main.js"></script>
+<script src="assets/quiz.js"></script>
+<script src="assets/sd.js"></script>
+</body>
+</html>
