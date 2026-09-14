@@ -132,8 +132,22 @@ python3 work/jp_finalize.py && python3 tools/build_pages.py
 - `tools/*.py` と `assets/*.js` のコメントも日本語化済み（中国語のコメント行 0）。表示テキストは文字列リテラル由来なので、
   ソースのコメント変更は HTML に影響しません（`build_pages.py` の出力は同じ）。
 - 中国語版 `sap_cn/` とは独立したディレクトリです（同じ教材・同じ画面を使っています）。
-  - **公開（GitHub / Vercel）は未実施**です。`sap_cn/tools/` の公開スクリプト（`publish_to_github.sh` / `verify_publish.sh` /
-    `reconcile_remote.sh`）のパスを差し替えれば同じ手順で公開できます。
+  - **公開済み**: https://github.com/raysource/sap_sd_jp （`main` / **public**）。最初の push の HEAD は
+    `4bac1d9ac027775e16ccbb84473c11e22a1c3680`（以後の更新で動きます。最新は `git log --oneline -1`）。
+    ```bash
+    bash tools/publish_to_github.sh   # init（無ければ）+ remote + commit + push（何度でも再実行可）
+    bash tools/verify_publish.sh      # push の出力ではなく ls-remote / gh api / ファイル数で確認（3 経路一致）
+    bash tools/reconcile_remote.sh    # 逐路径对账（core.quotepath=false + LC_ALL=C sort + blob のみ）
+    ```
+  - **注意（このディレクトリの名前とリポジトリ名）**: リポジトリは `sap_sd_jp`、手元のディレクトリは `sap_jp_sd` です。
+    生態系には **別の站** `sap_sd_jp/`（教材 S4.docx の全モジュール日本語版）も存在するため、**名前が入れ替わった状態**に
+    なっています（このリポジトリは本ディレクトリ＝SD コースの日本語版を収録）。混同を避けるには
+    `gh repo edit raysource/sap_sd_jp --name sap_jp_sd` でリポジトリ名を揃えられます。
+  - **著作権の位置づけ**: 収録している 269 枚の画面はユーザーの教材ドキュメント `S4.docx` から抽出したもので、
+    同じ一枚が既に公開リポジトリ `raysource/sap_cn_sd` / `raysource/sap-consult` にも入っています。非公開に戻す場合は
+    `gh repo edit raysource/sap_sd_jp --visibility private`（公開リポジトリの Pages は有料プランが必要）。
   - **トレーニングサイト索引（`../index.html`）へのカード追加も未実施**です（`../tools/make_hub_page.py` は共有ファイルのため、
     他サイトの索引に影響します）。本站は `tools/hub_stats.json` に自分の統計を自己申告済みなので、登録は SITES / ORDER に
     1 行足して `python3 ../tools/make_hub_page.py` を実行するだけです。
+  - **`sap_jp_sd/.git` ができたので、親リポジトリ（`raysource/sap-consult`）から見ると入れ子リポジトリ**です。
+    親へ取り込むときは `tools/include_nested_repo_files.sh "$PWD" sap_jp_sd`（`sap_sd_cn` / `sap_cn` と同じ手順）。
